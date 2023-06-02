@@ -16,6 +16,9 @@
 		16D09C762A28C5E1007C19E4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D09C752A28C5E1007C19E4 /* LoginViewController.swift */; };
 		16D09C792A28C7F2007C19E4 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D09C782A28C7F2007C19E4 /* NetworkManager.swift */; };
 		16D09C7B2A28D497007C19E4 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D09C7A2A28D497007C19E4 /* TabBarViewController.swift */; };
+		18F0BB4AE02F510A407B225A /* Pods_Odoo_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B706C36BD815FF554B6B1EF1 /* Pods_Odoo_iOS.framework */; };
+		3F0F4995BEEE980E638D0E65 /* Pods_Odoo_iOS_Odoo_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21163AA8DDD60FE31957BA8D /* Pods_Odoo_iOS_Odoo_iOSUITests.framework */; };
+		CB1D4615A3030DDC1EB3C787 /* Pods_Odoo_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E9555F8BAAC7BA040DFFE0E /* Pods_Odoo_iOSTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04B0A0D37883E438AB437229 /* Pods-Odoo-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Odoo-iOS.release.xcconfig"; path = "Target Support Files/Pods-Odoo-iOS/Pods-Odoo-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		16D09C3D2A272D6D007C19E4 /* Odoo-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Odoo-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		16D09C402A272D6D007C19E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16D09C422A272D6D007C19E4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +53,14 @@
 		16D09C752A28C5E1007C19E4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		16D09C782A28C7F2007C19E4 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		16D09C7A2A28D497007C19E4 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		21163AA8DDD60FE31957BA8D /* Pods_Odoo_iOS_Odoo_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Odoo_iOS_Odoo_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3092B88ED2702448DF99E137 /* Pods-Odoo-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Odoo-iOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Odoo-iOSTests/Pods-Odoo-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		60B89F5CF5DC966D2CF7E52E /* Pods-Odoo-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Odoo-iOSTests.release.xcconfig"; path = "Target Support Files/Pods-Odoo-iOSTests/Pods-Odoo-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		638DD9263EF2A103D35E2C1F /* Pods-Odoo-iOS-Odoo-iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Odoo-iOS-Odoo-iOSUITests.release.xcconfig"; path = "Target Support Files/Pods-Odoo-iOS-Odoo-iOSUITests/Pods-Odoo-iOS-Odoo-iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8E9555F8BAAC7BA040DFFE0E /* Pods_Odoo_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Odoo_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B706C36BD815FF554B6B1EF1 /* Pods_Odoo_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Odoo_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6857942F579815CF97D5871 /* Pods-Odoo-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Odoo-iOS.debug.xcconfig"; path = "Target Support Files/Pods-Odoo-iOS/Pods-Odoo-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		DEC433E069CF6F61808078CC /* Pods-Odoo-iOS-Odoo-iOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Odoo-iOS-Odoo-iOSUITests.debug.xcconfig"; path = "Target Support Files/Pods-Odoo-iOS-Odoo-iOSUITests/Pods-Odoo-iOS-Odoo-iOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18F0BB4AE02F510A407B225A /* Pods_Odoo_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB1D4615A3030DDC1EB3C787 /* Pods_Odoo_iOSTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,17 +84,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F0F4995BEEE980E638D0E65 /* Pods_Odoo_iOS_Odoo_iOSUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		06A35641065C3E9D0957329D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B706C36BD815FF554B6B1EF1 /* Pods_Odoo_iOS.framework */,
+				21163AA8DDD60FE31957BA8D /* Pods_Odoo_iOS_Odoo_iOSUITests.framework */,
+				8E9555F8BAAC7BA040DFFE0E /* Pods_Odoo_iOSTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		16D09C342A272D6D007C19E4 = {
 			isa = PBXGroup;
 			children = (
 				16D09C3F2A272D6D007C19E4 /* Odoo-iOS */,
 				16D09C3E2A272D6D007C19E4 /* Products */,
+				AE84833593865EFA626D9D06 /* Pods */,
+				06A35641065C3E9D0957329D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,6 +154,20 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		AE84833593865EFA626D9D06 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D6857942F579815CF97D5871 /* Pods-Odoo-iOS.debug.xcconfig */,
+				04B0A0D37883E438AB437229 /* Pods-Odoo-iOS.release.xcconfig */,
+				DEC433E069CF6F61808078CC /* Pods-Odoo-iOS-Odoo-iOSUITests.debug.xcconfig */,
+				638DD9263EF2A103D35E2C1F /* Pods-Odoo-iOS-Odoo-iOSUITests.release.xcconfig */,
+				3092B88ED2702448DF99E137 /* Pods-Odoo-iOSTests.debug.xcconfig */,
+				60B89F5CF5DC966D2CF7E52E /* Pods-Odoo-iOSTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,9 +175,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 16D09C672A272D6E007C19E4 /* Build configuration list for PBXNativeTarget "Odoo-iOS" */;
 			buildPhases = (
+				8E11ACD9142ED4B2DCC1EC7D /* [CP] Check Pods Manifest.lock */,
 				16D09C392A272D6D007C19E4 /* Sources */,
 				16D09C3A2A272D6D007C19E4 /* Frameworks */,
 				16D09C3B2A272D6D007C19E4 /* Resources */,
+				748651B806E2DFF1D9D8C6B7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -151,6 +194,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 16D09C6A2A272D6E007C19E4 /* Build configuration list for PBXNativeTarget "Odoo-iOSTests" */;
 			buildPhases = (
+				4BF2A197C922CD8EE9D43C0F /* [CP] Check Pods Manifest.lock */,
 				16D09C4F2A272D6E007C19E4 /* Sources */,
 				16D09C502A272D6E007C19E4 /* Frameworks */,
 				16D09C512A272D6E007C19E4 /* Resources */,
@@ -169,9 +213,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 16D09C6D2A272D6E007C19E4 /* Build configuration list for PBXNativeTarget "Odoo-iOSUITests" */;
 			buildPhases = (
+				84EFB26ACA782FBC29DB77AB /* [CP] Check Pods Manifest.lock */,
 				16D09C592A272D6E007C19E4 /* Sources */,
 				16D09C5A2A272D6E007C19E4 /* Frameworks */,
 				16D09C5B2A272D6E007C19E4 /* Resources */,
+				75380577C16AF3C279A924DE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -252,6 +298,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4BF2A197C922CD8EE9D43C0F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Odoo-iOSTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		748651B806E2DFF1D9D8C6B7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Odoo-iOS/Pods-Odoo-iOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Odoo-iOS/Pods-Odoo-iOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Odoo-iOS/Pods-Odoo-iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		75380577C16AF3C279A924DE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Odoo-iOS-Odoo-iOSUITests/Pods-Odoo-iOS-Odoo-iOSUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Odoo-iOS-Odoo-iOSUITests/Pods-Odoo-iOS-Odoo-iOSUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Odoo-iOS-Odoo-iOSUITests/Pods-Odoo-iOS-Odoo-iOSUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		84EFB26ACA782FBC29DB77AB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Odoo-iOS-Odoo-iOSUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8E11ACD9142ED4B2DCC1EC7D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Odoo-iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		16D09C392A272D6D007C19E4 /* Sources */ = {
@@ -432,6 +581,7 @@
 		};
 		16D09C682A272D6E007C19E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6857942F579815CF97D5871 /* Pods-Odoo-iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -461,6 +611,7 @@
 		};
 		16D09C692A272D6E007C19E4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 04B0A0D37883E438AB437229 /* Pods-Odoo-iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -490,6 +641,7 @@
 		};
 		16D09C6B2A272D6E007C19E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3092B88ED2702448DF99E137 /* Pods-Odoo-iOSTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -510,6 +662,7 @@
 		};
 		16D09C6C2A272D6E007C19E4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 60B89F5CF5DC966D2CF7E52E /* Pods-Odoo-iOSTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -530,6 +683,7 @@
 		};
 		16D09C6E2A272D6E007C19E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DEC433E069CF6F61808078CC /* Pods-Odoo-iOS-Odoo-iOSUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -548,6 +702,7 @@
 		};
 		16D09C6F2A272D6E007C19E4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 638DD9263EF2A103D35E2C1F /* Pods-Odoo-iOS-Odoo-iOSUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

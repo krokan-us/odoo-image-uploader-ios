@@ -53,15 +53,19 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginButtonTapped(_ sender: Any) {
         if let urlText = URLTextView.text, let url = URL(string: urlText) {
-            isUserAuthenticated = NetworkManager.shared.sendLoginRequest(baseURL: url, databaseName: databaseTextView.text, username: usernameTextView.text, password: passwordTextView.text)
-            
-            if isUserAuthenticated{
-                let storyboard = UIStoryboard(name: "Main", bundle: nil) // Replace "Main" with your storyboard name
-                if let tabBarVC = storyboard.instantiateViewController(withIdentifier: "tabBar") as? TabBarViewController {
-                    tabBarVC.modalPresentationStyle = .fullScreen
-                    DispatchQueue.main.async {
-                        self.present(tabBarVC, animated: false)
+            NetworkManager.shared.sendLoginRequest(baseURL: url, databaseName: databaseTextView.text, username: usernameTextView.text, password: passwordTextView.text) {
+                userID in
+                if let userID = userID {
+                    print("Login successful! User ID: \(userID)")
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    if let tabBarVC = storyboard.instantiateViewController(withIdentifier: "tabBar") as? TabBarViewController {
+                        tabBarVC.modalPresentationStyle = .fullScreen
+                        DispatchQueue.main.async {
+                            self.present(tabBarVC, animated: false)
+                        }
                     }
+                } else {
+                    print("Login failed.")
                 }
             }
         } else {
@@ -69,7 +73,7 @@ class LoginViewController: UIViewController {
             print("Invalid URL")
         }
     }
-}
+    }
 extension LoginViewController {
     @IBAction func URLClearButtonTapped(_ sender: Any) {
         URLTextView.text = ""
