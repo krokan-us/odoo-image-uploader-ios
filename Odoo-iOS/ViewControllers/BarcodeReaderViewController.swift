@@ -2,6 +2,7 @@ import UIKit
 import AVFoundation
 
 class BarcodeReaderViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
+    @IBOutlet weak var cameraView: UIView!
     @IBOutlet weak var barcodeReaderView: UIView!
     
     private var captureSession: AVCaptureSession?
@@ -16,6 +17,9 @@ class BarcodeReaderViewController: UIViewController, AVCaptureMetadataOutputObje
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         startBarcodeReader()
+        barcodeReaderView.layer.borderWidth = 3
+        barcodeReaderView.layer.borderColor = CGColor(red: 0, green: 1, blue: 0, alpha: 1)
+        barcodeReaderView.layer.zPosition = 1
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -25,7 +29,7 @@ class BarcodeReaderViewController: UIViewController, AVCaptureMetadataOutputObje
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        videoPreviewLayer?.frame = barcodeReaderView.bounds
+        videoPreviewLayer?.frame = cameraView.bounds
     }
     
     private func setupBarcodeReader() {
@@ -47,9 +51,9 @@ class BarcodeReaderViewController: UIViewController, AVCaptureMetadataOutputObje
             
             videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession!)
             videoPreviewLayer?.videoGravity = .resizeAspectFill
-            videoPreviewLayer?.frame = barcodeReaderView.bounds
+            videoPreviewLayer?.frame = cameraView.bounds
             videoPreviewLayer?.contentsGravity = .resizeAspectFill
-            barcodeReaderView.layer.addSublayer(videoPreviewLayer!)
+            cameraView.layer.addSublayer(videoPreviewLayer!)
         } catch {
             print("Error setting up barcode reader: \(error)")
         }
