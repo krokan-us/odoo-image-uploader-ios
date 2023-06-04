@@ -21,9 +21,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="130" height="129"/>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hs2-dY-wKP">
-                        <rect key="frame" x="82.333333333333329" y="0.0" width="47.666666666666671" height="34.333333333333336"/>
+                        <rect key="frame" x="72.333333333333329" y="0.0" width="57.666666666666671" height="34.333333333333336"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" image="checkmark" catalog="system"/>
+                        <buttonConfiguration key="configuration" style="plain" image="eye" catalog="system"/>
                     </button>
                 </subviews>
             </view>
@@ -45,6 +46,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="checkmark" catalog="system" width="128" height="114"/>
+        <image name="eye" catalog="system" width="128" height="79"/>
     </resources>
 </document>
