@@ -8,7 +8,15 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-
+    @IBOutlet weak var welcomeLabel: UILabel!
+    @IBOutlet weak var URLView: UIView!
+    @IBOutlet weak var databaseView: UIView!
+    @IBOutlet weak var usernameView: UIView!
+    @IBOutlet weak var passwordView: UIView!
+    @IBOutlet weak var URLLabel: UILabel!
+    @IBOutlet weak var databaseLabel: UILabel!
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var passwordLabel: UILabel!
     @IBOutlet weak var URLTextView: UITextView!
     @IBOutlet weak var databaseTextView: UITextView!
     @IBOutlet weak var usernameTextView: UITextView!
@@ -25,25 +33,52 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setViewBackgrounds()
+        configureLabels()
         configureTextViews()
         configureButtons()
-        loginButton.setTitle(NSLocalizedString("login", comment: ""), for: .normal)
     }
     
+    private func setViewBackgrounds(){
+        URLView.layer.borderWidth = 1
+        URLView.layer.borderColor = UIColor.label.cgColor
+        URLView.layer.cornerRadius = 10
+        
+        databaseView.layer.borderWidth = 1
+        databaseView.layer.borderColor = UIColor.label.cgColor
+        databaseView.layer.cornerRadius = 10
+        
+        usernameView.layer.borderWidth = 1
+        usernameView.layer.borderColor = UIColor.label.cgColor
+        usernameView.layer.cornerRadius = 10
+        
+        passwordView.layer.borderWidth = 1
+        passwordView.layer.borderColor = UIColor.label.cgColor
+        passwordView.layer.cornerRadius = 10
+    }
+    
+    private func configureLabels(){
+        welcomeLabel.text = NSLocalizedString("welcome", comment: "")
+        databaseLabel.text = NSLocalizedString("database", comment: "")
+        usernameLabel.text = NSLocalizedString("username", comment: "")
+        passwordLabel.text = NSLocalizedString("password", comment: "")
+    }
+
     private func configureTextViews() {
         URLTextView.isScrollEnabled = false
-        databaseTextView.isScrollEnabled = false
-        usernameTextView.isScrollEnabled = false
-        passwordTextView.isScrollEnabled = false
-        
         URLTextView.textContainer.lineBreakMode = .byTruncatingTail
-        databaseTextView.textContainer.lineBreakMode = .byTruncatingTail
-        usernameTextView.textContainer.lineBreakMode = .byTruncatingTail
-        passwordTextView.textContainer.lineBreakMode = .byTruncatingTail
-        
         URLTextView.textContainer.maximumNumberOfLines = 1
+        
+        databaseTextView.isScrollEnabled = false
+        databaseTextView.textContainer.lineBreakMode = .byTruncatingTail
         databaseTextView.textContainer.maximumNumberOfLines = 1
+        
+        usernameTextView.isScrollEnabled = false
+        usernameTextView.textContainer.lineBreakMode = .byTruncatingTail
         usernameTextView.textContainer.maximumNumberOfLines = 1
+        
+        passwordTextView.isScrollEnabled = false
+        passwordTextView.textContainer.lineBreakMode = .byTruncatingTail
         passwordTextView.textContainer.maximumNumberOfLines = 1
     }
     
@@ -52,7 +87,12 @@ class LoginViewController: UIViewController {
         databaseClearButton.setTitle("", for: .normal)
         usernameClearButton.setTitle("", for: .normal)
         passwordClearButton.setTitle("", for: .normal)
-
+        
+        loginButton.backgroundColor = .red
+        loginButton.tintColor = .white
+        loginButton.layer.borderColor = UIColor.red.cgColor
+        loginButton.layer.cornerRadius = 10
+        loginButton.setTitle(NSLocalizedString("login", comment: ""), for: .normal)
     }
     
     @IBAction func loginButtonTapped(_ sender: Any) {
@@ -77,7 +117,8 @@ class LoginViewController: UIViewController {
             print("Invalid URL")
         }
     }
-    }
+}
+
 extension LoginViewController {
     @IBAction func URLClearButtonTapped(_ sender: Any) {
         URLTextView.text = ""
