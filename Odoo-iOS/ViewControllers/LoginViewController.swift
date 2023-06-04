@@ -18,12 +18,16 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var databaseClearButton: UIButton!
     @IBOutlet weak var usernameClearButton: UIButton!
     @IBOutlet weak var passwordClearButton: UIButton!
+    
+    @IBOutlet weak var loginButton: UIButton!
+    
     private var isUserAuthenticated = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTextViews()
         configureButtons()
+        loginButton.setTitle(NSLocalizedString("login", comment: ""), for: .normal)
     }
     
     private func configureTextViews() {
