@@ -2,12 +2,13 @@ import UIKit
 import AVFoundation
 
 class BarcodeReaderViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
+    @IBOutlet weak var flashButton: UIButton!
     @IBOutlet weak var cameraView: UIView!
-    @IBOutlet weak var barcodeReaderView: UIView!
     
     private var captureSession: AVCaptureSession?
     private var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     private var isBarcodeDetected = false
+    var isFlashOn = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,17 +18,52 @@ class BarcodeReaderViewController: UIViewController, AVCaptureMetadataOutputObje
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        isFlashOn = false
+        flashButton.setTitle("", for: .normal)
+        flashButton.setImage(UIImage(systemName: "bolt.slash.fill"), for: .normal)
         isBarcodeDetected = false
         startBarcodeReader()
-        barcodeReaderView.layer.borderWidth = 3
-        barcodeReaderView.layer.borderColor = CGColor(red: 0, green: 1, blue: 0, alpha: 1)
-        barcodeReaderView.layer.zPosition = 1
     }
-    
+
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        if isFlashOn {
+            toggleFlashlight()
+        }
         stopBarcodeReader()
     }
+
+    @IBAction func flashButtonTapped(_ sender: Any) {
+        toggleFlashlight()
+    }
+    
+    private func toggleFlashlight() {
+        guard let device = AVCaptureDevice.default(for: .video) else { return }
+
+        if device.hasTorch {
+            do {
+                try device.lockForConfiguration()
+
+                if isFlashOn {
+                    device.torchMode = .off
+                    flashButton.setImage(UIImage(systemName: "bolt.slash.fill"), for: .normal)
+                } else {
+                    try device.setTorchModeOn(level: 1.0)
+                    flashButton.setImage(UIImage(systemName: "bolt.fill"), for: .normal)
+                }
+
+                device.unlockForConfiguration()
+                isFlashOn = !isFlashOn
+            } catch {
+                print("Flash could not be used")
+            }
+        } else {
+            print("Device does not have a Flash light")
+        }
+    }
+
+    
+    
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
