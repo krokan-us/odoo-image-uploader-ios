@@ -52,28 +52,77 @@ class DisplayImagesViewController: UIViewController {
 
 extension DisplayImagesViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return imageResponse?.productImages.count ?? 0
+        guard let imageCount = imageResponse?.productImages.count else {
+            return 0
+        }
+        return imageCount + (imageCount > 0 ? 1 : 0)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! ImageCollectionViewCell
-        
-        if let productImages = imageResponse?.productImages {
-            // Sort the productImages array based on the sequence values
-            var sortedImages = productImages.sorted { $0.sequence < $1.sequence }
+        if indexPath.item < (imageResponse?.productImages.count ?? 0) {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! ImageCollectionViewCell
             
-            if indexPath.item < sortedImages.count {
-                // Update the sequence value based on the new order
-                sortedImages[indexPath.item].sequence = indexPath.item + 1
+            if let productImages = imageResponse?.productImages {
+                // Sort the productImages array based on the sequence values
+                var sortedImages = productImages.sorted { $0.sequence < $1.sequence }
                 
-                cell.configure(with: sortedImages[indexPath.item])
+                if indexPath.item < sortedImages.count {
+                    // Update the sequence value based on the new order
+                    sortedImages[indexPath.item].sequence = indexPath.item + 1
+                    
+                    cell.configure(with: sortedImages[indexPath.item])
+                }
             }
+            
+            return cell
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! ImageCollectionViewCell
+            // Customize the appearance and handle the "addCell" functionality
+            cell.photoImageView.image = UIImage(named: "addImage")
+            cell.isSelectedButton.isHidden = true
+            cell.isUserInteractionEnabled = true
+            
+            return cell
         }
-        return cell
     }
 }
 
+extension DisplayImagesViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        let padding: CGFloat = 16.0
+        return UIEdgeInsets(top: padding, left: padding, bottom: padding, right: padding)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        let padding: CGFloat = 16.0
+        return padding
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let padding: CGFloat = 16.0
+        let collectionViewWidth = collectionView.bounds.width
+        let availableWidth = collectionViewWidth - (padding * 3) // Account for left padding, right padding, and spacing between cells
+        
+        let cellWidth = availableWidth / 2.0 // Two cells in each row
+        let cellHeight = cellWidth
+        
+        return CGSize(width: cellWidth, height: cellHeight)
+    }
+}
 
 extension DisplayImagesViewController: UICollectionViewDelegate {
-    // Implement any necessary delegate methods, such as handling item selection
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.item >= (imageResponse?.productImages.count ?? 0) {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            if let addImageVC = storyboard.instantiateViewController(withIdentifier: "addImage") as? AddImageViewController {
+                addImageVC.modalPresentationStyle = .fullScreen
+                DispatchQueue.main.async {
+                    self.present(addImageVC, animated: false)
+                }
+            }
+        } else {
+            // Handle the tapped image cell
+            // Implement any necessary logic for the tapped image cell
+        }
+    }
 }
