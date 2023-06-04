@@ -10,11 +10,11 @@ import Alamofire
 
 struct ProductImage {
     let id: Int
-    let name: String
-    let sequence: Int
-    let imageData: String
-    let isPublished: Bool
-    let fileName: String
+    var name: String
+    var sequence: Int
+    var imageData: String
+    var isPublished: Bool
+    var fileName: String
 }
 
 struct ImageResponse {
@@ -22,7 +22,7 @@ struct ImageResponse {
     let message: String
     let productId: Int
     let productName: String
-    let productImages: [ProductImage]
+    var productImages: [ProductImage]
 }
 
 class NetworkManager {
