@@ -7,6 +7,7 @@ class BarcodeReaderViewController: UIViewController, AVCaptureMetadataOutputObje
     
     private var captureSession: AVCaptureSession?
     private var videoPreviewLayer: AVCaptureVideoPreviewLayer?
+    private var isBarcodeDetected = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,6 +17,7 @@ class BarcodeReaderViewController: UIViewController, AVCaptureMetadataOutputObje
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        isBarcodeDetected = false
         startBarcodeReader()
         barcodeReaderView.layer.borderWidth = 3
         barcodeReaderView.layer.borderColor = CGColor(red: 0, green: 1, blue: 0, alpha: 1)
@@ -70,17 +72,22 @@ class BarcodeReaderViewController: UIViewController, AVCaptureMetadataOutputObje
     }
     
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
-        guard let metadataObject = metadataObjects.first as? AVMetadataMachineReadableCodeObject else {
-            print("No barcode detected")
+        guard !isBarcodeDetected,
+              let metadataObject = metadataObjects.first as? AVMetadataMachineReadableCodeObject,
+              let barcodeValue = metadataObject.stringValue
+        else {
             return
         }
         
-        guard let barcodeValue = metadataObject.stringValue else {
-            print("Unable to get barcode value")
-            return
+        isBarcodeDetected = true
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let displayImagesVC = storyboard.instantiateViewController(withIdentifier: "displayImages") as? DisplayImagesViewController {
+            displayImagesVC.productBarcode = barcodeValue
+            displayImagesVC.modalPresentationStyle = .fullScreen
+            DispatchQueue.main.async {
+                self.present(displayImagesVC, animated: false)
+            }
         }
-        
-        print("Detected barcode: \(barcodeValue)")
     }
     
     private func addTapGestureRecognizer() {
