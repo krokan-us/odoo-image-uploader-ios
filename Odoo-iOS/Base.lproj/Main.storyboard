@@ -6,13 +6,14 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Settings-->
+        <!--Settings Screen-->
         <scene sceneID="RWi-kb-js3">
             <objects>
-                <viewController id="0Hb-R4-uxh" sceneMemberID="viewController">
+                <viewController title="Settings Screen" id="0Hb-R4-uxh" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NNx-OB-Qkc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -34,14 +35,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan the barcode first." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xvx-pB-UFu">
-                                <rect key="frame" x="111.33333333333333" y="59" width="170.33333333333337" height="21"/>
+                                <rect key="frame" x="111.66666666666669" y="59" width="170" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FsC-NE-5ef" userLabel="barcodeReaderScreen">
                                 <rect key="frame" x="16" y="88" width="361" height="681"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iBM-K9-j7M" userLabel="scannerView">
+                                        <rect key="frame" x="80.666666666666686" y="290.66666666666669" width="200" height="100"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="fPV-4o-43S"/>
+                                            <constraint firstAttribute="width" constant="200" id="z6x-sN-lEK"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="iBM-K9-j7M" firstAttribute="centerX" secondItem="FsC-NE-5ef" secondAttribute="centerX" id="hHu-1R-pkZ"/>
+                                    <constraint firstItem="iBM-K9-j7M" firstAttribute="centerY" secondItem="FsC-NE-5ef" secondAttribute="centerY" id="lTu-SL-pdo"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="YK7-8W-QsR"/>
@@ -57,17 +72,165 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Camera" image="camera" catalog="system" id="0RP-xK-uoR"/>
                     <connections>
-                        <outlet property="barcodeReaderView" destination="FsC-NE-5ef" id="VQm-fa-52X"/>
+                        <outlet property="barcodeReaderView" destination="iBM-K9-j7M" id="R2c-Ag-D9t"/>
+                        <outlet property="cameraView" destination="FsC-NE-5ef" id="VQm-fa-52X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yuj-HT-pYB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="562.59541984732823" y="-391.54929577464793"/>
         </scene>
-        <!--Login View Controller-->
+        <!--Display Images Screen-->
+        <scene sceneID="PsI-NO-EjQ">
+            <objects>
+                <viewController storyboardIdentifier="displayImages" title="Display Images Screen" id="Ima-Jr-ztb" customClass="DisplayImagesViewController" customModule="Odoo_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vo2-oP-rKX">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BA3-gi-m7z">
+                                <rect key="frame" x="64" y="59" width="313" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sDi-v6-rbT">
+                                <rect key="frame" x="0.0" y="67" width="393" height="751"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dfK-4e-Nm9">
+                                    <size key="itemSize" width="200" height="200"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="s5d-ys-lkD">
+                                        <rect key="frame" x="96.666666666666671" y="0.0" width="200" height="200"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="QWR-wD-ixj">
+                                            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="200" height="200"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="STZ-ZX-fJP">
+                                <rect key="frame" x="16" y="59" width="40" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="w6n-Cv-k1n"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system"/>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="Ima-Jr-ztb" eventType="touchUpInside" id="QYn-Ib-CQK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Pm8-ff-grb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="STZ-ZX-fJP" firstAttribute="top" secondItem="Pm8-ff-grb" secondAttribute="top" id="6b0-1n-prY"/>
+                            <constraint firstItem="BA3-gi-m7z" firstAttribute="top" secondItem="Pm8-ff-grb" secondAttribute="top" id="7u6-Wo-qIe"/>
+                            <constraint firstItem="Pm8-ff-grb" firstAttribute="trailing" secondItem="BA3-gi-m7z" secondAttribute="trailing" constant="16" id="ER2-BK-xtZ"/>
+                            <constraint firstItem="Pm8-ff-grb" firstAttribute="trailing" secondItem="sDi-v6-rbT" secondAttribute="trailing" id="Mx6-He-lz2"/>
+                            <constraint firstItem="sDi-v6-rbT" firstAttribute="top" secondItem="BA3-gi-m7z" secondAttribute="bottom" constant="8" id="NWC-JN-osi"/>
+                            <constraint firstItem="STZ-ZX-fJP" firstAttribute="leading" secondItem="Pm8-ff-grb" secondAttribute="leading" constant="16" id="Nac-tr-Z0e"/>
+                            <constraint firstItem="BA3-gi-m7z" firstAttribute="leading" secondItem="STZ-ZX-fJP" secondAttribute="trailing" constant="8" symbolic="YES" id="PUB-Tc-El8"/>
+                            <constraint firstItem="Pm8-ff-grb" firstAttribute="bottom" secondItem="sDi-v6-rbT" secondAttribute="bottom" id="PdI-Ex-eRz"/>
+                            <constraint firstItem="sDi-v6-rbT" firstAttribute="leading" secondItem="Pm8-ff-grb" secondAttribute="leading" id="zJC-H4-dcy"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="STZ-ZX-fJP" id="n5H-bn-Wau"/>
+                        <outlet property="productImagesCollectionView" destination="sDi-v6-rbT" id="bwA-gB-4GB"/>
+                        <outlet property="productNameLabel" destination="BA3-gi-m7z" id="y19-W8-UrP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UYr-hz-I1O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1438.9312977099237" y="-392.25352112676057"/>
+        </scene>
+        <!--Modify Image Screen-->
+        <scene sceneID="4Rk-cs-Ucc">
+            <objects>
+                <viewController storyboardIdentifier="modifyImage" title="Modify Image Screen" id="Gkm-XI-J7b" customClass="ModifyImageViewController" customModule="Odoo_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GjE-16-7Kw">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="q1Y-PE-ejD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IEo-Xi-2Kc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2343" y="-841"/>
+        </scene>
+        <!--Add Image Screen-->
+        <scene sceneID="4pk-lI-6gP">
+            <objects>
+                <viewController storyboardIdentifier="addImage" title="Add Image Screen" id="Zji-W8-rv3" customClass="AddImageViewController" customModule="Odoo_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0R8-d7-cpi">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LMh-Me-GT4">
+                                <rect key="frame" x="15.999999999999996" y="59" width="39.666666666666657" height="34.333333333333343"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system"/>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="Zji-W8-rv3" eventType="touchUpInside" id="Ueo-sL-Evq"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jwm-Wg-POQ">
+                                <rect key="frame" x="16" y="101.33333333333331" width="361" height="674.33333333333348"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R0l-bv-MtC">
+                                <rect key="frame" x="15.999999999999996" y="783.66666666666663" width="54.666666666666657" height="34.333333333333371"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="photo" catalog="system"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8E-oA-dYm">
+                                <rect key="frame" x="168.66666666666666" y="783.66666666666663" width="55.666666666666657" height="34.333333333333371"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="camera.shutter.button" catalog="system"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Cp7-24-Udg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="LMh-Me-GT4" firstAttribute="top" secondItem="Cp7-24-Udg" secondAttribute="top" id="22G-Mx-1Vv"/>
+                            <constraint firstItem="Jwm-Wg-POQ" firstAttribute="leading" secondItem="Cp7-24-Udg" secondAttribute="leading" constant="16" id="Byr-xi-Jub"/>
+                            <constraint firstItem="Cp7-24-Udg" firstAttribute="bottom" secondItem="g8E-oA-dYm" secondAttribute="bottom" id="RzA-Bs-Tpz"/>
+                            <constraint firstItem="LMh-Me-GT4" firstAttribute="leading" secondItem="Cp7-24-Udg" secondAttribute="leading" constant="16" id="UAl-sd-hJe"/>
+                            <constraint firstItem="Cp7-24-Udg" firstAttribute="bottom" secondItem="R0l-bv-MtC" secondAttribute="bottom" id="USG-gW-MJG"/>
+                            <constraint firstItem="Cp7-24-Udg" firstAttribute="trailing" secondItem="Jwm-Wg-POQ" secondAttribute="trailing" constant="16" id="dtz-Xi-qDI"/>
+                            <constraint firstItem="R0l-bv-MtC" firstAttribute="top" secondItem="Jwm-Wg-POQ" secondAttribute="bottom" constant="8" id="etw-Ij-M9i"/>
+                            <constraint firstItem="Jwm-Wg-POQ" firstAttribute="top" secondItem="LMh-Me-GT4" secondAttribute="bottom" constant="8" symbolic="YES" id="kGe-JN-Gi4"/>
+                            <constraint firstItem="g8E-oA-dYm" firstAttribute="centerX" secondItem="0R8-d7-cpi" secondAttribute="centerX" id="xi7-NN-brg"/>
+                            <constraint firstItem="R0l-bv-MtC" firstAttribute="leading" secondItem="Cp7-24-Udg" secondAttribute="leading" constant="16" id="xiG-rE-8Fu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="LMh-Me-GT4" id="wB4-wa-bYv"/>
+                        <outlet property="cameraView" destination="Jwm-Wg-POQ" id="0zd-Zh-9uk"/>
+                        <outlet property="captureImageButton" destination="g8E-oA-dYm" id="vpK-dp-0D4"/>
+                        <outlet property="photoRollButton" destination="R0l-bv-MtC" id="QqP-fK-Nje"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uVf-kg-s9F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2341.2213740458014" y="-88.028169014084511"/>
+        </scene>
+        <!--Login Screen-->
         <scene sceneID="GUQ-Rk-4ac">
             <objects>
-                <viewController id="iRy-Bc-VCR" customClass="LoginViewController" customModule="Odoo_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Login Screen" id="iRy-Bc-VCR" customClass="LoginViewController" customModule="Odoo_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zen-5X-YJ7">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -239,6 +402,7 @@
                         <outlet property="URLTextView" destination="JSK-IF-AuT" id="DcB-qP-vgs"/>
                         <outlet property="databaseClearButton" destination="8Qt-hX-XGR" id="tB7-Ku-o2d"/>
                         <outlet property="databaseTextView" destination="Avw-9W-W1z" id="lWe-sa-SeH"/>
+                        <outlet property="loginButton" destination="SwF-mK-N5T" id="pc5-kl-Z1G"/>
                         <outlet property="passwordClearButton" destination="lfv-dm-GIc" id="Kum-II-dnT"/>
                         <outlet property="passwordTextView" destination="0H9-QY-13r" id="JVa-Ol-Cam"/>
                         <outlet property="usernameClearButton" destination="EBt-NM-yTh" id="uZi-3k-fSw"/>
@@ -270,8 +434,11 @@
     </scenes>
     <resources>
         <image name="camera" catalog="system" width="128" height="93"/>
+        <image name="camera.shutter.button" catalog="system" width="128" height="108"/>
+        <image name="chevron.backward" catalog="system" width="97" height="128"/>
         <image name="eraser" catalog="system" width="128" height="119"/>
         <image name="gear" catalog="system" width="128" height="122"/>
+        <image name="photo" catalog="system" width="128" height="93"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
