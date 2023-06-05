@@ -377,7 +377,7 @@
                                                 <color key="textColor" systemColor="secondaryLabelColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="admin" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2Zy-eq-PoJ">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="website" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2Zy-eq-PoJ">
                                                 <rect key="frame" x="46" y="32" width="269" height="30"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
