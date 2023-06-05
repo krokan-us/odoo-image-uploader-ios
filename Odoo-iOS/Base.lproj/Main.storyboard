@@ -323,7 +323,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="ALTINKAYA2022" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Avw-9W-W1z">
-                                                <rect key="frame" x="46.000000000000007" y="32" width="116.66666666666669" height="30"/>
+                                                <rect key="frame" x="46" y="32" width="269" height="30"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="R65-WF-sFd"/>
@@ -347,6 +347,7 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
+                                            <constraint firstItem="8Qt-hX-XGR" firstAttribute="leading" secondItem="Avw-9W-W1z" secondAttribute="trailing" constant="8" symbolic="YES" id="0iD-S4-gpI"/>
                                             <constraint firstItem="Avw-9W-W1z" firstAttribute="leading" secondItem="aU1-6Y-L16" secondAttribute="trailing" constant="8" symbolic="YES" id="4BE-9S-Wlo"/>
                                             <constraint firstItem="bnd-ST-pdK" firstAttribute="top" secondItem="Vtz-TJ-UJm" secondAttribute="top" constant="8" id="GBi-gv-agw"/>
                                             <constraint firstItem="aU1-6Y-L16" firstAttribute="top" secondItem="Vtz-TJ-UJm" secondAttribute="top" constant="20" id="GZA-Nm-lSu"/>
@@ -377,7 +378,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="admin" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2Zy-eq-PoJ">
-                                                <rect key="frame" x="46" y="32" width="49.666666666666657" height="30"/>
+                                                <rect key="frame" x="46" y="32" width="269" height="30"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="JHq-2A-aGs"/>
@@ -404,6 +405,7 @@
                                             <constraint firstItem="XMQ-5u-RhN" firstAttribute="leading" secondItem="ZCO-nb-NWk" secondAttribute="leading" constant="8" id="2cB-Ha-zWo"/>
                                             <constraint firstItem="EBt-NM-yTh" firstAttribute="centerY" secondItem="ZCO-nb-NWk" secondAttribute="centerY" id="6wA-kH-aYr"/>
                                             <constraint firstAttribute="bottom" secondItem="XMQ-5u-RhN" secondAttribute="bottom" constant="20" id="ADK-gZ-nVu"/>
+                                            <constraint firstItem="EBt-NM-yTh" firstAttribute="leading" secondItem="2Zy-eq-PoJ" secondAttribute="trailing" constant="8" symbolic="YES" id="D7m-8K-3r6"/>
                                             <constraint firstItem="XMQ-5u-RhN" firstAttribute="centerY" secondItem="ZCO-nb-NWk" secondAttribute="centerY" id="HXa-De-137"/>
                                             <constraint firstItem="2Zy-eq-PoJ" firstAttribute="leading" secondItem="XMQ-5u-RhN" secondAttribute="trailing" constant="8" symbolic="YES" id="NrZ-zZ-JjM"/>
                                             <constraint firstAttribute="trailing" secondItem="EBt-NM-yTh" secondAttribute="trailing" constant="8" id="PQE-Jl-kTw"/>
@@ -430,15 +432,15 @@
                                                 <color key="textColor" systemColor="secondaryLabelColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="Lorem ipsum" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0H9-QY-13r">
-                                                <rect key="frame" x="45.999999999999993" y="32" width="93.333333333333314" height="30"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0H9-QY-13r">
+                                                <rect key="frame" x="46" y="32" width="269" height="30"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="0Dz-Ru-jn3"/>
                                                 </constraints>
                                                 <color key="textColor" systemColor="labelColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" textContentType="password"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" smartDashesType="no" textContentType="password"/>
                                             </textView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lfv-dm-GIc">
                                                 <rect key="frame" x="323" y="18.000000000000004" width="30" height="34.333333333333343"/>
@@ -461,6 +463,7 @@
                                             <constraint firstAttribute="bottom" secondItem="oyV-2y-2Z5" secondAttribute="bottom" constant="20" id="L3d-N4-4kb"/>
                                             <constraint firstAttribute="bottom" secondItem="0H9-QY-13r" secondAttribute="bottom" constant="8" id="OUa-Tq-dLH"/>
                                             <constraint firstItem="lfv-dm-GIc" firstAttribute="centerY" secondItem="g3a-WY-fyE" secondAttribute="centerY" id="YVI-gx-dr7"/>
+                                            <constraint firstItem="lfv-dm-GIc" firstAttribute="leading" secondItem="0H9-QY-13r" secondAttribute="trailing" constant="8" symbolic="YES" id="ays-HA-M0O"/>
                                             <constraint firstItem="0H9-QY-13r" firstAttribute="leading" secondItem="oyV-2y-2Z5" secondAttribute="trailing" constant="8" symbolic="YES" id="bmt-HL-A9d"/>
                                             <constraint firstItem="k3g-Pa-Cj6" firstAttribute="leading" secondItem="oyV-2y-2Z5" secondAttribute="trailing" constant="8" symbolic="YES" id="fVp-MV-TZP"/>
                                             <constraint firstItem="oyV-2y-2Z5" firstAttribute="centerY" secondItem="g3a-WY-fyE" secondAttribute="centerY" id="jeT-E4-b8x"/>
