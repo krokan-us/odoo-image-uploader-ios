@@ -71,6 +71,11 @@ extension DisplayImagesViewController: UICollectionViewDataSource {
                     sortedImages[indexPath.item].sequence = indexPath.item + 1
                     
                     cell.configure(with: sortedImages[indexPath.item])
+                    
+                    // Assign the isSelectedButtonTapped closure
+                    cell.isSelectedButtonTapped = { [weak self] in
+                        self?.handleIsSelectedButtonTapped(at: indexPath.item)
+                    }
                 }
             }
             
@@ -84,6 +89,21 @@ extension DisplayImagesViewController: UICollectionViewDataSource {
             
             return cell
         }
+    }
+    
+    func handleIsSelectedButtonTapped(at index: Int) {
+        guard var productImages = imageResponse?.productImages else { return }
+        
+        // Toggle the isPublished value of the selected image
+        productImages[index].isPublished.toggle()
+        
+        // Update the image response with the modified product images
+        imageResponse?.productImages = productImages
+        
+        // Reload the collection view to reflect the updated data
+        productImagesCollectionView.reloadData()
+        
+        // TODO: Handle the logic for updating the server with the modified isPublished value
     }
 }
 
