@@ -160,4 +160,70 @@ class NetworkManager {
                 }
             }
     }
+    
+    func addImage(productID: Int, name: String, imageData: String, completion: @escaping (Bool, String?, Int?) -> Void) {
+        guard let currentBaseURL = UserDefaults.standard.url(forKey: "currentBaseURL"),
+              let currentDatabaseName = UserDefaults.standard.string(forKey: "currentDatabaseName"),
+              let currentlyLoggedUserId = UserDefaults.standard.object(forKey: "currentlyLoggedUserId") as? Int,
+              let currentlyLoggedUserPassword = UserDefaults.standard.string(forKey: "currentlyLoggedUserPassword") else {
+            print("Missing required user defaults")
+            completion(false, "Missing required user defaults", nil)
+            return
+        }
+        
+        let requestURL = currentBaseURL.appendingPathComponent("jsonrpc")
+        
+        let randomID = Int.random(in: 0...1000) // Generate random ID between 0 and 1000
+        
+        let payload: [String: Any] = [
+            "jsonrpc": "2.0",
+            "method": "call",
+            "params": [
+                "service": "object",
+                "method": "execute",
+                "args": [
+                    currentDatabaseName,
+                    currentlyLoggedUserId,
+                    currentlyLoggedUserPassword,
+                    "product.product",
+                    "upload_product_image_endpoint",
+                    0,
+                    [
+                        "product_id": productID,
+                        "name": name,
+                        "sequence": 10,
+                        "image_data": imageData,
+                        "filename": name.replacingOccurrences(of: " ", with: "-"),
+                        "is_published": true
+                    ],
+                    ["lang": "tr_TR"]
+                ]
+            ],
+            "id": randomID
+        ]
+        
+        AF.request(requestURL, method: .post, parameters: payload, encoding: JSONEncoding.default)
+            .validate()
+            .responseJSON { response in
+                switch response.result {
+                case .success(let value):
+                    if let json = value as? [String: Any],
+                       let result = json["result"] as? [String: Any],
+                       let status = result["status"] as? String,
+                       let message = result["message"] as? String,
+                       let imageID = result["image_id"] as? Int {
+                        if status == "success" {
+                            completion(true, message, imageID)
+                        } else {
+                            completion(false, message, nil)
+                        }
+                    } else {
+                        completion(false, "Invalid response", nil)
+                    }
+                case .failure(let error):
+                    print("Error: \(error)")
+                    completion(false, error.localizedDescription, nil)
+                }
+            }
+    }
 }
