@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  Odoo-iOS
+
+  Created by Asım Altınışık on 4.06.2023.
+ /* English */
+"login" = "Login";
+"database" = "Database";
+"username" = "Username";
+"password" = "Password";
+"welcome" = "Welcome";
+*/

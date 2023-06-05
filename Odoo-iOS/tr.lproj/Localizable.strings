@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  Odoo-iOS
+
+  Created by Asım Altınışık on 4.06.2023.
+ /* Turkish */
+"login" = "Giriş";
+"database" = "Veritabanı";
+"username" = "Kullanıcı adı";
+"password" = "Parola";
+"welcome" = "Hoş geldiniz";
+*/

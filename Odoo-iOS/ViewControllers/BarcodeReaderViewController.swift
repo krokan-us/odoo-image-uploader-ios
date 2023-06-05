@@ -2,10 +2,13 @@ import UIKit
 import AVFoundation
 
 class BarcodeReaderViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
-    @IBOutlet weak var barcodeReaderView: UIView!
+    @IBOutlet weak var flashButton: UIButton!
+    @IBOutlet weak var cameraView: UIView!
     
     private var captureSession: AVCaptureSession?
     private var videoPreviewLayer: AVCaptureVideoPreviewLayer?
+    private var isBarcodeDetected = false
+    var isFlashOn = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,17 +18,56 @@ class BarcodeReaderViewController: UIViewController, AVCaptureMetadataOutputObje
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        isFlashOn = false
+        flashButton.setTitle("", for: .normal)
+        flashButton.setImage(UIImage(systemName: "bolt.slash.fill"), for: .normal)
+        isBarcodeDetected = false
         startBarcodeReader()
     }
-    
+
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        if isFlashOn {
+            toggleFlashlight()
+        }
         stopBarcodeReader()
     }
+
+    @IBAction func flashButtonTapped(_ sender: Any) {
+        toggleFlashlight()
+    }
+    
+    private func toggleFlashlight() {
+        guard let device = AVCaptureDevice.default(for: .video) else { return }
+
+        if device.hasTorch {
+            do {
+                try device.lockForConfiguration()
+
+                if isFlashOn {
+                    device.torchMode = .off
+                    flashButton.setImage(UIImage(systemName: "bolt.slash.fill"), for: .normal)
+                } else {
+                    try device.setTorchModeOn(level: 1.0)
+                    flashButton.setImage(UIImage(systemName: "bolt.fill"), for: .normal)
+                }
+
+                device.unlockForConfiguration()
+                isFlashOn = !isFlashOn
+            } catch {
+                print("Flash could not be used")
+            }
+        } else {
+            print("Device does not have a Flash light")
+        }
+    }
+
+    
+    
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        videoPreviewLayer?.frame = barcodeReaderView.bounds
+        videoPreviewLayer?.frame = cameraView.bounds
     }
     
     private func setupBarcodeReader() {
@@ -47,9 +89,9 @@ class BarcodeReaderViewController: UIViewController, AVCaptureMetadataOutputObje
             
             videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession!)
             videoPreviewLayer?.videoGravity = .resizeAspectFill
-            videoPreviewLayer?.frame = barcodeReaderView.bounds
+            videoPreviewLayer?.frame = cameraView.bounds
             videoPreviewLayer?.contentsGravity = .resizeAspectFill
-            barcodeReaderView.layer.addSublayer(videoPreviewLayer!)
+            cameraView.layer.addSublayer(videoPreviewLayer!)
         } catch {
             print("Error setting up barcode reader: \(error)")
         }
@@ -66,17 +108,22 @@ class BarcodeReaderViewController: UIViewController, AVCaptureMetadataOutputObje
     }
     
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
-        guard let metadataObject = metadataObjects.first as? AVMetadataMachineReadableCodeObject else {
-            print("No barcode detected")
+        guard !isBarcodeDetected,
+              let metadataObject = metadataObjects.first as? AVMetadataMachineReadableCodeObject,
+              let barcodeValue = metadataObject.stringValue
+        else {
             return
         }
         
-        guard let barcodeValue = metadataObject.stringValue else {
-            print("Unable to get barcode value")
-            return
+        isBarcodeDetected = true
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let displayImagesVC = storyboard.instantiateViewController(withIdentifier: "displayImages") as? DisplayImagesViewController {
+            displayImagesVC.productBarcode = barcodeValue
+            displayImagesVC.modalPresentationStyle = .fullScreen
+            DispatchQueue.main.async {
+                self.present(displayImagesVC, animated: false)
+            }
         }
-        
-        print("Detected barcode: \(barcodeValue)")
     }
     
     private func addTapGestureRecognizer() {
