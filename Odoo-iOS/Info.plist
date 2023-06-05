@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>The app needs to add photos to your library to edit and upload them to the server.</string>
 	<key>NSCameraUsageDescription</key>
 	<string>The app needs access to your camera to scan barcodes and take photos to be uploaded.</string>
 	<key>UIApplicationSceneManifest</key>
