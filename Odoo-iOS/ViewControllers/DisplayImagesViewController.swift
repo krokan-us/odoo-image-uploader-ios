@@ -16,21 +16,8 @@ class DisplayImagesViewController: UIViewController {
     var imageResponse: ImageResponse? // Store the image response
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        print(productBarcode)
-        
-        NetworkManager.shared.fetchImages(productBarcode: productBarcode ?? "0") { imageResponse in
-            if let imageResponse = imageResponse {
-                self.imageResponse = imageResponse
-                self.productNameLabel.text = imageResponse.productName
-                // Reload the collection view to display the images
-                DispatchQueue.main.async {
-                    self.productImagesCollectionView.reloadData()
-                }
-            } else {
-                print("Failed to fetch images.")
-            }
-        }
+        super.viewDidLoad()        
+        getImagesFromAPI()
         
         // Register the cell
         let nib = UINib(nibName: "ImageCollectionViewCell", bundle: nil)
@@ -43,6 +30,22 @@ class DisplayImagesViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         backButton.setTitle("", for: .normal)
+        getImagesFromAPI()
+    }
+    
+    func getImagesFromAPI(){
+        NetworkManager.shared.fetchImages(productBarcode: productBarcode ?? "0") { imageResponse in
+            if let imageResponse = imageResponse {
+                self.imageResponse = imageResponse
+                self.productNameLabel.text = imageResponse.productName
+                // Reload the collection view to display the images
+                DispatchQueue.main.async {
+                    self.productImagesCollectionView.reloadData()
+                }
+            } else {
+                print("Failed to fetch images.")
+            }
+        }
     }
     
     @IBAction func backButtonTapped(_ sender: Any) {
@@ -52,10 +55,7 @@ class DisplayImagesViewController: UIViewController {
 
 extension DisplayImagesViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard let imageCount = imageResponse?.productImages.count else {
-            return 0
-        }
-        return imageCount + (imageCount > 0 ? 1 : 0)
+        return (imageResponse?.productImages.count ?? 0) + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -135,6 +135,7 @@ extension DisplayImagesViewController: UICollectionViewDelegate {
         if indexPath.item >= (imageResponse?.productImages.count ?? 0) {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             if let addImageVC = storyboard.instantiateViewController(withIdentifier: "addImage") as? AddImageViewController {
+                addImageVC.productID = imageResponse?.productId
                 addImageVC.modalPresentationStyle = .fullScreen
                 DispatchQueue.main.async {
                     self.present(addImageVC, animated: false)
