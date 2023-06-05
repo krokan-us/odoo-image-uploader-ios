@@ -9,22 +9,25 @@ import UIKit
 
 class LoginViewController: UIViewController {
     @IBOutlet weak var welcomeLabel: UILabel!
-    @IBOutlet weak var URLView: UIView!
-    @IBOutlet weak var databaseView: UIView!
-    @IBOutlet weak var usernameView: UIView!
-    @IBOutlet weak var passwordView: UIView!
-    @IBOutlet weak var URLLabel: UILabel!
-    @IBOutlet weak var databaseLabel: UILabel!
-    @IBOutlet weak var usernameLabel: UILabel!
-    @IBOutlet weak var passwordLabel: UILabel!
-    @IBOutlet weak var URLTextView: UITextView!
-    @IBOutlet weak var databaseTextView: UITextView!
-    @IBOutlet weak var usernameTextView: UITextView!
-    @IBOutlet weak var passwordTextView: UITextView!
     
+    @IBOutlet weak var URLView: UIView!
+    @IBOutlet weak var URLLabel: UILabel!
+    @IBOutlet weak var URLTextView: UITextView!
     @IBOutlet weak var URLClearButton: UIButton!
+    
+    @IBOutlet weak var databaseView: UIView!
+    @IBOutlet weak var databaseLabel: UILabel!
+    @IBOutlet weak var databaseTextView: UITextView!
     @IBOutlet weak var databaseClearButton: UIButton!
+    
+    @IBOutlet weak var usernameView: UIView!
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var usernameTextView: UITextView!
     @IBOutlet weak var usernameClearButton: UIButton!
+    
+    @IBOutlet weak var passwordView: UIView!
+    @IBOutlet weak var passwordLabel: UILabel!
+    @IBOutlet weak var passwordTextView: UITextView!
     @IBOutlet weak var passwordClearButton: UIButton!
     
     @IBOutlet weak var loginButton: UIButton!
@@ -37,6 +40,7 @@ class LoginViewController: UIViewController {
         configureLabels()
         configureTextViews()
         configureButtons()
+        configureTapGesture()
     }
     
     private func setViewBackgrounds(){
@@ -80,6 +84,7 @@ class LoginViewController: UIViewController {
         passwordTextView.isScrollEnabled = false
         passwordTextView.textContainer.lineBreakMode = .byTruncatingTail
         passwordTextView.textContainer.maximumNumberOfLines = 1
+        passwordTextView.isSecureTextEntry = true
     }
     
     private func configureButtons(){
@@ -93,6 +98,11 @@ class LoginViewController: UIViewController {
         loginButton.layer.borderColor = UIColor.red.cgColor
         loginButton.layer.cornerRadius = 10
         loginButton.setTitle(NSLocalizedString("login", comment: ""), for: .normal)
+    }
+    
+    private func configureTapGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        view.addGestureRecognizer(tapGesture)
     }
     
     @IBAction func loginButtonTapped(_ sender: Any) {
@@ -117,6 +127,10 @@ class LoginViewController: UIViewController {
             print("Invalid URL")
         }
     }
+    
+    @objc private func handleTap() {
+        view.endEditing(true)
+    }
 }
 
 extension LoginViewController {
@@ -136,4 +150,3 @@ extension LoginViewController {
         passwordTextView.text = ""
     }
 }
-
