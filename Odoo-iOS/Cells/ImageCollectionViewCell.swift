@@ -12,12 +12,16 @@ class ImageCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var isSelectedButton: UIButton!
     
+    var isSelectedButtonTapped: (() -> Void)?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         isSelectedButton.setTitle("", for: .normal)
         layer.borderWidth = 1
         layer.borderColor = UIColor.black.cgColor
         layer.cornerRadius = 10
+        
+        isSelectedButton.addTarget(self, action: #selector(isSelectedButtonAction), for: .touchUpInside)
     }
     
     func configure(with image: ProductImage) {
@@ -28,13 +32,15 @@ class ImageCollectionViewCell: UICollectionViewCell {
         }
         
         if let imageData = Data(base64Encoded: image.imageData) {
-            print("Successfully loaded image data for image ID: \(image.id)")
             photoImageView.image = UIImage(data: imageData)
         } else {
-            //Fail report will be sent here.
-            print("Failed to load image data for image ID: \(image.id)")
+            // Fail report will be sent here.
             photoImageView.image = UIImage(named: "corruptedImage")
-            isSelectedButton.isHidden = true
         }
+        isSelectedButton.isHidden = false
+    }
+    
+    @objc private func isSelectedButtonAction() {
+        isSelectedButtonTapped?()
     }
 }
