@@ -1,5 +1,13 @@
+//
+//  AddImageViewController.swift
+//  Odoo-iOS
+//
+//  Created by Asım Altınışık on 4.06.2023.
+//
+
 import UIKit
 import AVFoundation
+import CropViewController
 
 class AddImageViewController: UIViewController, UINavigationControllerDelegate {
 
@@ -157,29 +165,47 @@ class AddImageViewController: UIViewController, UINavigationControllerDelegate {
 
 extension AddImageViewController: AVCapturePhotoCaptureDelegate, UIImagePickerControllerDelegate {
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
-        guard let imageData = photo.fileDataRepresentation() else {
+        guard let imageData = photo.fileDataRepresentation(), let image = UIImage(data: imageData) else {
             print("Error converting AVCapturePhoto to data representation: \(error?.localizedDescription ?? "")")
             return
         }
         
-        uploadImage(imageData)
+        let cropViewController = CropViewController(image: image)
+        cropViewController.customAspectRatio = CGSize(width: 1, height: 1)
+        cropViewController.aspectRatioLockEnabled = true
+        cropViewController.resetAspectRatioEnabled = false
+        cropViewController.cropView.cropBoxResizeEnabled = false
+        cropViewController.delegate = self
+        present(cropViewController, animated: true, completion: nil)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true, completion: nil)
-        
+
         if let image = info[.originalImage] as? UIImage {
-            // Convert the selected image to data representation
-            guard let imageData = image.jpegData(compressionQuality: 0.8) else {
-                print("Error converting UIImage to data representation")
-                return
-            }
-            
-            uploadImage(imageData)
+            let cropViewController = CropViewController(image: image)
+            cropViewController.customAspectRatio = CGSize(width: 1, height: 1)
+            cropViewController.aspectRatioLockEnabled = true
+            cropViewController.resetAspectRatioEnabled = false
+            cropViewController.cropView.cropBoxResizeEnabled = false
+            cropViewController.delegate = self
+            present(cropViewController, animated: true, completion: nil)
         }
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
+    }
+}
+extension AddImageViewController: CropViewControllerDelegate {
+    func cropViewController(_ cropViewController: CropViewController, didCropToImage image: UIImage, withRect cropRect: CGRect, angle: Int) {
+        // 'image' is the newly cropped version of the original image
+        guard let imageData = image.jpegData(compressionQuality: 0.8) else {
+            print("Error converting UIImage to data representation")
+            return
+        }
+        cropViewController.dismiss(animated: true, completion: nil)
+        uploadImage(imageData)
+        self.dismiss(animated: true)
     }
 }
