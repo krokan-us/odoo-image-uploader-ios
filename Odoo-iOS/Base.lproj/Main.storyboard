@@ -149,21 +149,6 @@
             </objects>
             <point key="canvasLocation" x="1438.9312977099237" y="-392.25352112676057"/>
         </scene>
-        <!--Modify Image Screen-->
-        <scene sceneID="4Rk-cs-Ucc">
-            <objects>
-                <viewController storyboardIdentifier="modifyImage" title="Modify Image Screen" id="Gkm-XI-J7b" customClass="ModifyImageViewController" customModule="Odoo_iOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="GjE-16-7Kw">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="q1Y-PE-ejD"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IEo-Xi-2Kc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2343" y="-841"/>
-        </scene>
         <!--Add Image Screen-->
         <scene sceneID="4pk-lI-6gP">
             <objects>
@@ -240,7 +225,117 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uVf-kg-s9F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2341.2213740458014" y="-88.028169014084511"/>
+            <point key="canvasLocation" x="2311" y="-392"/>
+        </scene>
+        <!--Display Image-->
+        <scene sceneID="Nah-Bm-CUH">
+            <objects>
+                <viewController storyboardIdentifier="displayImage" title="Display Image" id="FQE-FP-2J7" customClass="DisplayImageViewController" customModule="Odoo_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="R6K-Xu-VLz">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mYy-Ig-jgx">
+                                <rect key="frame" x="117.66666666666669" y="783.66666666666663" width="158" height="34.333333333333371"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H5R-YO-Yen">
+                                        <rect key="frame" x="0.0" y="0.0" width="52.333333333333336" height="34.333333333333336"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="paintbrush.pointed" catalog="system"/>
+                                        <connections>
+                                            <action selector="modifyImageButtonTapped:" destination="FQE-FP-2J7" eventType="touchUpInside" id="Dtf-qA-dUV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i26-Id-h5f">
+                                        <rect key="frame" x="52.333333333333329" y="0.0" width="57.666666666666671" height="34.333333333333336"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="eye" catalog="system"/>
+                                        <connections>
+                                            <action selector="isPublishedButtonTapped:" destination="FQE-FP-2J7" eventType="touchUpInside" id="XrF-ar-YDO"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9wp-W9-lXE">
+                                        <rect key="frame" x="110" y="0.0" width="48" height="34.333333333333336"/>
+                                        <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="trash" catalog="system"/>
+                                        <connections>
+                                            <action selector="removeImageButtonTapped:" destination="FQE-FP-2J7" eventType="touchUpInside" id="4Dm-l5-e65"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ebv-Yc-ky0">
+                                <rect key="frame" x="16" y="245.66666666666663" width="361" height="361"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ebv-Yc-ky0" secondAttribute="height" multiplier="300:300" id="XfE-p2-qTb"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U9k-Ak-qwv" userLabel="backButton">
+                                <rect key="frame" x="16" y="59" width="20" height="34.333333333333343"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="YF8-jG-8Mj"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system"/>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="FQE-FP-2J7" eventType="touchUpInside" id="Yz8-8y-4sg"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qka-uf-JSu">
+                                <rect key="frame" x="176" y="59.000000000000007" width="41" height="20.333333333333336"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mcR-gv-sOR">
+                                <rect key="frame" x="233" y="59" width="20" height="34.333333333333343"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="yaD-vU-b1n"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="pencil" catalog="system"/>
+                                <connections>
+                                    <action selector="editImageNameButtonTapped:" destination="FQE-FP-2J7" eventType="touchUpInside" id="GnW-e3-7Q0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bVP-z0-d5F"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ebv-Yc-ky0" firstAttribute="leading" secondItem="bVP-z0-d5F" secondAttribute="leading" constant="16" id="1Vb-5a-eZ3"/>
+                            <constraint firstItem="mYy-Ig-jgx" firstAttribute="centerX" secondItem="R6K-Xu-VLz" secondAttribute="centerX" id="5lb-ov-eEk"/>
+                            <constraint firstItem="U9k-Ak-qwv" firstAttribute="leading" secondItem="bVP-z0-d5F" secondAttribute="leading" constant="16" id="GNd-g0-7Rr"/>
+                            <constraint firstItem="bVP-z0-d5F" firstAttribute="bottom" secondItem="mYy-Ig-jgx" secondAttribute="bottom" id="J5B-RI-ExO"/>
+                            <constraint firstItem="ebv-Yc-ky0" firstAttribute="centerY" secondItem="R6K-Xu-VLz" secondAttribute="centerY" id="OGk-IV-Uu5"/>
+                            <constraint firstItem="Qka-uf-JSu" firstAttribute="top" secondItem="bVP-z0-d5F" secondAttribute="top" id="PQw-WF-Aur"/>
+                            <constraint firstItem="mcR-gv-sOR" firstAttribute="leading" secondItem="Qka-uf-JSu" secondAttribute="trailing" constant="16" id="QsG-vY-M5M"/>
+                            <constraint firstItem="ebv-Yc-ky0" firstAttribute="centerX" secondItem="R6K-Xu-VLz" secondAttribute="centerX" id="VFv-HM-yry"/>
+                            <constraint firstItem="Qka-uf-JSu" firstAttribute="centerX" secondItem="R6K-Xu-VLz" secondAttribute="centerX" id="fA2-ER-eU5"/>
+                            <constraint firstItem="U9k-Ak-qwv" firstAttribute="top" secondItem="bVP-z0-d5F" secondAttribute="top" id="igO-qG-XmE"/>
+                            <constraint firstItem="bVP-z0-d5F" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="mcR-gv-sOR" secondAttribute="trailing" constant="16" id="kGX-sf-hQE"/>
+                            <constraint firstItem="Qka-uf-JSu" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="U9k-Ak-qwv" secondAttribute="trailing" constant="16" id="v66-wm-vHl"/>
+                            <constraint firstItem="bVP-z0-d5F" firstAttribute="trailing" secondItem="ebv-Yc-ky0" secondAttribute="trailing" constant="16" id="vd0-cN-ODl"/>
+                            <constraint firstItem="mcR-gv-sOR" firstAttribute="top" secondItem="bVP-z0-d5F" secondAttribute="top" id="wVW-3E-Jr2"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="U9k-Ak-qwv" id="g0h-IA-2nW"/>
+                        <outlet property="deleteButton" destination="9wp-W9-lXE" id="tbz-ch-er6"/>
+                        <outlet property="editImageNameButton" destination="mcR-gv-sOR" id="Hxm-NV-zZj"/>
+                        <outlet property="imageImageView" destination="ebv-Yc-ky0" id="9MM-yl-kFI"/>
+                        <outlet property="imageNameLabel" destination="Qka-uf-JSu" id="Y05-n5-paF"/>
+                        <outlet property="isPublishedButton" destination="i26-Id-h5f" id="qOd-nA-VtC"/>
+                        <outlet property="modifyImageButton" destination="H5R-YO-Yen" id="KHS-7A-q4I"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FZf-98-qNI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3151.9083969465646" y="-392.25352112676057"/>
         </scene>
         <!--Login Screen-->
         <scene sceneID="GUQ-Rk-4ac">
@@ -553,12 +648,16 @@
         <image name="camera.shutter.button" catalog="system" width="128" height="108"/>
         <image name="chevron.backward" catalog="system" width="97" height="128"/>
         <image name="eraser" catalog="system" width="128" height="119"/>
+        <image name="eye" catalog="system" width="128" height="79"/>
         <image name="gear" catalog="system" width="128" height="122"/>
         <image name="lock" catalog="system" width="125" height="128"/>
         <image name="network" catalog="system" width="128" height="123"/>
+        <image name="paintbrush.pointed" catalog="system" width="128" height="118"/>
+        <image name="pencil" catalog="system" width="128" height="113"/>
         <image name="person" catalog="system" width="128" height="121"/>
         <image name="photo" catalog="system" width="128" height="93"/>
         <image name="server.rack" catalog="system" width="128" height="93"/>
+        <image name="trash" catalog="system" width="117" height="128"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

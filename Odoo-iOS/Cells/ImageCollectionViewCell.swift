@@ -20,6 +20,7 @@ class ImageCollectionViewCell: UICollectionViewCell {
         layer.borderWidth = 1
         layer.borderColor = UIColor.black.cgColor
         layer.cornerRadius = 10
+        isSelectedButton.layer.cornerRadius = 10
         
         isSelectedButton.addTarget(self, action: #selector(isSelectedButtonAction), for: .touchUpInside)
     }

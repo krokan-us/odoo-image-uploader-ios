@@ -9,4 +9,10 @@
 "username" = "Kullanıcı adı";
 "password" = "Parola";
 "welcome" = "Hoş geldiniz";
+
+"confirm" = "Onay Gerekli";
+"confirmationMessage" = "Bu görseli kaldırmak istiyor musunuz?";
+"cancel" = "İptal";
+"remove" = "Kaldır";
+
 */

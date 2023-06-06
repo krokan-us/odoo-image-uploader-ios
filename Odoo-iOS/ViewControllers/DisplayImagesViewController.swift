@@ -26,6 +26,10 @@ class DisplayImagesViewController: UIViewController {
         // Set the collection view's data source and delegate
         productImagesCollectionView.dataSource = self
         productImagesCollectionView.delegate = self
+        
+        let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(backButtonTapped(_:)))
+        swipeGesture.direction = .right
+        self.view.addGestureRecognizer(swipeGesture)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,7 +52,7 @@ class DisplayImagesViewController: UIViewController {
         }
     }
     
-    @IBAction func backButtonTapped(_ sender: Any) {
+    @IBAction func backButtonTapped(_ sender: AnyObject) {
         self.dismiss(animated: true)
     }
 }
@@ -142,8 +146,17 @@ extension DisplayImagesViewController: UICollectionViewDelegate {
                 }
             }
         } else {
-            // Handle the tapped image cell
-            // Implement any necessary logic for the tapped image cell
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            if let displayImageVC = storyboard.instantiateViewController(withIdentifier: "displayImage") as? DisplayImageViewController {
+                if let productImages = imageResponse?.productImages {
+                    var sortedImages = productImages.sorted { $0.sequence < $1.sequence }
+                    displayImageVC.imageToBeDisplayed = sortedImages[indexPath.item]
+                }
+                displayImageVC.modalPresentationStyle = .fullScreen
+                DispatchQueue.main.async {
+                    self.present(displayImageVC, animated: false)
+                }
+            }
         }
     }
 }

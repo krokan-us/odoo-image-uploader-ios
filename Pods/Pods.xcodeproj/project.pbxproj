@@ -7,74 +7,149 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04A8430BFC619C34E5F4D3878D094380 /* CachedResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77226E8FC7B56CA1068824166848ADBF /* CachedResponseHandler.swift */; };
-		079F0820555C5B86C9FBD5EC6344137F /* Protected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D19AFBBBB00EEE64CE63E5D70649F6 /* Protected.swift */; };
-		11CCD832BD537718892C6A216A38490A /* URLRequest+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0C1B9BA6444238057611BDA7CACFA5 /* URLRequest+Alamofire.swift */; };
-		197457852FC83E905248660B0F930452 /* AuthenticationInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B206CABA3E5C254320AB3AD7135A3CE /* AuthenticationInterceptor.swift */; };
-		1AFD57838680DF58184FF94D14C7F3FF /* RequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F66307C1CA0F8DA20D1A6B668D1860 /* RequestInterceptor.swift */; };
+		0125D49E08B6D425F72375EEED3648B7 /* TOCropToolbar.h in Headers */ = {isa = PBXBuildFile; fileRef = B95A15BC99334A3EB29D515C9E4DA13F /* TOCropToolbar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		04A8430BFC619C34E5F4D3878D094380 /* CachedResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D3DC1AA349015A94491BF30DCC57CA /* CachedResponseHandler.swift */; };
+		0622FE500447E0E62B993DE74B69C413 /* UIImage+CropRotate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6495F8F30C01B8BD41755A721F05CC66 /* UIImage+CropRotate.m */; };
+		079F0820555C5B86C9FBD5EC6344137F /* Protected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1D51B5DE557C23C62211F1B62F1B7B /* Protected.swift */; };
+		0B7E119F5431E18D8E343534764563B2 /* TOCropViewControllerTransitioning.h in Headers */ = {isa = PBXBuildFile; fileRef = 88359AF0DA193A2CBD59495A989DCB15 /* TOCropViewControllerTransitioning.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0CFE58B0B122E087894687BFD3854E4D /* pl.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 1B598BB030AF6AC1A524F253AF9BC29B /* pl.lproj */; };
+		11CCD832BD537718892C6A216A38490A /* URLRequest+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082270F15ED78F0D7A744B99DA5AB6EE /* URLRequest+Alamofire.swift */; };
+		13BEA10CAD2DF27E1C82BCD8B282DD74 /* ar.lproj in Resources */ = {isa = PBXBuildFile; fileRef = FB8078B767D25F7520E492BC00F21C86 /* ar.lproj */; };
+		157435C910963F10BD9FEB6244FCF6AC /* CropViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 11D6D36DF5F7FCECCBD5839AD0C79B3A /* CropViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1672FDA0FF97A38A6AF67D91F7039357 /* nl.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 8A774B1742EA4FBCC2343D04DC8F5E6D /* nl.lproj */; };
+		17F61406A52F55F10B36FAAC1007C8E8 /* CropViewController-TOCropViewControllerBundle in Resources */ = {isa = PBXBuildFile; fileRef = 97A93DCEF2B1499B1F84D43333829DC7 /* CropViewController-TOCropViewControllerBundle */; };
+		197457852FC83E905248660B0F930452 /* AuthenticationInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B7B0B0800213798BBD9BDD3E03A0BC /* AuthenticationInterceptor.swift */; };
+		1ACAAB74335448B39D49F87B1991DBB3 /* UIImage+CropRotate.h in Headers */ = {isa = PBXBuildFile; fileRef = D31377C639592EE4F2C31343F67145CF /* UIImage+CropRotate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1AFD57838680DF58184FF94D14C7F3FF /* RequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB24DFBE28A55AD173126AD4431CC24 /* RequestInterceptor.swift */; };
+		1C6A3920C4BCCD1C6587B77B903A94B1 /* TOCropViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 944F4B521D27A5583BB1218013251554 /* TOCropViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1DF45DA15E12A378695967D9E43F3A41 /* Pods-Odoo-iOS-Odoo-iOSUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B8ADFC6733EC8ED170D79910AA17EFC /* Pods-Odoo-iOS-Odoo-iOSUITests-dummy.m */; };
 		2066926EA7E50B1C3AB9F174ADAFB657 /* Pods-Odoo-iOSTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F290AF7A0FD7A35DC1AAA18F15711DE3 /* Pods-Odoo-iOSTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		235EE39B8854968F24D3B8574927AA36 /* Pods-Odoo-iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C0A82D06E1EB95DB368774CDBBC7C /* Pods-Odoo-iOS-dummy.m */; };
-		282FCD4EA8B05830E9108690B8CD336B /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BD68F2EB883212FFD2A289C9C6AFFD /* Session.swift */; };
-		320C0D7A88AA812EFB20016BA1F5D7AE /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A436FE54641F2D107C7A36EEE579A711 /* AFError.swift */; };
-		385BC4B250B6A6DB8AAAEA77D5B7A46F /* Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D2AF8C623656CFD56B345D33E2C372 /* Combine.swift */; };
-		3A59D8FBAF9A54906E3644AC80465AFB /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B82D59AE35645D50D3A84BED8E57BBC /* Notifications.swift */; };
-		3FA127A261BB563409868A0DC21807B2 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5241B5E7FD5A8798EE42B92946C37 /* ResponseSerialization.swift */; };
-		482B74C0548970BB9C095E2D8530E421 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920D8F2C20208E53D68F47064E2AADAC /* ParameterEncoding.swift */; };
-		4A11D615BC67E82D3F3956F694D90D65 /* Pods-Odoo-iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FECBD6147CBAE011B2BCFD924A7F987 /* Pods-Odoo-iOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		529173B31EFCD3D199E79866AFBEC86C /* HTTPHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888DDD453AE7EBF323FD5C58AFC3C36A /* HTTPHeaders.swift */; };
-		5B92A66A66BD639411C3D839A0F87B0C /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAE996B4E9D2DB7B306B601909915C7 /* Request.swift */; };
-		643A7AFFB7AEB70B2B9B7E0926055023 /* RetryPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FF77F272823F291CC1199FF15724F9 /* RetryPolicy.swift */; };
-		67B10FEAA3B7E5387D20E76B1085E94D /* URLSessionConfiguration+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = C748480AB66C4D2CE843052F31C9C0D4 /* URLSessionConfiguration+Alamofire.swift */; };
-		732C29255F73EF3D83D49BD4F8FEAA8F /* MultipartUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24767B05C71B09A12209F0C3C0CE3CB9 /* MultipartUpload.swift */; };
-		737747B9A98257DB58112C3A23686669 /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592CA37CBFF826891439B792D0D405E6 /* MultipartFormData.swift */; };
-		77AB6AF4BFC6DE016DA7C057B5799C84 /* ServerTrustEvaluation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EC1AD74376CBE8B70B0820F6A611BA /* ServerTrustEvaluation.swift */; };
-		78B1DD1219182494A6AFAD26AAB20AA6 /* Concurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAC7B7C6D7F8B176EF5F9FB19EC1561 /* Concurrency.swift */; };
-		7D64BC3E6CAA4AB54EAC0AAADE93F578 /* OperationQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910E01056C25BE91CB35F0ED509E6324 /* OperationQueue+Alamofire.swift */; };
-		7F36BAFC80E2D5BE490A6B9108865FF3 /* Pods-Odoo-iOS-Odoo-iOSUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B8ADFC6733EC8ED170D79910AA17EFC /* Pods-Odoo-iOS-Odoo-iOSUITests-dummy.m */; };
-		81E6A0FF7F286008345ECFA3A2103FA8 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06058CC4DC17D97D816E6291418C188D /* Alamofire.swift */; };
-		82FD97FBBEFE51E2D3B434AF4954FC93 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366002D2484CDB3D84D2680DC45279B7 /* EventMonitor.swift */; };
-		8E698F134A953250D5834C8B83CDAD34 /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000339D58404A7D349EB962C6BE9E8C9 /* DispatchQueue+Alamofire.swift */; };
+		27A6C49B1D46F837F0B12677586F7A16 /* ja.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 647478A1655B0E6BD00AE46F05E3D865 /* ja.lproj */; };
+		282FCD4EA8B05830E9108690B8CD336B /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4D86125F0618BBA318BB9A9BB7D967 /* Session.swift */; };
+		2FB329BC6B05FEB87E74B94CCD0DE9E6 /* pt-BR.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 94B99B2D0D2F08617AF762DC4A9905E9 /* pt-BR.lproj */; };
+		3055AC122DC4CA98B7B09448E5F4E9B6 /* it.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 8DEF4C22105950338E57D302FC61E22E /* it.lproj */; };
+		320C0D7A88AA812EFB20016BA1F5D7AE /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA63FB2CCB1F1ECD5C488DA4A9834E6C /* AFError.swift */; };
+		322DEBBD84FA2A111F8AB1F055B3A8BC /* TOCropViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3991D598937663DD581B645380B6A19E /* TOCropViewController.m */; };
+		325F5E0DFE35BB21EC34EEA8BD152151 /* TOCropOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D6998B4C116DBBCCFB1E0AAA773741C /* TOCropOverlayView.m */; };
+		380C617B379550E876F7D8F2ECBA2736 /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 00C5B75120CB237441D14B674D9541F9 /* en.lproj */; };
+		385BC4B250B6A6DB8AAAEA77D5B7A46F /* Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35333E00DC8BEB97E8397C2B55FA938 /* Combine.swift */; };
+		38DE8AAB05336AD23BFBC30DB2CBFBF4 /* zh-Hant.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 2DE43D9A481E8C919E47D49BBC1B95E9 /* zh-Hant.lproj */; };
+		39C061F566EC7DA43ED1D5BE8D7B752B /* cs.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 4B38743BFFC0CAE24349281F111A092D /* cs.lproj */; };
+		3A59D8FBAF9A54906E3644AC80465AFB /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A5A2C7A1F6AA0F137F5522237B7A1C /* Notifications.swift */; };
+		3C1033326696275C856EC47132BDA167 /* TOActivityCroppedImageProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F512DE2B26CCA905A5924F2A8D10B0 /* TOActivityCroppedImageProvider.m */; };
+		3F538FDB2A113BB2D5A1BF22D32CE015 /* Pods-Odoo-iOS-Odoo-iOSUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 21DB36B4393D2B38A436EB8721204F9D /* Pods-Odoo-iOS-Odoo-iOSUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3FA127A261BB563409868A0DC21807B2 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66E991357494800D344693B00A23684 /* ResponseSerialization.swift */; };
+		3FE1340E511BA164178F4BCE212A588C /* fr.lproj in Resources */ = {isa = PBXBuildFile; fileRef = D80FE5E028CAF49DB443317747B00939 /* fr.lproj */; };
+		42A69898B25E8CF5F1A18324C2B1EED3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD0CE05D5D076B1B5190EE5DF97FD54E /* Foundation.framework */; };
+		482B74C0548970BB9C095E2D8530E421 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B2FC107C501611F8B3E75A1CD0ABCD /* ParameterEncoding.swift */; };
+		4B8AF1142055A6AEB95D91ECEEB23DBB /* zh-Hans.lproj in Resources */ = {isa = PBXBuildFile; fileRef = DB7BBAE8F835D97AA3A334572676C51B /* zh-Hans.lproj */; };
+		51B5F54C9770ED68716DA9182EBE6E80 /* ro.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 642A989D55B9B52B094D285C52863F4D /* ro.lproj */; };
+		522AFC97B9F36A47F53F53DE3CC5B637 /* Pods-Odoo-iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FECBD6147CBAE011B2BCFD924A7F987 /* Pods-Odoo-iOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		529173B31EFCD3D199E79866AFBEC86C /* HTTPHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896771F8059CE167D68116A6597C8EAE /* HTTPHeaders.swift */; };
+		58234F8A09292C6F67BC1BAE99E9CA46 /* ru.lproj in Resources */ = {isa = PBXBuildFile; fileRef = E4D359948018C1282F8AD9E121D5F3D2 /* ru.lproj */; };
+		5B5F042781BAFE8BCA5AA9251E1617BE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD0CE05D5D076B1B5190EE5DF97FD54E /* Foundation.framework */; };
+		5B92A66A66BD639411C3D839A0F87B0C /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3E09CFE6FAC42D2825996BEA3772F6 /* Request.swift */; };
+		5CFDA8C832F794F2C029A433BB3996A4 /* CropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A733FB105A9D071D4B25AA1EFCC3CF3 /* CropViewController.swift */; };
+		5DB129C6A71C2630FACB223B2D27E8C8 /* es.lproj in Resources */ = {isa = PBXBuildFile; fileRef = D97A2C537F404FB8C6BBD5AB844B676D /* es.lproj */; };
+		6032EF8BEF6DE02B5E1360616EECCEC2 /* CropViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B26F336E528F4F3052562E5F4D2927AA /* CropViewController-dummy.m */; };
+		60A2CF183D675A74ED4648120144C0B3 /* TOCropView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE47302A8601E1A89447F9686E50F7F8 /* TOCropView.m */; };
+		643A7AFFB7AEB70B2B9B7E0926055023 /* RetryPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6B327F372057FB86F7B342F1D339CE /* RetryPolicy.swift */; };
+		67B10FEAA3B7E5387D20E76B1085E94D /* URLSessionConfiguration+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD076AA951689FA1A793A90D8A63BAA3 /* URLSessionConfiguration+Alamofire.swift */; };
+		68538065CB16D0529EED90AE3C8D0AD4 /* pt.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 9FE3CBF4049B3EBCB1F5D8A4A7572362 /* pt.lproj */; };
+		6BB36D9AE294696A82B6E76D396AEB35 /* de.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 1774C066E5E0B860FB00C695A741802B /* de.lproj */; };
+		708515D6834361D40017CAAF4F2CC0B3 /* TOCropToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = BBFADB166388DB8D74B7B039CE8FADBA /* TOCropToolbar.m */; };
+		732C29255F73EF3D83D49BD4F8FEAA8F /* MultipartUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDE71B897BA6821D2CC9DEC9E5C7D06 /* MultipartUpload.swift */; };
+		737747B9A98257DB58112C3A23686669 /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78E821182E343ABF42D6865C53C2F57 /* MultipartFormData.swift */; };
+		77AB6AF4BFC6DE016DA7C057B5799C84 /* ServerTrustEvaluation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210C3ABBAAF55270D9F7D44C943BD9C5 /* ServerTrustEvaluation.swift */; };
+		78B1DD1219182494A6AFAD26AAB20AA6 /* Concurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3505D8D64B3AD0562BA7286A13B9CB3D /* Concurrency.swift */; };
+		7D64BC3E6CAA4AB54EAC0AAADE93F578 /* OperationQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D290EC514DDA203B895B452B0A88FB /* OperationQueue+Alamofire.swift */; };
+		816E6F31C7A83FD7672DE5816CAFAD51 /* ca.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 588C3C613DAECD706F9DA136EDDB5602 /* ca.lproj */; };
+		81E6A0FF7F286008345ECFA3A2103FA8 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1825931A1AF4FD8D22D9DF159F01A8D /* Alamofire.swift */; };
+		822937C516A749D37AD0FEF0A72EF436 /* fa.lproj in Resources */ = {isa = PBXBuildFile; fileRef = E1BBDCECDA22514CDDB8E72B85D92D5B /* fa.lproj */; };
+		82FD97FBBEFE51E2D3B434AF4954FC93 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F39D4737E9AE64D67FE5A533AF72983 /* EventMonitor.swift */; };
+		84EC0CE35A95418CA06FEE23863A6761 /* tr.lproj in Resources */ = {isa = PBXBuildFile; fileRef = A467E003A4D4DD714D53A89C45323A67 /* tr.lproj */; };
+		8E698F134A953250D5834C8B83CDAD34 /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A72E38042A43FA2180CFF72CBCE55A3 /* DispatchQueue+Alamofire.swift */; };
 		8E85763AE29BEF0A46EE875B8F069E8E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD0CE05D5D076B1B5190EE5DF97FD54E /* Foundation.framework */; };
-		A1B404E2C394634CDDB4FC65FE21DF4E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD0CE05D5D076B1B5190EE5DF97FD54E /* Foundation.framework */; };
-		A523488C60BF961290D0B1ABB9ADACEC /* RequestCompression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDB01290164DBD601DFFB8BF2E99BB5 /* RequestCompression.swift */; };
-		AA721ECC2B36AFB7D9FE70C83E6D63F9 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F10AF7BA68CD513FE4BD12AC3E9325 /* Response.swift */; };
-		B17D933C8F8BC6A4F91AA620D7D7A870 /* ParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B1939EB3C8896EB69219C5F7BE0889 /* ParameterEncoder.swift */; };
-		BAB17A1C6CAD14B3788973EAF8466C93 /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC207F43B02F0FCBF22B2B6ECAB6315 /* NetworkReachabilityManager.swift */; };
-		BEA5850FBAAF11CFE56D7EC9E99668F8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD0CE05D5D076B1B5190EE5DF97FD54E /* Foundation.framework */; };
-		C04739CBCEE445B66192BFA708655EDF /* StringEncoding+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D0CEF5C05F64E7426A7256B88CE035 /* StringEncoding+Alamofire.swift */; };
-		C8269B42DED12AB1F275648D0BD32E45 /* URLEncodedFormEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4726E64C69480A59B59C7FAEADD2FEB4 /* URLEncodedFormEncoder.swift */; };
+		91ABE29FE5EBE0105C1ED64A2BA84C96 /* CropViewController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 98F044349170FC75290309EB19B7498D /* CropViewController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		966A7E28EEA82172850ADB4EC2AC6C46 /* ms.lproj in Resources */ = {isa = PBXBuildFile; fileRef = A4DAC7A1EA8A03ADC5BE50DECC9A09DA /* ms.lproj */; };
+		98A612A6CFD2CB9B46230613C97B44D0 /* TOCropViewConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 8230E1A7D0EEDCDAE2085903235AE9A7 /* TOCropViewConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9D821C13BB833A82187542144390AED4 /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 28B87E3DAE15E161E98477E68802F51D /* Base.lproj */; };
+		9FD58B37E5DD8E08AB41E2E2209666EC /* TOCropOverlayView.h in Headers */ = {isa = PBXBuildFile; fileRef = C437231288E181E07AC1CCB504E79747 /* TOCropOverlayView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A523488C60BF961290D0B1ABB9ADACEC /* RequestCompression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0482159A2C414A2D994126EA7A954068 /* RequestCompression.swift */; };
+		AA721ECC2B36AFB7D9FE70C83E6D63F9 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D9C905872C42A8AC22C31AFEF1C350 /* Response.swift */; };
+		AE4462034FCC4B26BB5538A2698EAED4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD0CE05D5D076B1B5190EE5DF97FD54E /* Foundation.framework */; };
+		AFE2B94E0CC30E8333C2A3E2CDAF32B5 /* fa-IR.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 2B56DF291ECA6A3C0B235217A2163110 /* fa-IR.lproj */; };
+		B17D933C8F8BC6A4F91AA620D7D7A870 /* ParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3A2A645BAEEC42B4C522E8A6A1296F /* ParameterEncoder.swift */; };
+		B56F5B91020C46BC39AC6C2FEA387D70 /* TOCropViewControllerTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = 466BAFEA6C7CD3F8820FF1B56CC239BB /* TOCropViewControllerTransitioning.m */; };
+		B6ADBA6217AA1EE7CD56221D4906AA59 /* TOCroppedImageAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 1941B680940A02FF26C0F0146C643387 /* TOCroppedImageAttributes.m */; };
+		B78665DF6738EAA0D1B80EECE070879A /* id.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 11A9F71B6B3E37929DFAA648779F80A7 /* id.lproj */; };
+		BAB17A1C6CAD14B3788973EAF8466C93 /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013E8CEC4102B4F869DC2DAF6005A0E1 /* NetworkReachabilityManager.swift */; };
+		C04739CBCEE445B66192BFA708655EDF /* StringEncoding+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F436EAAD5410E16D28C0085EAF42AC2 /* StringEncoding+Alamofire.swift */; };
+		C0CD026E0D28D018B6E6A01E0671C7E8 /* ko.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 50FBE71B6E8156C4716A34B5E9388890 /* ko.lproj */; };
+		C8269B42DED12AB1F275648D0BD32E45 /* URLEncodedFormEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E760196A673752F0A5BDD54F866B24E4 /* URLEncodedFormEncoder.swift */; };
 		CD5919F9B33E7AE7B6536A8D41BDC890 /* Pods-Odoo-iOSTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A4B7D9AACCDFB319B1FFA493EBBF8B40 /* Pods-Odoo-iOSTests-dummy.m */; };
-		D0560E8E2E5EB407B5D8E0381BF453FA /* URLConvertible+URLRequestConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5152926B0E533873A8EED86D330834C0 /* URLConvertible+URLRequestConvertible.swift */; };
-		D09FBBADAF7C5C757AA5AB5DFE54BD25 /* Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EA17C4197838FFA052EE7B9CAD9DD8D3 /* Alamofire-dummy.m */; };
-		D368E6F70C5E6998548A72E65F92432D /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CA3C62864BF74A58495C935CB6F35D /* Validation.swift */; };
+		D0560E8E2E5EB407B5D8E0381BF453FA /* URLConvertible+URLRequestConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A3A6824D21FE38B757794B47D46046 /* URLConvertible+URLRequestConvertible.swift */; };
+		D09FBBADAF7C5C757AA5AB5DFE54BD25 /* Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 77FF17556C402516C588AD3278DB82A6 /* Alamofire-dummy.m */; };
+		D2596A3450D23C209A5B43995BE085E0 /* TOCroppedImageAttributes.h in Headers */ = {isa = PBXBuildFile; fileRef = 5447936DE43A8C4271234161030CCC26 /* TOCroppedImageAttributes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D368E6F70C5E6998548A72E65F92432D /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8665BC7A40FA000B92C6CB55571629C9 /* Validation.swift */; };
 		D7BCBE1EB4A638403C265CE2199EFF1B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D3D57353834825F7B52B816066B7789 /* CFNetwork.framework */; };
-		E6251F02EE12804D1B66AE32E716E664 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6965E5E3838DCDCC41AC01DA56A7D8D /* SessionDelegate.swift */; };
+		DCAD9827EEA5BB6C05557DEB2C2BCCB4 /* TOCropScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = E745DAFE8EFB03F4FB84AF0A4A750D62 /* TOCropScrollView.m */; };
+		DF696BA6462AB7847B8D8394BDD61869 /* da-DK.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 725B0C4598A55643694B38C48C42564D /* da-DK.lproj */; };
+		DFC77A7364BD2F9E5F383F24E0DE9686 /* Pods-Odoo-iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C0A82D06E1EB95DB368774CDBBC7C /* Pods-Odoo-iOS-dummy.m */; };
+		E6251F02EE12804D1B66AE32E716E664 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7E2D92092FAAFE9740B47B1418C44D /* SessionDelegate.swift */; };
 		E9DA2ADC35E29C6A870C34EADB29721E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD0CE05D5D076B1B5190EE5DF97FD54E /* Foundation.framework */; };
-		ECE6F23823454A8FDB3F97CE1A7CD182 /* RedirectHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B27F0DC0BF19F460FD9E129E69629E /* RedirectHandler.swift */; };
-		ECF2F956B37A4C28B228BC291A57AD6E /* RequestTaskMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953E276D9A7B3CF40C485A7FB983B8E7 /* RequestTaskMap.swift */; };
-		F038D81F7ABAA15CF03246AD4BF334F7 /* Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F833B93B04081CCB1F8033F4D88CDF4 /* Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F2415AE8678DE2698B7AD7D88B1A5C0F /* AlamofireExtended.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B614FCEF1E81C3ADCF667EBD4DD00A /* AlamofireExtended.swift */; };
-		F66CC47AD425C8D57BD149AFD09C2AFE /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18C61B77E806893D01FB3110BCFF9F3 /* HTTPMethod.swift */; };
-		F6E94E8EE1CE35F49B9091BE8748587B /* Result+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA707F68E714E23150CF6B884D329CA /* Result+Alamofire.swift */; };
-		FB2718D842CFC43288CB0E88E0F792CB /* Pods-Odoo-iOS-Odoo-iOSUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 21DB36B4393D2B38A436EB8721204F9D /* Pods-Odoo-iOS-Odoo-iOSUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EC1E543D1821D4C28A52FBF7573B0E28 /* vi.lproj in Resources */ = {isa = PBXBuildFile; fileRef = DA980AAE7C87A7E67B9641456300EF1A /* vi.lproj */; };
+		ECE6F23823454A8FDB3F97CE1A7CD182 /* RedirectHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B036ED70128EDEEEBEEFC30F9DF014 /* RedirectHandler.swift */; };
+		ECF2F956B37A4C28B228BC291A57AD6E /* RequestTaskMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2163AE61511207640A1A59E5E6374007 /* RequestTaskMap.swift */; };
+		F038D81F7ABAA15CF03246AD4BF334F7 /* Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A843F55B55A531EC6F870F23498F6E87 /* Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F09E551DE4C95F8CB02194C3EC1546E6 /* TOCropScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A6B163455F72D39CDABE94F4BE2D28E /* TOCropScrollView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F2415AE8678DE2698B7AD7D88B1A5C0F /* AlamofireExtended.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4DED6AB72EFEE99CA21332D784973D /* AlamofireExtended.swift */; };
+		F5FB29780265FFF383EA1592BF8B2623 /* sk.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 31DF3211A610695CB36AE482123AB0DE /* sk.lproj */; };
+		F66CC47AD425C8D57BD149AFD09C2AFE /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = C999EAE40275D44291EABB08806E400A /* HTTPMethod.swift */; };
+		F6E94E8EE1CE35F49B9091BE8748587B /* Result+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = B478EF34B00DC287EA823DC6861588FB /* Result+Alamofire.swift */; };
+		FB22953D868CBBFE78E236CC79F5AA43 /* fi.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 48E9AB639F16DEB0113E71FC93EDCF1D /* fi.lproj */; };
+		FB62DBBFC44F0F66857FEA75CA61A34B /* TOActivityCroppedImageProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 8AD1D1E90B2ABF8BA11E76D1CED93FEC /* TOActivityCroppedImageProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FC143AFAAD57DF493065AC17051C6815 /* hu.lproj in Resources */ = {isa = PBXBuildFile; fileRef = D549896B54523BEF4FA45B811130118C /* hu.lproj */; };
+		FDBD2B40802DF884C7218A83A7B78FEB /* TOCropView.h in Headers */ = {isa = PBXBuildFile; fileRef = E7F04ABDD6C18B443965BDDEEB6E0B73 /* TOCropView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		05F07F40A791AA74E6C730D4FE3772D4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1553CA4AA33739FD387B76DDCE6FD43D;
-			remoteInfo = "Pods-Odoo-iOS";
-		};
-		1A7B167734F16B2681A0400D38076A75 /* PBXContainerItemProxy */ = {
+		25B103A7529845974A9ABBB29992B976 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = EAAA1AD3A8A1B59AB91319EE40752C6D;
 			remoteInfo = Alamofire;
 		};
-		4514376535118998B790FF73F4F2690A /* PBXContainerItemProxy */ = {
+		4CD26CBEC3BD3CCEA4FBE5455EAB5865 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1553CA4AA33739FD387B76DDCE6FD43D;
+			remoteInfo = "Pods-Odoo-iOS";
+		};
+		6580E801312E8DC5FBD8A3A42547836B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BB4EEF23ECB2BAF774CE8EFA5AF90C40;
+			remoteInfo = "CropViewController-TOCropViewControllerBundle";
+		};
+		7C1DEA6477ED6524A7BA37949DDCFBDF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CC81A5995F9CEB2971CBA61ACA13FCA3;
+			remoteInfo = CropViewController;
+		};
+		A164FFC0F91D33F4CD3DE60D48A2E7F4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CC81A5995F9CEB2971CBA61ACA13FCA3;
+			remoteInfo = CropViewController;
+		};
+		EDAC9D6AF27CEAB97F63FB16AADDFC09 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -84,100 +159,167 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		000339D58404A7D349EB962C6BE9E8C9 /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Alamofire.swift"; path = "Source/DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
+		00C5B75120CB237441D14B674D9541F9 /* en.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = en.lproj; path = "Objective-C/TOCropViewController/Resources/en.lproj"; sourceTree = "<group>"; };
+		013E8CEC4102B4F869DC2DAF6005A0E1 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
+		0482159A2C414A2D994126EA7A954068 /* RequestCompression.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestCompression.swift; path = Source/RequestCompression.swift; sourceTree = "<group>"; };
 		049024CB2A38AC2BFF5B062DBCA9EF5B /* Pods-Odoo-iOS-Odoo-iOSUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Odoo-iOS-Odoo-iOSUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		06058CC4DC17D97D816E6291418C188D /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
+		082270F15ED78F0D7A744B99DA5AB6EE /* URLRequest+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLRequest+Alamofire.swift"; path = "Source/URLRequest+Alamofire.swift"; sourceTree = "<group>"; };
 		0AA87BE16A6E390C8D6A7D1CAB03C40C /* Pods-Odoo-iOS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Odoo-iOS-acknowledgements.markdown"; sourceTree = "<group>"; };
+		11A9F71B6B3E37929DFAA648779F80A7 /* id.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = id.lproj; path = "Objective-C/TOCropViewController/Resources/id.lproj"; sourceTree = "<group>"; };
+		11D6D36DF5F7FCECCBD5839AD0C79B3A /* CropViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CropViewController.h; path = Swift/CropViewController/CropViewController.h; sourceTree = "<group>"; };
+		15EE1E902594C4B2F66C9E35D159E49B /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
+		1774C066E5E0B860FB00C695A741802B /* de.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = de.lproj; path = "Objective-C/TOCropViewController/Resources/de.lproj"; sourceTree = "<group>"; };
+		1941B680940A02FF26C0F0146C643387 /* TOCroppedImageAttributes.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TOCroppedImageAttributes.m; path = "Objective-C/TOCropViewController/Models/TOCroppedImageAttributes.m"; sourceTree = "<group>"; };
+		19672639458D5EF5EC76A48F6BF5A2B3 /* CropViewController */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CropViewController; path = CropViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A6B163455F72D39CDABE94F4BE2D28E /* TOCropScrollView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TOCropScrollView.h; path = "Objective-C/TOCropViewController/Views/TOCropScrollView.h"; sourceTree = "<group>"; };
+		1A733FB105A9D071D4B25AA1EFCC3CF3 /* CropViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CropViewController.swift; path = Swift/CropViewController/CropViewController.swift; sourceTree = "<group>"; };
+		1B598BB030AF6AC1A524F253AF9BC29B /* pl.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = pl.lproj; path = "Objective-C/TOCropViewController/Resources/pl.lproj"; sourceTree = "<group>"; };
 		1B8ADFC6733EC8ED170D79910AA17EFC /* Pods-Odoo-iOS-Odoo-iOSUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Odoo-iOS-Odoo-iOSUITests-dummy.m"; sourceTree = "<group>"; };
+		1DDB8584BD5179FF2427BE0F96FEE62F /* CropViewController.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CropViewController.debug.xcconfig; sourceTree = "<group>"; };
+		1DDE71B897BA6821D2CC9DEC9E5C7D06 /* MultipartUpload.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartUpload.swift; path = Source/MultipartUpload.swift; sourceTree = "<group>"; };
+		210C3ABBAAF55270D9F7D44C943BD9C5 /* ServerTrustEvaluation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustEvaluation.swift; path = Source/ServerTrustEvaluation.swift; sourceTree = "<group>"; };
+		2163AE61511207640A1A59E5E6374007 /* RequestTaskMap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestTaskMap.swift; path = Source/RequestTaskMap.swift; sourceTree = "<group>"; };
 		21DB36B4393D2B38A436EB8721204F9D /* Pods-Odoo-iOS-Odoo-iOSUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Odoo-iOS-Odoo-iOSUITests-umbrella.h"; sourceTree = "<group>"; };
-		22C5241B5E7FD5A8798EE42B92946C37 /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
-		24767B05C71B09A12209F0C3C0CE3CB9 /* MultipartUpload.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartUpload.swift; path = Source/MultipartUpload.swift; sourceTree = "<group>"; };
+		22F512DE2B26CCA905A5924F2A8D10B0 /* TOActivityCroppedImageProvider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TOActivityCroppedImageProvider.m; path = "Objective-C/TOCropViewController/Models/TOActivityCroppedImageProvider.m"; sourceTree = "<group>"; };
 		262AD5A523CC2EC5344981C9049A6695 /* Pods-Odoo-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Odoo-iOS.debug.xcconfig"; sourceTree = "<group>"; };
-		306E2D1B9E4FC953243A0CACF97218A6 /* Alamofire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.release.xcconfig; sourceTree = "<group>"; };
+		28B87E3DAE15E161E98477E68802F51D /* Base.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = Base.lproj; path = "Objective-C/TOCropViewController/Resources/Base.lproj"; sourceTree = "<group>"; };
+		2B56DF291ECA6A3C0B235217A2163110 /* fa-IR.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = "fa-IR.lproj"; path = "Objective-C/TOCropViewController/Resources/fa-IR.lproj"; sourceTree = "<group>"; };
+		2D6998B4C116DBBCCFB1E0AAA773741C /* TOCropOverlayView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TOCropOverlayView.m; path = "Objective-C/TOCropViewController/Views/TOCropOverlayView.m"; sourceTree = "<group>"; };
+		2DE43D9A481E8C919E47D49BBC1B95E9 /* zh-Hant.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = "zh-Hant.lproj"; path = "Objective-C/TOCropViewController/Resources/zh-Hant.lproj"; sourceTree = "<group>"; };
 		31A428B85B90AFA9C9E3D4B15BDCBEF2 /* Pods-Odoo-iOSTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Odoo-iOSTests.modulemap"; sourceTree = "<group>"; };
-		31FF77F272823F291CC1199FF15724F9 /* RetryPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RetryPolicy.swift; path = Source/RetryPolicy.swift; sourceTree = "<group>"; };
-		366002D2484CDB3D84D2680DC45279B7 /* EventMonitor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EventMonitor.swift; path = Source/EventMonitor.swift; sourceTree = "<group>"; };
-		38F66307C1CA0F8DA20D1A6B668D1860 /* RequestInterceptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestInterceptor.swift; path = Source/RequestInterceptor.swift; sourceTree = "<group>"; };
-		40CA3C62864BF74A58495C935CB6F35D /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
+		31DF3211A610695CB36AE482123AB0DE /* sk.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = sk.lproj; path = "Objective-C/TOCropViewController/Resources/sk.lproj"; sourceTree = "<group>"; };
+		3505D8D64B3AD0562BA7286A13B9CB3D /* Concurrency.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Concurrency.swift; path = Source/Concurrency.swift; sourceTree = "<group>"; };
+		3991D598937663DD581B645380B6A19E /* TOCropViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TOCropViewController.m; path = "Objective-C/TOCropViewController/TOCropViewController.m"; sourceTree = "<group>"; };
+		3C4D86125F0618BBA318BB9A9BB7D967 /* Session.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Session.swift; path = Source/Session.swift; sourceTree = "<group>"; };
 		41B00971F4456CBD3A438FD3FDD5E5E9 /* Pods-Odoo-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Odoo-iOS.modulemap"; sourceTree = "<group>"; };
-		4726E64C69480A59B59C7FAEADD2FEB4 /* URLEncodedFormEncoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLEncodedFormEncoder.swift; path = Source/URLEncodedFormEncoder.swift; sourceTree = "<group>"; };
-		4F833B93B04081CCB1F8033F4D88CDF4 /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
+		466BAFEA6C7CD3F8820FF1B56CC239BB /* TOCropViewControllerTransitioning.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TOCropViewControllerTransitioning.m; path = "Objective-C/TOCropViewController/Models/TOCropViewControllerTransitioning.m"; sourceTree = "<group>"; };
+		48E9AB639F16DEB0113E71FC93EDCF1D /* fi.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = fi.lproj; path = "Objective-C/TOCropViewController/Resources/fi.lproj"; sourceTree = "<group>"; };
+		4B38743BFFC0CAE24349281F111A092D /* cs.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = cs.lproj; path = "Objective-C/TOCropViewController/Resources/cs.lproj"; sourceTree = "<group>"; };
+		4EB24DFBE28A55AD173126AD4431CC24 /* RequestInterceptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestInterceptor.swift; path = Source/RequestInterceptor.swift; sourceTree = "<group>"; };
 		4FECBD6147CBAE011B2BCFD924A7F987 /* Pods-Odoo-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Odoo-iOS-umbrella.h"; sourceTree = "<group>"; };
 		508AC7870987FF0ADD2C1A44C41C8DFB /* Pods-Odoo-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Odoo-iOS.release.xcconfig"; sourceTree = "<group>"; };
-		5152926B0E533873A8EED86D330834C0 /* URLConvertible+URLRequestConvertible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLConvertible+URLRequestConvertible.swift"; path = "Source/URLConvertible+URLRequestConvertible.swift"; sourceTree = "<group>"; };
+		50FBE71B6E8156C4716A34B5E9388890 /* ko.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = ko.lproj; path = "Objective-C/TOCropViewController/Resources/ko.lproj"; sourceTree = "<group>"; };
+		5447936DE43A8C4271234161030CCC26 /* TOCroppedImageAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TOCroppedImageAttributes.h; path = "Objective-C/TOCropViewController/Models/TOCroppedImageAttributes.h"; sourceTree = "<group>"; };
 		5559F4171C82F3CC26B63784675BBDC3 /* Pods-Odoo-iOS-Odoo-iOSUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Odoo-iOS-Odoo-iOSUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		588C3C613DAECD706F9DA136EDDB5602 /* ca.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = ca.lproj; path = "Objective-C/TOCropViewController/Resources/ca.lproj"; sourceTree = "<group>"; };
 		588FC698443FF855DB185BCB6BF45EC3 /* Pods-Odoo-iOS-Odoo-iOSUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Odoo-iOS-Odoo-iOSUITests-Info.plist"; sourceTree = "<group>"; };
-		592CA37CBFF826891439B792D0D405E6 /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
+		58D9C905872C42A8AC22C31AFEF1C350 /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
+		5A3E09CFE6FAC42D2825996BEA3772F6 /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
 		5D797E9A5C5782CE845840781FA1CC81 /* Alamofire */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		60D19AFBBBB00EEE64CE63E5D70649F6 /* Protected.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Protected.swift; path = Source/Protected.swift; sourceTree = "<group>"; };
+		5D8BB97CC9C6F79FBDF49FFFBE0F568C /* Alamofire-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Alamofire-Info.plist"; sourceTree = "<group>"; };
+		5E3A2A645BAEEC42B4C522E8A6A1296F /* ParameterEncoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoder.swift; path = Source/ParameterEncoder.swift; sourceTree = "<group>"; };
 		61C3D453D04B8239EA30289973975CE3 /* Pods-Odoo-iOS-Odoo-iOSUITests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Odoo-iOS-Odoo-iOSUITests"; path = Pods_Odoo_iOS_Odoo_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		67B27F0DC0BF19F460FD9E129E69629E /* RedirectHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RedirectHandler.swift; path = Source/RedirectHandler.swift; sourceTree = "<group>"; };
-		6ED8831F6FF4301FD74775E203143BC4 /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
-		740AAA5D9614C4C73D0E5D0E6E1FA9F3 /* Alamofire-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Alamofire-Info.plist"; sourceTree = "<group>"; };
-		77226E8FC7B56CA1068824166848ADBF /* CachedResponseHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CachedResponseHandler.swift; path = Source/CachedResponseHandler.swift; sourceTree = "<group>"; };
+		62A3A6824D21FE38B757794B47D46046 /* URLConvertible+URLRequestConvertible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLConvertible+URLRequestConvertible.swift"; path = "Source/URLConvertible+URLRequestConvertible.swift"; sourceTree = "<group>"; };
+		642A989D55B9B52B094D285C52863F4D /* ro.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = ro.lproj; path = "Objective-C/TOCropViewController/Resources/ro.lproj"; sourceTree = "<group>"; };
+		647478A1655B0E6BD00AE46F05E3D865 /* ja.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = ja.lproj; path = "Objective-C/TOCropViewController/Resources/ja.lproj"; sourceTree = "<group>"; };
+		6495F8F30C01B8BD41755A721F05CC66 /* UIImage+CropRotate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+CropRotate.m"; path = "Objective-C/TOCropViewController/Categories/UIImage+CropRotate.m"; sourceTree = "<group>"; };
+		6821E808261192456F711E3ED6E3B9AB /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Alamofire.modulemap; sourceTree = "<group>"; };
+		69B7B0B0800213798BBD9BDD3E03A0BC /* AuthenticationInterceptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AuthenticationInterceptor.swift; path = Source/AuthenticationInterceptor.swift; sourceTree = "<group>"; };
+		6A72E38042A43FA2180CFF72CBCE55A3 /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Alamofire.swift"; path = "Source/DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
+		6F39D4737E9AE64D67FE5A533AF72983 /* EventMonitor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EventMonitor.swift; path = Source/EventMonitor.swift; sourceTree = "<group>"; };
+		6F436EAAD5410E16D28C0085EAF42AC2 /* StringEncoding+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "StringEncoding+Alamofire.swift"; path = "Source/StringEncoding+Alamofire.swift"; sourceTree = "<group>"; };
+		725B0C4598A55643694B38C48C42564D /* da-DK.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = "da-DK.lproj"; path = "Objective-C/TOCropViewController/Resources/da-DK.lproj"; sourceTree = "<group>"; };
 		77CE857862EF01BE17478A5D81A553AD /* Pods-Odoo-iOSTests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Odoo-iOSTests"; path = Pods_Odoo_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		79D0CEF5C05F64E7426A7256B88CE035 /* StringEncoding+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "StringEncoding+Alamofire.swift"; path = "Source/StringEncoding+Alamofire.swift"; sourceTree = "<group>"; };
-		7B82D59AE35645D50D3A84BED8E57BBC /* Notifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Notifications.swift; path = Source/Notifications.swift; sourceTree = "<group>"; };
-		888DDD453AE7EBF323FD5C58AFC3C36A /* HTTPHeaders.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTTPHeaders.swift; path = Source/HTTPHeaders.swift; sourceTree = "<group>"; };
-		88B1939EB3C8896EB69219C5F7BE0889 /* ParameterEncoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoder.swift; path = Source/ParameterEncoder.swift; sourceTree = "<group>"; };
+		77FF17556C402516C588AD3278DB82A6 /* Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-dummy.m"; sourceTree = "<group>"; };
+		8230E1A7D0EEDCDAE2085903235AE9A7 /* TOCropViewConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TOCropViewConstants.h; path = "Objective-C/TOCropViewController/Constants/TOCropViewConstants.h"; sourceTree = "<group>"; };
+		8665BC7A40FA000B92C6CB55571629C9 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
+		88359AF0DA193A2CBD59495A989DCB15 /* TOCropViewControllerTransitioning.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TOCropViewControllerTransitioning.h; path = "Objective-C/TOCropViewController/Models/TOCropViewControllerTransitioning.h"; sourceTree = "<group>"; };
 		8934F350D6741E827775D751BCA092E4 /* Pods-Odoo-iOS */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Odoo-iOS"; path = Pods_Odoo_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		896771F8059CE167D68116A6597C8EAE /* HTTPHeaders.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTTPHeaders.swift; path = Source/HTTPHeaders.swift; sourceTree = "<group>"; };
+		8A774B1742EA4FBCC2343D04DC8F5E6D /* nl.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = nl.lproj; path = "Objective-C/TOCropViewController/Resources/nl.lproj"; sourceTree = "<group>"; };
+		8AD1D1E90B2ABF8BA11E76D1CED93FEC /* TOActivityCroppedImageProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TOActivityCroppedImageProvider.h; path = "Objective-C/TOCropViewController/Models/TOActivityCroppedImageProvider.h"; sourceTree = "<group>"; };
 		8D3D57353834825F7B52B816066B7789 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
-		8FDB01290164DBD601DFFB8BF2E99BB5 /* RequestCompression.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestCompression.swift; path = Source/RequestCompression.swift; sourceTree = "<group>"; };
-		910E01056C25BE91CB35F0ED509E6324 /* OperationQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "OperationQueue+Alamofire.swift"; path = "Source/OperationQueue+Alamofire.swift"; sourceTree = "<group>"; };
-		920D8F2C20208E53D68F47064E2AADAC /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
-		94F10AF7BA68CD513FE4BD12AC3E9325 /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
-		953E276D9A7B3CF40C485A7FB983B8E7 /* RequestTaskMap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestTaskMap.swift; path = Source/RequestTaskMap.swift; sourceTree = "<group>"; };
+		8DEF4C22105950338E57D302FC61E22E /* it.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = it.lproj; path = "Objective-C/TOCropViewController/Resources/it.lproj"; sourceTree = "<group>"; };
+		944F4B521D27A5583BB1218013251554 /* TOCropViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TOCropViewController.h; path = "Objective-C/TOCropViewController/TOCropViewController.h"; sourceTree = "<group>"; };
+		94B99B2D0D2F08617AF762DC4A9905E9 /* pt-BR.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = "pt-BR.lproj"; path = "Objective-C/TOCropViewController/Resources/pt-BR.lproj"; sourceTree = "<group>"; };
+		97A93DCEF2B1499B1F84D43333829DC7 /* CropViewController-TOCropViewControllerBundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "CropViewController-TOCropViewControllerBundle"; path = TOCropViewControllerBundle.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		98F044349170FC75290309EB19B7498D /* CropViewController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CropViewController-umbrella.h"; sourceTree = "<group>"; };
 		9B156D1D5F71533BF8751CEAAC19A386 /* Pods-Odoo-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Odoo-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
-		9B206CABA3E5C254320AB3AD7135A3CE /* AuthenticationInterceptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AuthenticationInterceptor.swift; path = Source/AuthenticationInterceptor.swift; sourceTree = "<group>"; };
+		9C1D51B5DE557C23C62211F1B62F1B7B /* Protected.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Protected.swift; path = Source/Protected.swift; sourceTree = "<group>"; };
 		9C5C0A82D06E1EB95DB368774CDBBC7C /* Pods-Odoo-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Odoo-iOS-dummy.m"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9FE3CBF4049B3EBCB1F5D8A4A7572362 /* pt.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = pt.lproj; path = "Objective-C/TOCropViewController/Resources/pt.lproj"; sourceTree = "<group>"; };
 		A157B1F9411DEB5AE8BD161B7B03EFA0 /* Pods-Odoo-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Odoo-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		A436FE54641F2D107C7A36EEE579A711 /* AFError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFError.swift; path = Source/AFError.swift; sourceTree = "<group>"; };
+		A1825931A1AF4FD8D22D9DF159F01A8D /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
+		A35333E00DC8BEB97E8397C2B55FA938 /* Combine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Combine.swift; path = Source/Combine.swift; sourceTree = "<group>"; };
+		A467E003A4D4DD714D53A89C45323A67 /* tr.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = tr.lproj; path = "Objective-C/TOCropViewController/Resources/tr.lproj"; sourceTree = "<group>"; };
 		A4B7D9AACCDFB319B1FFA493EBBF8B40 /* Pods-Odoo-iOSTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Odoo-iOSTests-dummy.m"; sourceTree = "<group>"; };
-		A52D1AFEE03B6011772E5FAE0AC50EEE /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Alamofire.modulemap; sourceTree = "<group>"; };
-		AD714F718D7CC54F064F15757F78C492 /* Alamofire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.debug.xcconfig; sourceTree = "<group>"; };
-		B1B614FCEF1E81C3ADCF667EBD4DD00A /* AlamofireExtended.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlamofireExtended.swift; path = Source/AlamofireExtended.swift; sourceTree = "<group>"; };
-		B2D2AF8C623656CFD56B345D33E2C372 /* Combine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Combine.swift; path = Source/Combine.swift; sourceTree = "<group>"; };
+		A4DAC7A1EA8A03ADC5BE50DECC9A09DA /* ms.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = ms.lproj; path = "Objective-C/TOCropViewController/Resources/ms.lproj"; sourceTree = "<group>"; };
+		A5D290EC514DDA203B895B452B0A88FB /* OperationQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "OperationQueue+Alamofire.swift"; path = "Source/OperationQueue+Alamofire.swift"; sourceTree = "<group>"; };
+		A78E821182E343ABF42D6865C53C2F57 /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
+		A7F734951AFAAABB927DCC4942406E59 /* CropViewController-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CropViewController-Info.plist"; sourceTree = "<group>"; };
+		A843F55B55A531EC6F870F23498F6E87 /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
+		AECB44B6BD35DE8469E5851D27272CDA /* CropViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CropViewController-prefix.pch"; sourceTree = "<group>"; };
+		B26F336E528F4F3052562E5F4D2927AA /* CropViewController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CropViewController-dummy.m"; sourceTree = "<group>"; };
+		B3D3DC1AA349015A94491BF30DCC57CA /* CachedResponseHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CachedResponseHandler.swift; path = Source/CachedResponseHandler.swift; sourceTree = "<group>"; };
+		B478EF34B00DC287EA823DC6861588FB /* Result+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Result+Alamofire.swift"; path = "Source/Result+Alamofire.swift"; sourceTree = "<group>"; };
 		B5AE3321F2D3E1659A3C8E451609DC86 /* Pods-Odoo-iOS-Odoo-iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Odoo-iOS-Odoo-iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
-		BDAE996B4E9D2DB7B306B601909915C7 /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
-		C18C61B77E806893D01FB3110BCFF9F3 /* HTTPMethod.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTTPMethod.swift; path = Source/HTTPMethod.swift; sourceTree = "<group>"; };
-		C2BD68F2EB883212FFD2A289C9C6AFFD /* Session.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Session.swift; path = Source/Session.swift; sourceTree = "<group>"; };
+		B66E991357494800D344693B00A23684 /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
+		B95A15BC99334A3EB29D515C9E4DA13F /* TOCropToolbar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TOCropToolbar.h; path = "Objective-C/TOCropViewController/Views/TOCropToolbar.h"; sourceTree = "<group>"; };
+		BBFADB166388DB8D74B7B039CE8FADBA /* TOCropToolbar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TOCropToolbar.m; path = "Objective-C/TOCropViewController/Views/TOCropToolbar.m"; sourceTree = "<group>"; };
+		BD076AA951689FA1A793A90D8A63BAA3 /* URLSessionConfiguration+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLSessionConfiguration+Alamofire.swift"; path = "Source/URLSessionConfiguration+Alamofire.swift"; sourceTree = "<group>"; };
+		BE65F525967E2DAB31046EC10231F464 /* CropViewController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CropViewController.release.xcconfig; sourceTree = "<group>"; };
 		C39F547165A6C948E4987C94E8C5F49A /* Pods-Odoo-iOS-Odoo-iOSUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Odoo-iOS-Odoo-iOSUITests.modulemap"; sourceTree = "<group>"; };
-		C6965E5E3838DCDCC41AC01DA56A7D8D /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Source/SessionDelegate.swift; sourceTree = "<group>"; };
-		C748480AB66C4D2CE843052F31C9C0D4 /* URLSessionConfiguration+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLSessionConfiguration+Alamofire.swift"; path = "Source/URLSessionConfiguration+Alamofire.swift"; sourceTree = "<group>"; };
+		C437231288E181E07AC1CCB504E79747 /* TOCropOverlayView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TOCropOverlayView.h; path = "Objective-C/TOCropViewController/Views/TOCropOverlayView.h"; sourceTree = "<group>"; };
+		C5A5A2C7A1F6AA0F137F5522237B7A1C /* Notifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Notifications.swift; path = Source/Notifications.swift; sourceTree = "<group>"; };
 		C8F7AD02E870DFAD9347B0EC339827CA /* Pods-Odoo-iOS-Odoo-iOSUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Odoo-iOS-Odoo-iOSUITests-frameworks.sh"; sourceTree = "<group>"; };
+		C999EAE40275D44291EABB08806E400A /* HTTPMethod.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTTPMethod.swift; path = Source/HTTPMethod.swift; sourceTree = "<group>"; };
 		CC7142AAA9FC93225D1D8EA8DA58E651 /* Pods-Odoo-iOS-Odoo-iOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Odoo-iOS-Odoo-iOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		CDE487AFC9EA0324BD3425BAF2BF21E9 /* ResourceBundle-TOCropViewControllerBundle-CropViewController-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-TOCropViewControllerBundle-CropViewController-Info.plist"; sourceTree = "<group>"; };
+		CE47302A8601E1A89447F9686E50F7F8 /* TOCropView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TOCropView.m; path = "Objective-C/TOCropViewController/Views/TOCropView.m"; sourceTree = "<group>"; };
+		CF7E2D92092FAAFE9740B47B1418C44D /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Source/SessionDelegate.swift; sourceTree = "<group>"; };
 		D0BB3C92028064077A64D98DA3DCCC49 /* Pods-Odoo-iOSTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Odoo-iOSTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		DCAC7B7C6D7F8B176EF5F9FB19EC1561 /* Concurrency.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Concurrency.swift; path = Source/Concurrency.swift; sourceTree = "<group>"; };
-		DDA707F68E714E23150CF6B884D329CA /* Result+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Result+Alamofire.swift"; path = "Source/Result+Alamofire.swift"; sourceTree = "<group>"; };
+		D31377C639592EE4F2C31343F67145CF /* UIImage+CropRotate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+CropRotate.h"; path = "Objective-C/TOCropViewController/Categories/UIImage+CropRotate.h"; sourceTree = "<group>"; };
+		D549896B54523BEF4FA45B811130118C /* hu.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = hu.lproj; path = "Objective-C/TOCropViewController/Resources/hu.lproj"; sourceTree = "<group>"; };
+		D582D5798EA5FE997F45793122066BC5 /* Alamofire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.release.xcconfig; sourceTree = "<group>"; };
+		D5B2FC107C501611F8B3E75A1CD0ABCD /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
+		D6B036ED70128EDEEEBEEFC30F9DF014 /* RedirectHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RedirectHandler.swift; path = Source/RedirectHandler.swift; sourceTree = "<group>"; };
+		D80FE5E028CAF49DB443317747B00939 /* fr.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = fr.lproj; path = "Objective-C/TOCropViewController/Resources/fr.lproj"; sourceTree = "<group>"; };
+		D97A2C537F404FB8C6BBD5AB844B676D /* es.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = es.lproj; path = "Objective-C/TOCropViewController/Resources/es.lproj"; sourceTree = "<group>"; };
+		DA63FB2CCB1F1ECD5C488DA4A9834E6C /* AFError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFError.swift; path = Source/AFError.swift; sourceTree = "<group>"; };
+		DA980AAE7C87A7E67B9641456300EF1A /* vi.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = vi.lproj; path = "Objective-C/TOCropViewController/Resources/vi.lproj"; sourceTree = "<group>"; };
+		DB7BBAE8F835D97AA3A334572676C51B /* zh-Hans.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = "zh-Hans.lproj"; path = "Objective-C/TOCropViewController/Resources/zh-Hans.lproj"; sourceTree = "<group>"; };
 		DEC91704616219B886701BB4173A9520 /* Pods-Odoo-iOS-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Odoo-iOS-frameworks.sh"; sourceTree = "<group>"; };
-		E8EC1AD74376CBE8B70B0820F6A611BA /* ServerTrustEvaluation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustEvaluation.swift; path = Source/ServerTrustEvaluation.swift; sourceTree = "<group>"; };
-		EA0C1B9BA6444238057611BDA7CACFA5 /* URLRequest+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLRequest+Alamofire.swift"; path = "Source/URLRequest+Alamofire.swift"; sourceTree = "<group>"; };
-		EA17C4197838FFA052EE7B9CAD9DD8D3 /* Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-dummy.m"; sourceTree = "<group>"; };
+		E0159A7D35C96BAF30E48F782F1ED576 /* Alamofire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.debug.xcconfig; sourceTree = "<group>"; };
+		E1BBDCECDA22514CDDB8E72B85D92D5B /* fa.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = fa.lproj; path = "Objective-C/TOCropViewController/Resources/fa.lproj"; sourceTree = "<group>"; };
+		E4D359948018C1282F8AD9E121D5F3D2 /* ru.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = ru.lproj; path = "Objective-C/TOCropViewController/Resources/ru.lproj"; sourceTree = "<group>"; };
+		E745DAFE8EFB03F4FB84AF0A4A750D62 /* TOCropScrollView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TOCropScrollView.m; path = "Objective-C/TOCropViewController/Views/TOCropScrollView.m"; sourceTree = "<group>"; };
+		E760196A673752F0A5BDD54F866B24E4 /* URLEncodedFormEncoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLEncodedFormEncoder.swift; path = Source/URLEncodedFormEncoder.swift; sourceTree = "<group>"; };
+		E7F04ABDD6C18B443965BDDEEB6E0B73 /* TOCropView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TOCropView.h; path = "Objective-C/TOCropViewController/Views/TOCropView.h"; sourceTree = "<group>"; };
 		EA5FAED20832BA7458701B6B44F7E409 /* Pods-Odoo-iOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Odoo-iOS-acknowledgements.plist"; sourceTree = "<group>"; };
+		EA6B327F372057FB86F7B342F1D339CE /* RetryPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RetryPolicy.swift; path = Source/RetryPolicy.swift; sourceTree = "<group>"; };
+		EC4DED6AB72EFEE99CA21332D784973D /* AlamofireExtended.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlamofireExtended.swift; path = Source/AlamofireExtended.swift; sourceTree = "<group>"; };
 		EE66B931CEF68B9C8CA9E2C45EE4F1C1 /* Pods-Odoo-iOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Odoo-iOS-Info.plist"; sourceTree = "<group>"; };
 		F290AF7A0FD7A35DC1AAA18F15711DE3 /* Pods-Odoo-iOSTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Odoo-iOSTests-umbrella.h"; sourceTree = "<group>"; };
+		F39061BF943C42FD2AC93D5F8F30705B /* CropViewController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CropViewController.modulemap; sourceTree = "<group>"; };
 		F5AECEEC7E3CF1256593991AC5BB4342 /* Pods-Odoo-iOSTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Odoo-iOSTests-Info.plist"; sourceTree = "<group>"; };
+		FB8078B767D25F7520E492BC00F21C86 /* ar.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = ar.lproj; path = "Objective-C/TOCropViewController/Resources/ar.lproj"; sourceTree = "<group>"; };
 		FBB9C8BDBA9D8B5EA9FF5F5A06136FD6 /* Pods-Odoo-iOSTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Odoo-iOSTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		FD0CE05D5D076B1B5190EE5DF97FD54E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		FEC207F43B02F0FCBF22B2B6ECAB6315 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		07AE327FEE8D54DC4AB39ABDFD20F720 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42A69898B25E8CF5F1A18324C2B1EED3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		459DD3ED6636CAB86E837BAB3E74013A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5BF6E64D3157435E5797A5278584A4DC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				D7BCBE1EB4A638403C265CE2199EFF1B /* CFNetwork.framework in Frameworks */,
 				8E85763AE29BEF0A46EE875B8F069E8E /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		871EDD27D2E77BF7D0F7CF8DC3A06938 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BEA5850FBAAF11CFE56D7EC9E99668F8 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,11 +331,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E8CDAFE9131F94CF9C794AEC1CB300AB /* Frameworks */ = {
+		9A379AC08A5FE96921F781F9B8D84414 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1B404E2C394634CDDB4FC65FE21DF4E /* Foundation.framework in Frameworks */,
+				5B5F042781BAFE8BCA5AA9251E1617BE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3199EEAABCB08F88FAC832ED6178828 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE4462034FCC4B26BB5538A2698EAED4 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,12 +375,63 @@
 			path = "Target Support Files/Pods-Odoo-iOS-Odoo-iOSUITests";
 			sourceTree = "<group>";
 		};
-		5859CCC0ABE736D54D7BFD670A82F169 /* Pods */ = {
+		3FFD893BED1609903B8694127592B7B0 /* Alamofire */ = {
 			isa = PBXGroup;
 			children = (
-				E4DBDEEA84D01EDB41FB547B1154D346 /* Alamofire */,
+				DA63FB2CCB1F1ECD5C488DA4A9834E6C /* AFError.swift */,
+				A1825931A1AF4FD8D22D9DF159F01A8D /* Alamofire.swift */,
+				EC4DED6AB72EFEE99CA21332D784973D /* AlamofireExtended.swift */,
+				69B7B0B0800213798BBD9BDD3E03A0BC /* AuthenticationInterceptor.swift */,
+				B3D3DC1AA349015A94491BF30DCC57CA /* CachedResponseHandler.swift */,
+				A35333E00DC8BEB97E8397C2B55FA938 /* Combine.swift */,
+				3505D8D64B3AD0562BA7286A13B9CB3D /* Concurrency.swift */,
+				6A72E38042A43FA2180CFF72CBCE55A3 /* DispatchQueue+Alamofire.swift */,
+				6F39D4737E9AE64D67FE5A533AF72983 /* EventMonitor.swift */,
+				896771F8059CE167D68116A6597C8EAE /* HTTPHeaders.swift */,
+				C999EAE40275D44291EABB08806E400A /* HTTPMethod.swift */,
+				A78E821182E343ABF42D6865C53C2F57 /* MultipartFormData.swift */,
+				1DDE71B897BA6821D2CC9DEC9E5C7D06 /* MultipartUpload.swift */,
+				013E8CEC4102B4F869DC2DAF6005A0E1 /* NetworkReachabilityManager.swift */,
+				C5A5A2C7A1F6AA0F137F5522237B7A1C /* Notifications.swift */,
+				A5D290EC514DDA203B895B452B0A88FB /* OperationQueue+Alamofire.swift */,
+				5E3A2A645BAEEC42B4C522E8A6A1296F /* ParameterEncoder.swift */,
+				D5B2FC107C501611F8B3E75A1CD0ABCD /* ParameterEncoding.swift */,
+				9C1D51B5DE557C23C62211F1B62F1B7B /* Protected.swift */,
+				D6B036ED70128EDEEEBEEFC30F9DF014 /* RedirectHandler.swift */,
+				5A3E09CFE6FAC42D2825996BEA3772F6 /* Request.swift */,
+				0482159A2C414A2D994126EA7A954068 /* RequestCompression.swift */,
+				4EB24DFBE28A55AD173126AD4431CC24 /* RequestInterceptor.swift */,
+				2163AE61511207640A1A59E5E6374007 /* RequestTaskMap.swift */,
+				58D9C905872C42A8AC22C31AFEF1C350 /* Response.swift */,
+				B66E991357494800D344693B00A23684 /* ResponseSerialization.swift */,
+				B478EF34B00DC287EA823DC6861588FB /* Result+Alamofire.swift */,
+				EA6B327F372057FB86F7B342F1D339CE /* RetryPolicy.swift */,
+				210C3ABBAAF55270D9F7D44C943BD9C5 /* ServerTrustEvaluation.swift */,
+				3C4D86125F0618BBA318BB9A9BB7D967 /* Session.swift */,
+				CF7E2D92092FAAFE9740B47B1418C44D /* SessionDelegate.swift */,
+				6F436EAAD5410E16D28C0085EAF42AC2 /* StringEncoding+Alamofire.swift */,
+				62A3A6824D21FE38B757794B47D46046 /* URLConvertible+URLRequestConvertible.swift */,
+				E760196A673752F0A5BDD54F866B24E4 /* URLEncodedFormEncoder.swift */,
+				082270F15ED78F0D7A744B99DA5AB6EE /* URLRequest+Alamofire.swift */,
+				BD076AA951689FA1A793A90D8A63BAA3 /* URLSessionConfiguration+Alamofire.swift */,
+				8665BC7A40FA000B92C6CB55571629C9 /* Validation.swift */,
+				F800C5F3F696A4163513127FB7684F9B /* Support Files */,
 			);
-			name = Pods;
+			name = Alamofire;
+			path = Alamofire;
+			sourceTree = "<group>";
+		};
+		52A42FE71F6CE8D85B19E292D6A7CF8D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5D797E9A5C5782CE845840781FA1CC81 /* Alamofire */,
+				19672639458D5EF5EC76A48F6BF5A2B3 /* CropViewController */,
+				97A93DCEF2B1499B1F84D43333829DC7 /* CropViewController-TOCropViewControllerBundle */,
+				8934F350D6741E827775D751BCA092E4 /* Pods-Odoo-iOS */,
+				61C3D453D04B8239EA30289973975CE3 /* Pods-Odoo-iOS-Odoo-iOSUITests */,
+				77CE857862EF01BE17478A5D81A553AD /* Pods-Odoo-iOSTests */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		5C592F71348C335A69797DA59A226C1E /* Pods-Odoo-iOSTests */ = {
@@ -249,21 +450,6 @@
 			path = "Target Support Files/Pods-Odoo-iOSTests";
 			sourceTree = "<group>";
 		};
-		5F92C9B9F679FE7DF64E95279E5DB79F /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				A52D1AFEE03B6011772E5FAE0AC50EEE /* Alamofire.modulemap */,
-				EA17C4197838FFA052EE7B9CAD9DD8D3 /* Alamofire-dummy.m */,
-				740AAA5D9614C4C73D0E5D0E6E1FA9F3 /* Alamofire-Info.plist */,
-				6ED8831F6FF4301FD74775E203143BC4 /* Alamofire-prefix.pch */,
-				4F833B93B04081CCB1F8033F4D88CDF4 /* Alamofire-umbrella.h */,
-				AD714F718D7CC54F064F15757F78C492 /* Alamofire.debug.xcconfig */,
-				306E2D1B9E4FC953243A0CACF97218A6 /* Alamofire.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Alamofire";
-			sourceTree = "<group>";
-		};
 		61C8CC330A5CA84DA2F5F1D32AB07069 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -273,15 +459,13 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		66D581CD43DB469E0F1C75DC7EB75C64 /* Products */ = {
+		6873EF1966CE129678F07928C7B157E3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				5D797E9A5C5782CE845840781FA1CC81 /* Alamofire */,
-				8934F350D6741E827775D751BCA092E4 /* Pods-Odoo-iOS */,
-				61C3D453D04B8239EA30289973975CE3 /* Pods-Odoo-iOS-Odoo-iOSUITests */,
-				77CE857862EF01BE17478A5D81A553AD /* Pods-Odoo-iOSTests */,
+				3FFD893BED1609903B8694127592B7B0 /* Alamofire */,
+				E832D0B46709A9E8AD331334861E3BC6 /* CropViewController */,
 			);
-			name = Products;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		6C53B6EDE266054F2D67AA90B67CF68A /* Targets Support Files */ = {
@@ -292,6 +476,22 @@
 				5C592F71348C335A69797DA59A226C1E /* Pods-Odoo-iOSTests */,
 			);
 			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		757DA3ACFA05509D9F1D150CFACF9E14 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F39061BF943C42FD2AC93D5F8F30705B /* CropViewController.modulemap */,
+				B26F336E528F4F3052562E5F4D2927AA /* CropViewController-dummy.m */,
+				A7F734951AFAAABB927DCC4942406E59 /* CropViewController-Info.plist */,
+				AECB44B6BD35DE8469E5851D27272CDA /* CropViewController-prefix.pch */,
+				98F044349170FC75290309EB19B7498D /* CropViewController-umbrella.h */,
+				1DDB8584BD5179FF2427BE0F96FEE62F /* CropViewController.debug.xcconfig */,
+				BE65F525967E2DAB31046EC10231F464 /* CropViewController.release.xcconfig */,
+				CDE487AFC9EA0324BD3425BAF2BF21E9 /* ResourceBundle-TOCropViewControllerBundle-CropViewController-Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/CropViewController";
 			sourceTree = "<group>";
 		};
 		9AC8CA330ECE1471CA0F46C47BC724D3 /* Pods-Odoo-iOS */ = {
@@ -311,66 +511,129 @@
 			path = "Target Support Files/Pods-Odoo-iOS";
 			sourceTree = "<group>";
 		};
+		BECE5CA731B304BA4E00D0A5FAB4631B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FB8078B767D25F7520E492BC00F21C86 /* ar.lproj */,
+				28B87E3DAE15E161E98477E68802F51D /* Base.lproj */,
+				588C3C613DAECD706F9DA136EDDB5602 /* ca.lproj */,
+				4B38743BFFC0CAE24349281F111A092D /* cs.lproj */,
+				725B0C4598A55643694B38C48C42564D /* da-DK.lproj */,
+				1774C066E5E0B860FB00C695A741802B /* de.lproj */,
+				00C5B75120CB237441D14B674D9541F9 /* en.lproj */,
+				D97A2C537F404FB8C6BBD5AB844B676D /* es.lproj */,
+				E1BBDCECDA22514CDDB8E72B85D92D5B /* fa.lproj */,
+				2B56DF291ECA6A3C0B235217A2163110 /* fa-IR.lproj */,
+				48E9AB639F16DEB0113E71FC93EDCF1D /* fi.lproj */,
+				D80FE5E028CAF49DB443317747B00939 /* fr.lproj */,
+				D549896B54523BEF4FA45B811130118C /* hu.lproj */,
+				11A9F71B6B3E37929DFAA648779F80A7 /* id.lproj */,
+				8DEF4C22105950338E57D302FC61E22E /* it.lproj */,
+				647478A1655B0E6BD00AE46F05E3D865 /* ja.lproj */,
+				50FBE71B6E8156C4716A34B5E9388890 /* ko.lproj */,
+				A4DAC7A1EA8A03ADC5BE50DECC9A09DA /* ms.lproj */,
+				8A774B1742EA4FBCC2343D04DC8F5E6D /* nl.lproj */,
+				1B598BB030AF6AC1A524F253AF9BC29B /* pl.lproj */,
+				9FE3CBF4049B3EBCB1F5D8A4A7572362 /* pt.lproj */,
+				94B99B2D0D2F08617AF762DC4A9905E9 /* pt-BR.lproj */,
+				642A989D55B9B52B094D285C52863F4D /* ro.lproj */,
+				E4D359948018C1282F8AD9E121D5F3D2 /* ru.lproj */,
+				31DF3211A610695CB36AE482123AB0DE /* sk.lproj */,
+				A467E003A4D4DD714D53A89C45323A67 /* tr.lproj */,
+				DA980AAE7C87A7E67B9641456300EF1A /* vi.lproj */,
+				DB7BBAE8F835D97AA3A334572676C51B /* zh-Hans.lproj */,
+				2DE43D9A481E8C919E47D49BBC1B95E9 /* zh-Hant.lproj */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
-				5859CCC0ABE736D54D7BFD670A82F169 /* Pods */,
-				66D581CD43DB469E0F1C75DC7EB75C64 /* Products */,
+				6873EF1966CE129678F07928C7B157E3 /* Pods */,
+				52A42FE71F6CE8D85B19E292D6A7CF8D /* Products */,
 				6C53B6EDE266054F2D67AA90B67CF68A /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		E4DBDEEA84D01EDB41FB547B1154D346 /* Alamofire */ = {
+		E832D0B46709A9E8AD331334861E3BC6 /* CropViewController */ = {
 			isa = PBXGroup;
 			children = (
-				A436FE54641F2D107C7A36EEE579A711 /* AFError.swift */,
-				06058CC4DC17D97D816E6291418C188D /* Alamofire.swift */,
-				B1B614FCEF1E81C3ADCF667EBD4DD00A /* AlamofireExtended.swift */,
-				9B206CABA3E5C254320AB3AD7135A3CE /* AuthenticationInterceptor.swift */,
-				77226E8FC7B56CA1068824166848ADBF /* CachedResponseHandler.swift */,
-				B2D2AF8C623656CFD56B345D33E2C372 /* Combine.swift */,
-				DCAC7B7C6D7F8B176EF5F9FB19EC1561 /* Concurrency.swift */,
-				000339D58404A7D349EB962C6BE9E8C9 /* DispatchQueue+Alamofire.swift */,
-				366002D2484CDB3D84D2680DC45279B7 /* EventMonitor.swift */,
-				888DDD453AE7EBF323FD5C58AFC3C36A /* HTTPHeaders.swift */,
-				C18C61B77E806893D01FB3110BCFF9F3 /* HTTPMethod.swift */,
-				592CA37CBFF826891439B792D0D405E6 /* MultipartFormData.swift */,
-				24767B05C71B09A12209F0C3C0CE3CB9 /* MultipartUpload.swift */,
-				FEC207F43B02F0FCBF22B2B6ECAB6315 /* NetworkReachabilityManager.swift */,
-				7B82D59AE35645D50D3A84BED8E57BBC /* Notifications.swift */,
-				910E01056C25BE91CB35F0ED509E6324 /* OperationQueue+Alamofire.swift */,
-				88B1939EB3C8896EB69219C5F7BE0889 /* ParameterEncoder.swift */,
-				920D8F2C20208E53D68F47064E2AADAC /* ParameterEncoding.swift */,
-				60D19AFBBBB00EEE64CE63E5D70649F6 /* Protected.swift */,
-				67B27F0DC0BF19F460FD9E129E69629E /* RedirectHandler.swift */,
-				BDAE996B4E9D2DB7B306B601909915C7 /* Request.swift */,
-				8FDB01290164DBD601DFFB8BF2E99BB5 /* RequestCompression.swift */,
-				38F66307C1CA0F8DA20D1A6B668D1860 /* RequestInterceptor.swift */,
-				953E276D9A7B3CF40C485A7FB983B8E7 /* RequestTaskMap.swift */,
-				94F10AF7BA68CD513FE4BD12AC3E9325 /* Response.swift */,
-				22C5241B5E7FD5A8798EE42B92946C37 /* ResponseSerialization.swift */,
-				DDA707F68E714E23150CF6B884D329CA /* Result+Alamofire.swift */,
-				31FF77F272823F291CC1199FF15724F9 /* RetryPolicy.swift */,
-				E8EC1AD74376CBE8B70B0820F6A611BA /* ServerTrustEvaluation.swift */,
-				C2BD68F2EB883212FFD2A289C9C6AFFD /* Session.swift */,
-				C6965E5E3838DCDCC41AC01DA56A7D8D /* SessionDelegate.swift */,
-				79D0CEF5C05F64E7426A7256B88CE035 /* StringEncoding+Alamofire.swift */,
-				5152926B0E533873A8EED86D330834C0 /* URLConvertible+URLRequestConvertible.swift */,
-				4726E64C69480A59B59C7FAEADD2FEB4 /* URLEncodedFormEncoder.swift */,
-				EA0C1B9BA6444238057611BDA7CACFA5 /* URLRequest+Alamofire.swift */,
-				C748480AB66C4D2CE843052F31C9C0D4 /* URLSessionConfiguration+Alamofire.swift */,
-				40CA3C62864BF74A58495C935CB6F35D /* Validation.swift */,
-				5F92C9B9F679FE7DF64E95279E5DB79F /* Support Files */,
+				11D6D36DF5F7FCECCBD5839AD0C79B3A /* CropViewController.h */,
+				1A733FB105A9D071D4B25AA1EFCC3CF3 /* CropViewController.swift */,
+				8AD1D1E90B2ABF8BA11E76D1CED93FEC /* TOActivityCroppedImageProvider.h */,
+				22F512DE2B26CCA905A5924F2A8D10B0 /* TOActivityCroppedImageProvider.m */,
+				C437231288E181E07AC1CCB504E79747 /* TOCropOverlayView.h */,
+				2D6998B4C116DBBCCFB1E0AAA773741C /* TOCropOverlayView.m */,
+				5447936DE43A8C4271234161030CCC26 /* TOCroppedImageAttributes.h */,
+				1941B680940A02FF26C0F0146C643387 /* TOCroppedImageAttributes.m */,
+				1A6B163455F72D39CDABE94F4BE2D28E /* TOCropScrollView.h */,
+				E745DAFE8EFB03F4FB84AF0A4A750D62 /* TOCropScrollView.m */,
+				B95A15BC99334A3EB29D515C9E4DA13F /* TOCropToolbar.h */,
+				BBFADB166388DB8D74B7B039CE8FADBA /* TOCropToolbar.m */,
+				E7F04ABDD6C18B443965BDDEEB6E0B73 /* TOCropView.h */,
+				CE47302A8601E1A89447F9686E50F7F8 /* TOCropView.m */,
+				8230E1A7D0EEDCDAE2085903235AE9A7 /* TOCropViewConstants.h */,
+				944F4B521D27A5583BB1218013251554 /* TOCropViewController.h */,
+				3991D598937663DD581B645380B6A19E /* TOCropViewController.m */,
+				88359AF0DA193A2CBD59495A989DCB15 /* TOCropViewControllerTransitioning.h */,
+				466BAFEA6C7CD3F8820FF1B56CC239BB /* TOCropViewControllerTransitioning.m */,
+				D31377C639592EE4F2C31343F67145CF /* UIImage+CropRotate.h */,
+				6495F8F30C01B8BD41755A721F05CC66 /* UIImage+CropRotate.m */,
+				BECE5CA731B304BA4E00D0A5FAB4631B /* Resources */,
+				757DA3ACFA05509D9F1D150CFACF9E14 /* Support Files */,
 			);
-			name = Alamofire;
-			path = Alamofire;
+			name = CropViewController;
+			path = CropViewController;
+			sourceTree = "<group>";
+		};
+		F800C5F3F696A4163513127FB7684F9B /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				6821E808261192456F711E3ED6E3B9AB /* Alamofire.modulemap */,
+				77FF17556C402516C588AD3278DB82A6 /* Alamofire-dummy.m */,
+				5D8BB97CC9C6F79FBDF49FFFBE0F568C /* Alamofire-Info.plist */,
+				15EE1E902594C4B2F66C9E35D159E49B /* Alamofire-prefix.pch */,
+				A843F55B55A531EC6F870F23498F6E87 /* Alamofire-umbrella.h */,
+				E0159A7D35C96BAF30E48F782F1ED576 /* Alamofire.debug.xcconfig */,
+				D582D5798EA5FE997F45793122066BC5 /* Alamofire.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Alamofire";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		01E454C3D4B3D61B12E173F2EE4F6BEF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				157435C910963F10BD9FEB6244FCF6AC /* CropViewController.h in Headers */,
+				91ABE29FE5EBE0105C1ED64A2BA84C96 /* CropViewController-umbrella.h in Headers */,
+				FB62DBBFC44F0F66857FEA75CA61A34B /* TOActivityCroppedImageProvider.h in Headers */,
+				9FD58B37E5DD8E08AB41E2E2209666EC /* TOCropOverlayView.h in Headers */,
+				D2596A3450D23C209A5B43995BE085E0 /* TOCroppedImageAttributes.h in Headers */,
+				F09E551DE4C95F8CB02194C3EC1546E6 /* TOCropScrollView.h in Headers */,
+				0125D49E08B6D425F72375EEED3648B7 /* TOCropToolbar.h in Headers */,
+				FDBD2B40802DF884C7218A83A7B78FEB /* TOCropView.h in Headers */,
+				98A612A6CFD2CB9B46230613C97B44D0 /* TOCropViewConstants.h in Headers */,
+				1C6A3920C4BCCD1C6587B77B903A94B1 /* TOCropViewController.h in Headers */,
+				0B7E119F5431E18D8E343534764563B2 /* TOCropViewControllerTransitioning.h in Headers */,
+				1ACAAB74335448B39D49F87B1991DBB3 /* UIImage+CropRotate.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1114BB7CFFF0ACEF2B2ABDBE3A19DD44 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				522AFC97B9F36A47F53F53DE3CC5B637 /* Pods-Odoo-iOS-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5A50623DED472BA4C8176115F1BC5770 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -379,19 +642,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		64C112C2F717B94C44463BAFCB1C8AFD /* Headers */ = {
+		9A1D3D2088AE11197FA285716ACFF226 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A11D615BC67E82D3F3956F694D90D65 /* Pods-Odoo-iOS-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A49ABAFB3B61CFAD4F2E5C3397A8F886 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FB2718D842CFC43288CB0E88E0F792CB /* Pods-Odoo-iOS-Odoo-iOSUITests-umbrella.h in Headers */,
+				3F538FDB2A113BB2D5A1BF22D32CE015 /* Pods-Odoo-iOS-Odoo-iOSUITests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,17 +663,18 @@
 /* Begin PBXNativeTarget section */
 		1553CA4AA33739FD387B76DDCE6FD43D /* Pods-Odoo-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6A0DD8244241132B3DB95D3202540363 /* Build configuration list for PBXNativeTarget "Pods-Odoo-iOS" */;
+			buildConfigurationList = 76944DD2EF3FFD33AE125D73C3146DE1 /* Build configuration list for PBXNativeTarget "Pods-Odoo-iOS" */;
 			buildPhases = (
-				64C112C2F717B94C44463BAFCB1C8AFD /* Headers */,
-				39AB5725FA76CFE7D70FEB48DF05BE0F /* Sources */,
-				871EDD27D2E77BF7D0F7CF8DC3A06938 /* Frameworks */,
-				B9B291DA134CBE327DBDB44773D5687C /* Resources */,
+				1114BB7CFFF0ACEF2B2ABDBE3A19DD44 /* Headers */,
+				94D522A3DFE0E076D55C743EFA7EDAA3 /* Sources */,
+				07AE327FEE8D54DC4AB39ABDFD20F720 /* Frameworks */,
+				B7A8D49E139F72CD76A6C3DC44F6C72B /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				789D7765F3EEBCCA0DE566B28453605E /* PBXTargetDependency */,
+				E53CB3D5B98A748C9877D974697BDF13 /* PBXTargetDependency */,
+				D0B501C28AD8EE9855E72EFC64FC9484 /* PBXTargetDependency */,
 			);
 			name = "Pods-Odoo-iOS";
 			productName = Pods_Odoo_iOS;
@@ -427,22 +683,40 @@
 		};
 		916575CA9C6E235CF6B146C6EF9FF9B1 /* Pods-Odoo-iOS-Odoo-iOSUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8059B0928C7BF11785D166F9EBC5012F /* Build configuration list for PBXNativeTarget "Pods-Odoo-iOS-Odoo-iOSUITests" */;
+			buildConfigurationList = 01EFEE0D22F97BFB0709325DEE367D8A /* Build configuration list for PBXNativeTarget "Pods-Odoo-iOS-Odoo-iOSUITests" */;
 			buildPhases = (
-				A49ABAFB3B61CFAD4F2E5C3397A8F886 /* Headers */,
-				5D3D1B09DE8FA3E48567B21FCEFB2D92 /* Sources */,
-				E8CDAFE9131F94CF9C794AEC1CB300AB /* Frameworks */,
-				E7F55F208B5A55435D78534838902E89 /* Resources */,
+				9A1D3D2088AE11197FA285716ACFF226 /* Headers */,
+				CAE75F9F2353C33B61511BF57905EC0B /* Sources */,
+				9A379AC08A5FE96921F781F9B8D84414 /* Frameworks */,
+				8ADA44EBA441EB7E863D5F71718AD9E7 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				7F77D758CEEBD786E69E183C2ACB4C4E /* PBXTargetDependency */,
+				6E06ECA68B401009E25E873E3B96AE72 /* PBXTargetDependency */,
+				85C9C71A7B581B4CC08334F1DB3247B6 /* PBXTargetDependency */,
 			);
 			name = "Pods-Odoo-iOS-Odoo-iOSUITests";
 			productName = Pods_Odoo_iOS_Odoo_iOSUITests;
 			productReference = 61C3D453D04B8239EA30289973975CE3 /* Pods-Odoo-iOS-Odoo-iOSUITests */;
 			productType = "com.apple.product-type.framework";
+		};
+		BB4EEF23ECB2BAF774CE8EFA5AF90C40 /* CropViewController-TOCropViewControllerBundle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A672F0CE59ADDB92BC5673F9AE5151A7 /* Build configuration list for PBXNativeTarget "CropViewController-TOCropViewControllerBundle" */;
+			buildPhases = (
+				223D25F99E2BF99AE4B2083A5F999B46 /* Sources */,
+				459DD3ED6636CAB86E837BAB3E74013A /* Frameworks */,
+				BCE2F4B54C60A34D9035C152B431413F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CropViewController-TOCropViewControllerBundle";
+			productName = TOCropViewControllerBundle;
+			productReference = 97A93DCEF2B1499B1F84D43333829DC7 /* CropViewController-TOCropViewControllerBundle */;
+			productType = "com.apple.product-type.bundle";
 		};
 		BDEB564BE643ADD8FAD19E43C01EDA43 /* Pods-Odoo-iOSTests */ = {
 			isa = PBXNativeTarget;
@@ -456,11 +730,30 @@
 			buildRules = (
 			);
 			dependencies = (
-				040837FE155826CEA4CAC2BD4C8A295D /* PBXTargetDependency */,
+				116B158C737D2732C4F03C00316F5FA9 /* PBXTargetDependency */,
 			);
 			name = "Pods-Odoo-iOSTests";
 			productName = Pods_Odoo_iOSTests;
 			productReference = 77CE857862EF01BE17478A5D81A553AD /* Pods-Odoo-iOSTests */;
+			productType = "com.apple.product-type.framework";
+		};
+		CC81A5995F9CEB2971CBA61ACA13FCA3 /* CropViewController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00D51F041533BC1499BACA614A730982 /* Build configuration list for PBXNativeTarget "CropViewController" */;
+			buildPhases = (
+				01E454C3D4B3D61B12E173F2EE4F6BEF /* Headers */,
+				24914EAFD12E90DD8D2325F4E28BE9B5 /* Sources */,
+				F3199EEAABCB08F88FAC832ED6178828 /* Frameworks */,
+				0C5DFA728140DCEE2D70A063E82D3778 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BF3C2351F70815D914FA2BF671A7F2DC /* PBXTargetDependency */,
+			);
+			name = CropViewController;
+			productName = CropViewController;
+			productReference = 19672639458D5EF5EC76A48F6BF5A2B3 /* CropViewController */;
 			productType = "com.apple.product-type.framework";
 		};
 		EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */ = {
@@ -496,14 +789,43 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				Base,
+				ar,
+				ca,
+				cs,
+				"da-DK",
+				de,
 				en,
+				es,
+				fa,
+				"fa-IR",
+				fi,
+				fr,
+				hu,
+				id,
+				it,
+				ja,
+				ko,
+				ms,
+				nl,
+				pl,
+				pt,
+				"pt-BR",
+				ro,
+				ru,
+				sk,
+				tr,
+				vi,
+				"zh-Hans",
+				"zh-Hant",
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 66D581CD43DB469E0F1C75DC7EB75C64 /* Products */;
+			productRefGroup = 52A42FE71F6CE8D85B19E292D6A7CF8D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */,
+				CC81A5995F9CEB2971CBA61ACA13FCA3 /* CropViewController */,
+				BB4EEF23ECB2BAF774CE8EFA5AF90C40 /* CropViewController-TOCropViewControllerBundle */,
 				1553CA4AA33739FD387B76DDCE6FD43D /* Pods-Odoo-iOS */,
 				916575CA9C6E235CF6B146C6EF9FF9B1 /* Pods-Odoo-iOS-Odoo-iOSUITests */,
 				BDEB564BE643ADD8FAD19E43C01EDA43 /* Pods-Odoo-iOSTests */,
@@ -512,7 +834,29 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0C5DFA728140DCEE2D70A063E82D3778 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17F61406A52F55F10B36FAAC1007C8E8 /* CropViewController-TOCropViewControllerBundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		565FD2058706F22D2347B30C65280F30 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8ADA44EBA441EB7E863D5F71718AD9E7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B7A8D49E139F72CD76A6C3DC44F6C72B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -526,23 +870,70 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B9B291DA134CBE327DBDB44773D5687C /* Resources */ = {
+		BCE2F4B54C60A34D9035C152B431413F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E7F55F208B5A55435D78534838902E89 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				13BEA10CAD2DF27E1C82BCD8B282DD74 /* ar.lproj in Resources */,
+				9D821C13BB833A82187542144390AED4 /* Base.lproj in Resources */,
+				816E6F31C7A83FD7672DE5816CAFAD51 /* ca.lproj in Resources */,
+				39C061F566EC7DA43ED1D5BE8D7B752B /* cs.lproj in Resources */,
+				DF696BA6462AB7847B8D8394BDD61869 /* da-DK.lproj in Resources */,
+				6BB36D9AE294696A82B6E76D396AEB35 /* de.lproj in Resources */,
+				380C617B379550E876F7D8F2ECBA2736 /* en.lproj in Resources */,
+				5DB129C6A71C2630FACB223B2D27E8C8 /* es.lproj in Resources */,
+				822937C516A749D37AD0FEF0A72EF436 /* fa.lproj in Resources */,
+				AFE2B94E0CC30E8333C2A3E2CDAF32B5 /* fa-IR.lproj in Resources */,
+				FB22953D868CBBFE78E236CC79F5AA43 /* fi.lproj in Resources */,
+				3FE1340E511BA164178F4BCE212A588C /* fr.lproj in Resources */,
+				FC143AFAAD57DF493065AC17051C6815 /* hu.lproj in Resources */,
+				B78665DF6738EAA0D1B80EECE070879A /* id.lproj in Resources */,
+				3055AC122DC4CA98B7B09448E5F4E9B6 /* it.lproj in Resources */,
+				27A6C49B1D46F837F0B12677586F7A16 /* ja.lproj in Resources */,
+				C0CD026E0D28D018B6E6A01E0671C7E8 /* ko.lproj in Resources */,
+				966A7E28EEA82172850ADB4EC2AC6C46 /* ms.lproj in Resources */,
+				1672FDA0FF97A38A6AF67D91F7039357 /* nl.lproj in Resources */,
+				0CFE58B0B122E087894687BFD3854E4D /* pl.lproj in Resources */,
+				68538065CB16D0529EED90AE3C8D0AD4 /* pt.lproj in Resources */,
+				2FB329BC6B05FEB87E74B94CCD0DE9E6 /* pt-BR.lproj in Resources */,
+				51B5F54C9770ED68716DA9182EBE6E80 /* ro.lproj in Resources */,
+				58234F8A09292C6F67BC1BAE99E9CA46 /* ru.lproj in Resources */,
+				F5FB29780265FFF383EA1592BF8B2623 /* sk.lproj in Resources */,
+				84EC0CE35A95418CA06FEE23863A6761 /* tr.lproj in Resources */,
+				EC1E543D1821D4C28A52FBF7573B0E28 /* vi.lproj in Resources */,
+				4B8AF1142055A6AEB95D91ECEEB23DBB /* zh-Hans.lproj in Resources */,
+				38DE8AAB05336AD23BFBC30DB2CBFBF4 /* zh-Hant.lproj in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		223D25F99E2BF99AE4B2083A5F999B46 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24914EAFD12E90DD8D2325F4E28BE9B5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5CFDA8C832F794F2C029A433BB3996A4 /* CropViewController.swift in Sources */,
+				6032EF8BEF6DE02B5E1360616EECCEC2 /* CropViewController-dummy.m in Sources */,
+				3C1033326696275C856EC47132BDA167 /* TOActivityCroppedImageProvider.m in Sources */,
+				325F5E0DFE35BB21EC34EEA8BD152151 /* TOCropOverlayView.m in Sources */,
+				B6ADBA6217AA1EE7CD56221D4906AA59 /* TOCroppedImageAttributes.m in Sources */,
+				DCAD9827EEA5BB6C05557DEB2C2BCCB4 /* TOCropScrollView.m in Sources */,
+				708515D6834361D40017CAAF4F2CC0B3 /* TOCropToolbar.m in Sources */,
+				60A2CF183D675A74ED4648120144C0B3 /* TOCropView.m in Sources */,
+				322DEBBD84FA2A111F8AB1F055B3A8BC /* TOCropViewController.m in Sources */,
+				B56F5B91020C46BC39AC6C2FEA387D70 /* TOCropViewControllerTransitioning.m in Sources */,
+				0622FE500447E0E62B993DE74B69C413 /* UIImage+CropRotate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		277C3B3F937C6D40D2B777A164FAB89D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -588,14 +979,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		39AB5725FA76CFE7D70FEB48DF05BE0F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				235EE39B8854968F24D3B8574927AA36 /* Pods-Odoo-iOS-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		3AAF15E5FF315F87B9A18D2AD542ECFA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -604,34 +987,60 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5D3D1B09DE8FA3E48567B21FCEFB2D92 /* Sources */ = {
+		94D522A3DFE0E076D55C743EFA7EDAA3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F36BAFC80E2D5BE490A6B9108865FF3 /* Pods-Odoo-iOS-Odoo-iOSUITests-dummy.m in Sources */,
+				DFC77A7364BD2F9E5F383F24E0DE9686 /* Pods-Odoo-iOS-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CAE75F9F2353C33B61511BF57905EC0B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1DF45DA15E12A378695967D9E43F3A41 /* Pods-Odoo-iOS-Odoo-iOSUITests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		040837FE155826CEA4CAC2BD4C8A295D /* PBXTargetDependency */ = {
+		116B158C737D2732C4F03C00316F5FA9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-Odoo-iOS";
 			target = 1553CA4AA33739FD387B76DDCE6FD43D /* Pods-Odoo-iOS */;
-			targetProxy = 05F07F40A791AA74E6C730D4FE3772D4 /* PBXContainerItemProxy */;
+			targetProxy = 4CD26CBEC3BD3CCEA4FBE5455EAB5865 /* PBXContainerItemProxy */;
 		};
-		789D7765F3EEBCCA0DE566B28453605E /* PBXTargetDependency */ = {
+		6E06ECA68B401009E25E873E3B96AE72 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Alamofire;
 			target = EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */;
-			targetProxy = 1A7B167734F16B2681A0400D38076A75 /* PBXContainerItemProxy */;
+			targetProxy = EDAC9D6AF27CEAB97F63FB16AADDFC09 /* PBXContainerItemProxy */;
 		};
-		7F77D758CEEBD786E69E183C2ACB4C4E /* PBXTargetDependency */ = {
+		85C9C71A7B581B4CC08334F1DB3247B6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CropViewController;
+			target = CC81A5995F9CEB2971CBA61ACA13FCA3 /* CropViewController */;
+			targetProxy = A164FFC0F91D33F4CD3DE60D48A2E7F4 /* PBXContainerItemProxy */;
+		};
+		BF3C2351F70815D914FA2BF671A7F2DC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "CropViewController-TOCropViewControllerBundle";
+			target = BB4EEF23ECB2BAF774CE8EFA5AF90C40 /* CropViewController-TOCropViewControllerBundle */;
+			targetProxy = 6580E801312E8DC5FBD8A3A42547836B /* PBXContainerItemProxy */;
+		};
+		D0B501C28AD8EE9855E72EFC64FC9484 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CropViewController;
+			target = CC81A5995F9CEB2971CBA61ACA13FCA3 /* CropViewController */;
+			targetProxy = 7C1DEA6477ED6524A7BA37949DDCFBDF /* PBXContainerItemProxy */;
+		};
+		E53CB3D5B98A748C9877D974697BDF13 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Alamofire;
 			target = EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */;
-			targetProxy = 4514376535118998B790FF73F4F2690A /* PBXContainerItemProxy */;
+			targetProxy = 25B103A7529845974A9ABBB29992B976 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -652,7 +1061,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-Odoo-iOSTests/Pods-Odoo-iOSTests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -674,12 +1083,10 @@
 			};
 			name = Release;
 		};
-		3FBB6994D3292EF0D82C651A6CF409A0 /* Debug */ = {
+		268B25AF3E303AD915388E53AF33AFA4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CC7142AAA9FC93225D1D8EA8DA58E651 /* Pods-Odoo-iOS-Odoo-iOSUITests.debug.xcconfig */;
+			baseConfigurationReference = BE65F525967E2DAB31046EC10231F464 /* CropViewController.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -688,30 +1095,30 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Odoo-iOS-Odoo-iOSUITests/Pods-Odoo-iOS-Odoo-iOSUITests-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/CropViewController/CropViewController-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CropViewController/CropViewController-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Odoo-iOS-Odoo-iOSUITests/Pods-Odoo-iOS-Odoo-iOSUITests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				MODULEMAP_FILE = "Target Support Files/CropViewController/CropViewController.modulemap";
+				PRODUCT_MODULE_NAME = CropViewController;
+				PRODUCT_NAME = CropViewController;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
-		46DBB88A8494AB6D9C64623190C531F4 /* Release */ = {
+		3C8C357286DDF2FEE5A26A84436E229C /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B5AE3321F2D3E1659A3C8E451609DC86 /* Pods-Odoo-iOS-Odoo-iOSUITests.release.xcconfig */;
 			buildSettings = {
@@ -727,7 +1134,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-Odoo-iOS-Odoo-iOSUITests/Pods-Odoo-iOS-Odoo-iOSUITests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -735,6 +1142,44 @@
 				);
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-Odoo-iOS-Odoo-iOSUITests/Pods-Odoo-iOS-Odoo-iOSUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		43A1F38B9BD833A0A381C0DA815F755E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 508AC7870987FF0ADD2C1A44C41C8DFB /* Pods-Odoo-iOS.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Odoo-iOS/Pods-Odoo-iOS-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Odoo-iOS/Pods-Odoo-iOS.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -815,9 +1260,9 @@
 			};
 			name = Debug;
 		};
-		6DFC3FFA60EDE21900CC6C40063EC575 /* Release */ = {
+		7A595DCC633A660F68FA0295D9208A42 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 508AC7870987FF0ADD2C1A44C41C8DFB /* Pods-Odoo-iOS.release.xcconfig */;
+			baseConfigurationReference = CC7142AAA9FC93225D1D8EA8DA58E651 /* Pods-Odoo-iOS-Odoo-iOSUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -829,16 +1274,16 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Odoo-iOS/Pods-Odoo-iOS-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-Odoo-iOS-Odoo-iOSUITests/Pods-Odoo-iOS-Odoo-iOSUITests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Odoo-iOS/Pods-Odoo-iOS.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-Odoo-iOS-Odoo-iOSUITests/Pods-Odoo-iOS-Odoo-iOSUITests.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -847,11 +1292,10 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		8B5A46FF8D3C1289CDEE3BAFACABCD2A /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -915,9 +1359,26 @@
 			};
 			name = Release;
 		};
+		9F546D05AE70CDADB451C18B4D037B00 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE65F525967E2DAB31046EC10231F464 /* CropViewController.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/CropViewController";
+				IBSC_MODULE = CropViewController;
+				INFOPLIST_FILE = "Target Support Files/CropViewController/ResourceBundle-TOCropViewControllerBundle-CropViewController-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_NAME = TOCropViewControllerBundle;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
 		B7D9E7CD650F798EC835C67DACFEBC4F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AD714F718D7CC54F064F15757F78C492 /* Alamofire.debug.xcconfig */;
+			baseConfigurationReference = E0159A7D35C96BAF30E48F782F1ED576 /* Alamofire.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -931,7 +1392,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Alamofire/Alamofire-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -950,7 +1411,7 @@
 			};
 			name = Debug;
 		};
-		E1FD49326954C89514DA101C2123C1D2 /* Debug */ = {
+		C49CFFF583FC354B7BCA0660095ED560 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 262AD5A523CC2EC5344981C9049A6695 /* Pods-Odoo-iOS.debug.xcconfig */;
 			buildSettings = {
@@ -966,7 +1427,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-Odoo-iOS/Pods-Odoo-iOS-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -981,6 +1442,40 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CB039D8FCD5338342674DA04E8B1378E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1DDB8584BD5179FF2427BE0F96FEE62F /* CropViewController.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/CropViewController/CropViewController-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CropViewController/CropViewController-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/CropViewController/CropViewController.modulemap";
+				PRODUCT_MODULE_NAME = CropViewController;
+				PRODUCT_NAME = CropViewController;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1003,7 +1498,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-Odoo-iOSTests/Pods-Odoo-iOSTests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1024,9 +1519,26 @@
 			};
 			name = Debug;
 		};
+		F25BECD5E06B9C64B733B1C2398CA5B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1DDB8584BD5179FF2427BE0F96FEE62F /* CropViewController.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/CropViewController";
+				IBSC_MODULE = CropViewController;
+				INFOPLIST_FILE = "Target Support Files/CropViewController/ResourceBundle-TOCropViewControllerBundle-CropViewController-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_NAME = TOCropViewControllerBundle;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
 		F5F3306F2C09AB4B623C805497E28D51 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 306E2D1B9E4FC953243A0CACF97218A6 /* Alamofire.release.xcconfig */;
+			baseConfigurationReference = D582D5798EA5FE997F45793122066BC5 /* Alamofire.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1040,7 +1552,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Alamofire/Alamofire-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1063,6 +1575,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		00D51F041533BC1499BACA614A730982 /* Build configuration list for PBXNativeTarget "CropViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB039D8FCD5338342674DA04E8B1378E /* Debug */,
+				268B25AF3E303AD915388E53AF33AFA4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		01EFEE0D22F97BFB0709325DEE367D8A /* Build configuration list for PBXNativeTarget "Pods-Odoo-iOS-Odoo-iOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A595DCC633A660F68FA0295D9208A42 /* Debug */,
+				3C8C357286DDF2FEE5A26A84436E229C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1072,20 +1602,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6A0DD8244241132B3DB95D3202540363 /* Build configuration list for PBXNativeTarget "Pods-Odoo-iOS" */ = {
+		76944DD2EF3FFD33AE125D73C3146DE1 /* Build configuration list for PBXNativeTarget "Pods-Odoo-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E1FD49326954C89514DA101C2123C1D2 /* Debug */,
-				6DFC3FFA60EDE21900CC6C40063EC575 /* Release */,
+				C49CFFF583FC354B7BCA0660095ED560 /* Debug */,
+				43A1F38B9BD833A0A381C0DA815F755E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8059B0928C7BF11785D166F9EBC5012F /* Build configuration list for PBXNativeTarget "Pods-Odoo-iOS-Odoo-iOSUITests" */ = {
+		A672F0CE59ADDB92BC5673F9AE5151A7 /* Build configuration list for PBXNativeTarget "CropViewController-TOCropViewControllerBundle" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3FBB6994D3292EF0D82C651A6CF409A0 /* Debug */,
-				46DBB88A8494AB6D9C64623190C531F4 /* Release */,
+				F25BECD5E06B9C64B733B1C2398CA5B4 /* Debug */,
+				9F546D05AE70CDADB451C18B4D037B00 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
