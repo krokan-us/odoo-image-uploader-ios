@@ -289,4 +289,59 @@ class NetworkManager {
                 }
             }
     }
+    
+    func removeImage(imageID: Int, completion: @escaping (Bool, String?) -> Void) {
+        guard let currentBaseURL = UserDefaults.standard.url(forKey: "currentBaseURL"),
+              let currentDatabaseName = UserDefaults.standard.string(forKey: "currentDatabaseName"),
+              let currentlyLoggedUserId = UserDefaults.standard.object(forKey: "currentlyLoggedUserId") as? Int,
+              let currentlyLoggedUserPassword = UserDefaults.standard.string(forKey: "currentlyLoggedUserPassword") else {
+            print("Missing required user defaults")
+            completion(false, "Missing required user defaults")
+            return
+        }
+        
+        let requestURL = currentBaseURL.appendingPathComponent("jsonrpc")
+        
+        let randomID = Int.random(in: 0...1000) // Generate random ID between 0 and 1000
+        
+        let payload: [String: Any] = [
+            "jsonrpc": "2.0",
+            "method": "call",
+            "params": [
+                "service": "object",
+                "method": "execute",
+                "args": [
+                    currentDatabaseName,
+                    currentlyLoggedUserId,
+                    currentlyLoggedUserPassword,
+                    "base_multi_image.image",
+                    "unlink",
+                    imageID
+                ]
+            ],
+            "id": randomID
+        ]
+        
+        AF.request(requestURL, method: .post, parameters: payload, encoding: JSONEncoding.default)
+            .validate()
+            .responseJSON { response in
+                switch response.result {
+                case .success(let value):
+                    if let json = value as? [String: Any],
+                       let result = json["result"] as? Int {
+                        // The operation was successful if the result is 1
+                        if result == 1 {
+                            completion(true, "Image successfully removed")
+                        } else {
+                            completion(false, "Failed to remove image")
+                        }
+                    } else {
+                        completion(false, "Invalid response")
+                    }
+                case .failure(let error):
+                    print("Error: \(error)")
+                    completion(false, error.localizedDescription)
+                }
+            }
+    }
 }
