@@ -9,7 +9,7 @@ import UIKit
 import CropViewController
 
 class DisplayImageViewController: UIViewController, CropViewControllerDelegate {
-
+    
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var imageNameLabel: UILabel!
     @IBOutlet weak var editImageNameButton: UIButton!
@@ -19,10 +19,14 @@ class DisplayImageViewController: UIViewController, CropViewControllerDelegate {
     @IBOutlet weak var deleteButton: UIButton!
     
     var imageToBeDisplayed: ProductImage?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupImageDetails()
+
+        let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(backButtonTapped(_:)))
+        swipeGesture.direction = .right
+        self.view.addGestureRecognizer(swipeGesture)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,8 +39,10 @@ class DisplayImageViewController: UIViewController, CropViewControllerDelegate {
         modifyImageButton.setTitle("", for: .normal)
         isPublishedButton.setTitle("", for: .normal)
         deleteButton.setTitle("", for: .normal)
+        imageImageView.layer.borderWidth = 3
+        imageImageView.layer.borderColor = UIColor.black.cgColor
     }
-
+    
     private func setupImageDetails() {
         if let imageToBeDisplayed = imageToBeDisplayed {
             imageNameLabel.text = imageToBeDisplayed.name
@@ -46,15 +52,15 @@ class DisplayImageViewController: UIViewController, CropViewControllerDelegate {
             isPublishedButton.setImage(UIImage(systemName: imageName), for: .normal)
         }
     }
-
-    @IBAction func backButtonTapped(_ sender: Any) {
+    
+    @IBAction func backButtonTapped(_ sender: AnyObject) {
         self.dismiss(animated: true)
     }
-
+    
     @IBAction func editImageNameButtonTapped(_ sender: Any) {
         // code to handle editing the image name
     }
-
+    
     @IBAction func modifyImageButtonTapped(_ sender: Any) {
         guard let imageToBeDisplayed = imageToBeDisplayed else { return }
         let cropViewController = CropViewController(image: UIImage(data: Data(base64Encoded: imageToBeDisplayed.imageData)!)!)
@@ -65,7 +71,7 @@ class DisplayImageViewController: UIViewController, CropViewControllerDelegate {
         cropViewController.delegate = self
         self.present(cropViewController, animated: true, completion: nil)
     }
-
+    
     @IBAction func isPublishedButtonTapped(_ sender: Any) {
         imageToBeDisplayed?.isPublished.toggle()
         
@@ -74,7 +80,7 @@ class DisplayImageViewController: UIViewController, CropViewControllerDelegate {
             let imageName = isPublished ? "eye" : "eye.slash"
             isPublishedButton.setImage(UIImage(systemName: imageName), for: .normal)
         }
-
+        
         // assuming modifyImage(image:completion:) is also a method in this class
         if let imageToBeDisplayed = imageToBeDisplayed {
             NetworkManager.shared.modifyImage(image: imageToBeDisplayed) { success, message in
@@ -90,9 +96,25 @@ class DisplayImageViewController: UIViewController, CropViewControllerDelegate {
             }
         }
     }
-
+    
     @IBAction func removeImageButtonTapped(_ sender: Any) {
-        // code to handle removing the image
+        guard let imageToBeRemoved = imageToBeDisplayed else { return }
+        
+        let alertController = UIAlertController(title: NSLocalizedString("confirm", comment: ""), message: NSLocalizedString("confirmationMessage", comment: ""), preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: NSLocalizedString("cancel", comment: ""), style: .cancel))
+        alertController.addAction(UIAlertAction(title: NSLocalizedString("remove", comment: ""), style: .destructive) { _ in
+            NetworkManager.shared.removeImage(imageID: imageToBeRemoved.id) { success, message in
+                if success {
+                    print("Successfully removed image.")
+                    DispatchQueue.main.async {
+                        self.dismiss(animated: true)
+                    }
+                } else {
+                    print("Failed to remove image: \(message ?? "No error message provided.")")
+                }
+            }
+        })
+        self.present(alertController, animated: true)
     }
     
     func cropViewController(_ cropViewController: CropViewController, didCropToImage image: UIImage, withRect cropRect: CGRect, angle: Int) {
@@ -101,7 +123,7 @@ class DisplayImageViewController: UIViewController, CropViewControllerDelegate {
         // Convert the cropped image to base64 and update the imageToBeDisplayed
         let imageData = image.pngData()!.base64EncodedString()
         imageToBeDisplayed.imageData = imageData
-
+        
         NetworkManager.shared.modifyImage(image: imageToBeDisplayed) { (success, errorMessage) in
             if success {
                 print("Successfully modified image.")
@@ -112,7 +134,6 @@ class DisplayImageViewController: UIViewController, CropViewControllerDelegate {
                 print("Failed to modify image: \(errorMessage ?? "No error message provided.")")
             }
         }
-        
         self.dismiss(animated: true, completion: nil)
     }
 }
