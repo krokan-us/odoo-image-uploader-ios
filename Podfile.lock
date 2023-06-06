@@ -1,16 +1,20 @@
 PODS:
   - Alamofire (5.7.1)
+  - CropViewController (2.6.1)
 
 DEPENDENCIES:
   - Alamofire
+  - CropViewController
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - CropViewController
 
 SPEC CHECKSUMS:
   Alamofire: 0123a34370cb170936ae79a8df46cc62b2edeb88
+  CropViewController: 58fb440f30dac788b129d2a1f24cffdcb102669c
 
-PODFILE CHECKSUM: 669769397af8e8e0294760278cc389c2e0988e9f
+PODFILE CHECKSUM: 10fb6ef91872fca7339cba11db3e87dc359efe6e
 
 COCOAPODS: 1.12.1
