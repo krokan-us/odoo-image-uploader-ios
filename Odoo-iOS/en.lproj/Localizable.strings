@@ -9,4 +9,9 @@
 "username" = "Username";
 "password" = "Password";
 "welcome" = "Welcome";
+
+"confirm" = "Confirm";
+"confirmationMessage" = "Are you sure you want to remove this image?";
+"cancel" = "Cancel";
+"remove" = "Remove";
 */
