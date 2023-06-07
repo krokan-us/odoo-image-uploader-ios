@@ -98,7 +98,8 @@ class NetworkManager {
                     0,
                     [
                         "product_barcode": productBarcode
-                    ],[
+                    ],
+                    [
                         "lang": "tr_TR"
                     ]
                 ]
@@ -208,6 +209,7 @@ class NetworkManager {
             .responseJSON { response in
                 switch response.result {
                 case .success(let value):
+                    print(response)
                     if let json = value as? [String: Any],
                        let result = json["result"] as? [String: Any],
                        let status = result["status"] as? String,
@@ -217,6 +219,15 @@ class NetworkManager {
                             completion(true, message, imageID)
                         } else {
                             completion(false, message, nil)
+                        }
+                    } else if let json = value as? [String: Any],
+                              let error = json["error"] as? [String: Any],
+                              let data = error["data"] as? [String: Any],
+                              let debug = data["debug"] as? String {
+                        if debug.contains("base_multi_image_image_uniq_name_owner") {
+                            completion(false, NSLocalizedString("sameNameErrorDescription", comment: ""), nil)
+                        } else {
+                            completion(false, NSLocalizedString("anErrorOccured", comment: ""), nil)
                         }
                     } else {
                         completion(false, "Invalid response", nil)
@@ -258,8 +269,8 @@ class NetworkManager {
                     [
                         "name": image.name,
                         "is_published": image.isPublished,
-                        "filename": image.fileName,
-                        "sequence": image.name.slugify(),
+                        "filename": image.name.slugify(),
+                        "sequence": image.sequence,
                         "file_db_store": image.imageData
                     ],
                     ["lang": "tr_TR"]

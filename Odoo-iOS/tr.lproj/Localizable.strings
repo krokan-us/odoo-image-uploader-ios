@@ -23,4 +23,10 @@
 "imageName" = "Görsel İsmi";
 "submit" = "Yükle";
 "emptyImageNameWarning" = "Görsel adı boş olamaz.";
+
+"success" = "Başarılı";
+"imageUploaded" = "Görüntü yüklendi.";
+
+"sameNameErrorDescription" = "Aynı isimle iki görüntü olamaz.";
+"anErrorOccured" = "Bir hata oldu.";
 */

@@ -20,6 +20,7 @@ class AddImageViewController: UIViewController, UINavigationControllerDelegate {
     private var captureSession: AVCaptureSession?
     private var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     private var isFlashOn = false
+    private var photoOutput: AVCapturePhotoOutput?
     
     var productID: Int?
     
@@ -66,23 +67,10 @@ class AddImageViewController: UIViewController, UINavigationControllerDelegate {
     }
     
     @IBAction func captureButtonTapped(_ sender: Any) {
-        guard let captureSession = captureSession else {
-            print("Capture session is not configured.")
-            return
-        }
-        
-        let photoOutput = AVCapturePhotoOutput()
-        
-        if captureSession.canAddOutput(photoOutput) {
-            captureSession.addOutput(photoOutput)
+        let photoSettings = AVCapturePhotoSettings()
+        photoSettings.isHighResolutionPhotoEnabled = false
             
-            let photoSettings = AVCapturePhotoSettings()
-            photoSettings.isHighResolutionPhotoEnabled = false
-            
-            photoOutput.capturePhoto(with: photoSettings, delegate: self)
-        } else {
-            print("Unable to add photo output to the capture session.")
-        }
+        photoOutput?.capturePhoto(with: photoSettings, delegate: self)
     }
     
     private func configureCaptureSession() {
@@ -101,6 +89,14 @@ class AddImageViewController: UIViewController, UINavigationControllerDelegate {
             }
         } catch {
             print("Error setting up capture device input: \(error)")
+        }
+
+        // Configure the photo output
+        photoOutput = AVCapturePhotoOutput()
+        if captureSession?.canAddOutput(photoOutput!) == true {
+            captureSession?.addOutput(photoOutput!)
+        } else {
+            print("Unable to add photo output to the capture session.")
         }
     }
     
@@ -169,21 +165,32 @@ class AddImageViewController: UIViewController, UINavigationControllerDelegate {
             NetworkManager.shared.addImage(productID: self.productID ?? 0, name: trimmedImageName, imageData: base64String) { success, message, imageID in
                 if success {
                     print("Image uploaded successfully. Message: \(message ?? "") Image ID: \(imageID ?? 0)")
-                    // Handle the successful upload
+                    
+                    // Present an alert box saying the image is uploaded, dismiss it automatically
+                    let successAlert = UIAlertController(title: NSLocalizedString("success", comment: ""), message: NSLocalizedString("imageUploaded", comment: ""), preferredStyle: .alert)
+                    self.present(successAlert, animated: true, completion: nil)
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                        successAlert.dismiss(animated: true, completion: nil)
+                    }
                 } else {
                     print("Failed to add image. Message: \(message ?? "")")
-                    let errorAlert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
-                    let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                    let errorAlert = UIAlertController(title: NSLocalizedString("error", comment: ""), message: message, preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: NSLocalizedString("ok", comment: ""), style: .default, handler: nil)
                     errorAlert.addAction(okAction)
                     self.present(errorAlert, animated: true, completion: nil)
                 }
             }
         }
         submitAction.isEnabled = false
-        
+
+        let cancelAction = UIAlertAction(title: NSLocalizedString("cancel", comment: ""), style: .cancel, handler: nil)
+
         alertController.addAction(submitAction)
+        alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion: nil)
     }
+
 
     @objc func imageNameTextFieldDidChange(_ textField: UITextField) {
         guard let text = textField.text else { return }
