@@ -29,6 +29,10 @@ class AddImageViewController: UIViewController, UINavigationControllerDelegate {
         configureCaptureSession()
         configurePreviewLayer()
         startCaptureSession()
+        
+        let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(backButtonTapped(_:)))
+        swipeGesture.direction = .right
+        self.view.addGestureRecognizer(swipeGesture)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -52,7 +56,7 @@ class AddImageViewController: UIViewController, UINavigationControllerDelegate {
         videoPreviewLayer?.frame = cameraView.bounds
     }
     
-    @IBAction func backButtonTapped(_ sender: Any) {
+    @IBAction func backButtonTapped(_ sender: AnyObject) {
         self.dismiss(animated: true)
     }
     
