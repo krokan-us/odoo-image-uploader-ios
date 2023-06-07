@@ -27,7 +27,7 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var passwordView: UIView!
     @IBOutlet weak var passwordLabel: UILabel!
-    @IBOutlet weak var passwordTextView: UITextView!
+    @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var passwordClearButton: UIButton!
     
     @IBOutlet weak var loginButton: UIButton!
@@ -80,11 +80,6 @@ class LoginViewController: UIViewController {
         usernameTextView.isScrollEnabled = false
         usernameTextView.textContainer.lineBreakMode = .byTruncatingTail
         usernameTextView.textContainer.maximumNumberOfLines = 1
-        
-        passwordTextView.isScrollEnabled = false
-        passwordTextView.textContainer.lineBreakMode = .byTruncatingTail
-        passwordTextView.textContainer.maximumNumberOfLines = 1
-        passwordTextView.isSecureTextEntry = true
     }
     
     private func configureButtons(){
@@ -107,7 +102,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginButtonTapped(_ sender: Any) {
         if let urlText = URLTextView.text, let url = URL(string: urlText) {
-            NetworkManager.shared.sendLoginRequest(baseURL: url, databaseName: databaseTextView.text, username: usernameTextView.text, password: passwordTextView.text) {
+            NetworkManager.shared.sendLoginRequest(baseURL: url, databaseName: databaseTextView.text, username: usernameTextView.text, password: passwordTextField.text ?? "") {
                 userID in
                 if let userID = userID {
                     print("Login successful! User ID: \(userID)")
@@ -147,6 +142,6 @@ extension LoginViewController {
     }
     
     @IBAction func passwordClearButtonTapped(_ sender: Any) {
-        passwordTextView.text = ""
+        passwordTextField.text = ""
     }
 }
