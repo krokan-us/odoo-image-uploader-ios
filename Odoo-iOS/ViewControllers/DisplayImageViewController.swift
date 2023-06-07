@@ -8,11 +8,10 @@
 import UIKit
 import CropViewController
 
-class DisplayImageViewController: UIViewController, CropViewControllerDelegate {
+class DisplayImageViewController: UIViewController, CropViewControllerDelegate, UITextViewDelegate {
     
     @IBOutlet weak var backButton: UIButton!
-    @IBOutlet weak var imageNameLabel: UILabel!
-    @IBOutlet weak var editImageNameButton: UIButton!
+    @IBOutlet weak var imageNameTextView: UITextView!
     @IBOutlet weak var imageImageView: UIImageView!
     @IBOutlet weak var modifyImageButton: UIButton!
     @IBOutlet weak var isPublishedButton: UIButton!
@@ -27,6 +26,7 @@ class DisplayImageViewController: UIViewController, CropViewControllerDelegate {
         let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(backButtonTapped(_:)))
         swipeGesture.direction = .right
         self.view.addGestureRecognizer(swipeGesture)
+        imageNameTextView.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,17 +35,19 @@ class DisplayImageViewController: UIViewController, CropViewControllerDelegate {
     
     private func setupButtons(){
         backButton.setTitle("", for: .normal)
-        editImageNameButton.setTitle("", for: .normal)
         modifyImageButton.setTitle("", for: .normal)
         isPublishedButton.setTitle("", for: .normal)
         deleteButton.setTitle("", for: .normal)
         imageImageView.layer.borderWidth = 3
         imageImageView.layer.borderColor = UIColor.black.cgColor
+        imageNameTextView.isScrollEnabled = false
+        imageNameTextView.textContainer.lineBreakMode = .byTruncatingTail
+        imageNameTextView.textContainer.maximumNumberOfLines = 1
     }
     
     private func setupImageDetails() {
         if let imageToBeDisplayed = imageToBeDisplayed {
-            imageNameLabel.text = imageToBeDisplayed.name
+            imageNameTextView.text = imageToBeDisplayed.name
             imageImageView.image = UIImage(data: Data(base64Encoded: imageToBeDisplayed.imageData)!) // assuming that imageData is base64 encoded
             
             let imageName = imageToBeDisplayed.isPublished ? "eye" : "eye.slash"
@@ -53,12 +55,31 @@ class DisplayImageViewController: UIViewController, CropViewControllerDelegate {
         }
     }
     
-    @IBAction func backButtonTapped(_ sender: AnyObject) {
-        self.dismiss(animated: true)
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n" { // Return key
+            textView.resignFirstResponder() // Dismiss the keyboard
+
+            // Update image name on server
+            guard var imageToBeDisplayed = imageToBeDisplayed else { return true }
+
+            // Set new name from textView
+            imageToBeDisplayed.name = textView.text
+
+            NetworkManager.shared.modifyImage(image: imageToBeDisplayed) { (success, errorMessage) in
+                if success {
+                    print("Successfully modified image name.")
+                } else {
+                    print("Failed to modify image name: \(errorMessage ?? "No error message provided.")")
+                }
+            }
+
+            return false // Prevent new line character from being added
+        }
+        return true // Allow other characters
     }
     
-    @IBAction func editImageNameButtonTapped(_ sender: Any) {
-        // code to handle editing the image name
+    @IBAction func backButtonTapped(_ sender: AnyObject) {
+        self.dismiss(animated: true)
     }
     
     @IBAction func modifyImageButtonTapped(_ sender: Any) {
