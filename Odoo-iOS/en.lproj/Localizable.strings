@@ -14,4 +14,13 @@
 "confirmationMessage" = "Are you sure you want to remove this image?";
 "cancel" = "Cancel";
 "remove" = "Remove";
+
+"error" = "Error";
+"ok" = "OK";
+"failedToChangeIsPublishedValue" = "Failed to change the isPublished value.";
+
+"enterImageName" = "Enter Image Name";
+"imageName" = "Image Name";
+"submit" = "Submit";
+"emptyImageNameWarning" = "Image name cannot be empty.";
 */
