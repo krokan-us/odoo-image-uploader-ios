@@ -151,16 +151,22 @@ class AddImageViewController: UIViewController, UINavigationControllerDelegate {
         
         // Display an alert with a text field to get the image name from the user
         let alertController = UIAlertController(title: NSLocalizedString("enterImageName", comment: ""), message: "", preferredStyle: .alert)
+        
         alertController.addTextField { textField in
             textField.placeholder = NSLocalizedString("imageName", comment: "")
+            textField.addTarget(self, action: #selector(self.imageNameTextFieldDidChange(_:)), for: .editingChanged)
         }
+        
         let submitAction = UIAlertAction(title: NSLocalizedString("submit", comment: ""), style: .default) { _ in
             let textField = alertController.textFields![0] as UITextField
-            guard let imageName = textField.text, !imageName.isEmpty else {
-                print("Invalid image name.")
+            guard let imageName = textField.text else {
                 return
             }
-            NetworkManager.shared.addImage(productID: self.productID ?? 0, name: imageName, imageData: base64String) { success, message, imageID in
+            let trimmedImageName = imageName.trimmingCharacters(in: .whitespacesAndNewlines)
+            guard !trimmedImageName.isEmpty else {
+                return
+            }
+            NetworkManager.shared.addImage(productID: self.productID ?? 0, name: trimmedImageName, imageData: base64String) { success, message, imageID in
                 if success {
                     print("Image uploaded successfully. Message: \(message ?? "") Image ID: \(imageID ?? 0)")
                     // Handle the successful upload
@@ -173,8 +179,31 @@ class AddImageViewController: UIViewController, UINavigationControllerDelegate {
                 }
             }
         }
+        submitAction.isEnabled = false
+        
         alertController.addAction(submitAction)
         self.present(alertController, animated: true, completion: nil)
+    }
+
+    @objc func imageNameTextFieldDidChange(_ textField: UITextField) {
+        guard let text = textField.text else { return }
+        if text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            if let alertController = presentedViewController as? UIAlertController {
+                alertController.actions.forEach { action in
+                    if action.title == NSLocalizedString("submit", comment: "") {
+                        action.isEnabled = false
+                    }
+                }
+            }
+        } else {
+            if let alertController = presentedViewController as? UIAlertController {
+                alertController.actions.forEach { action in
+                    if action.title == NSLocalizedString("submit", comment: "") {
+                        action.isEnabled = true
+                    }
+                }
+            }
+        }
     }
 }
 
