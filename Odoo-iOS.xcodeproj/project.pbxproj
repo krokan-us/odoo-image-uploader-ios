@@ -22,6 +22,7 @@
 		16D09C792A28C7F2007C19E4 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D09C782A28C7F2007C19E4 /* NetworkManager.swift */; };
 		16D09C7B2A28D497007C19E4 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D09C7A2A28D497007C19E4 /* TabBarViewController.swift */; };
 		16ECBD5F2A2E7C45004F5EC9 /* DisplayImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ECBD5E2A2E7C45004F5EC9 /* DisplayImageViewController.swift */; };
+		16ECBD622A305C64004F5EC9 /* String+Slugify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ECBD612A305C64004F5EC9 /* String+Slugify.swift */; };
 		6B0092D32EAB9117FAC740C8 /* Pods_Odoo_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4567CF7E7219C9020C57F1CF /* Pods_Odoo_iOS.framework */; };
 		7E59ED5D2AA582EC7E0FB662 /* Pods_Odoo_iOS_Odoo_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BB3A7DA3C11C61C001938D4 /* Pods_Odoo_iOS_Odoo_iOSUITests.framework */; };
 		82D1FE8F39FEEAC05F6D31EC /* Pods_Odoo_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529772A065ADAAE0640ED4AD /* Pods_Odoo_iOSTests.framework */; };
@@ -66,6 +67,7 @@
 		16D09C782A28C7F2007C19E4 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		16D09C7A2A28D497007C19E4 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		16ECBD5E2A2E7C45004F5EC9 /* DisplayImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayImageViewController.swift; sourceTree = "<group>"; };
+		16ECBD612A305C64004F5EC9 /* String+Slugify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Slugify.swift"; sourceTree = "<group>"; };
 		3BB3A7DA3C11C61C001938D4 /* Pods_Odoo_iOS_Odoo_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Odoo_iOS_Odoo_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4567CF7E7219C9020C57F1CF /* Pods_Odoo_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Odoo_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		529772A065ADAAE0640ED4AD /* Pods_Odoo_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Odoo_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,11 +138,11 @@
 		16D09C3F2A272D6D007C19E4 /* Odoo-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				16ECBD632A305EF9004F5EC9 /* Delegates */,
+				16ECBD602A305C44004F5EC9 /* Extensions */,
 				160864A92A2C9B10006C9EAC /* Cells */,
 				16D09C772A28C7E1007C19E4 /* Managers */,
 				16D09C712A28B982007C19E4 /* ViewControllers */,
-				16D09C402A272D6D007C19E4 /* AppDelegate.swift */,
-				16D09C422A272D6D007C19E4 /* SceneDelegate.swift */,
 				16D09C462A272D6D007C19E4 /* Main.storyboard */,
 				16D09C492A272D6E007C19E4 /* Assets.xcassets */,
 				16D09C4B2A272D6E007C19E4 /* LaunchScreen.storyboard */,
@@ -169,6 +171,23 @@
 				16D09C782A28C7F2007C19E4 /* NetworkManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		16ECBD602A305C44004F5EC9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				16ECBD612A305C64004F5EC9 /* String+Slugify.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		16ECBD632A305EF9004F5EC9 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				16D09C402A272D6D007C19E4 /* AppDelegate.swift */,
+				16D09C422A272D6D007C19E4 /* SceneDelegate.swift */,
+			);
+			path = Delegates;
 			sourceTree = "<group>";
 		};
 		2120BBBD5E9603DF716ADD64 /* Frameworks */ = {
@@ -440,6 +459,7 @@
 				16D09C762A28C5E1007C19E4 /* LoginViewController.swift in Sources */,
 				16D09C412A272D6D007C19E4 /* AppDelegate.swift in Sources */,
 				160864B52A2CD92A006C9EAC /* AddImageViewController.swift in Sources */,
+				16ECBD622A305C64004F5EC9 /* String+Slugify.swift in Sources */,
 				160864AC2A2C9B27006C9EAC /* ImageCollectionViewCell.swift in Sources */,
 				16D09C792A28C7F2007C19E4 /* NetworkManager.swift in Sources */,
 				16D09C432A272D6D007C19E4 /* SceneDelegate.swift in Sources */,
@@ -634,11 +654,13 @@
 				DEVELOPMENT_TEAM = 7WX6W95X32;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Odoo-iOS/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "The app needs access to your camera to scan barcodes and take photos to be uploaded.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "The app needs to add photos to your library to edit and upload them to the server.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -664,11 +686,13 @@
 				DEVELOPMENT_TEAM = 7WX6W95X32;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Odoo-iOS/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "The app needs access to your camera to scan barcodes and take photos to be uploaded.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "The app needs to add photos to your library to edit and upload them to the server.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
