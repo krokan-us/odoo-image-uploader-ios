@@ -30,6 +30,10 @@ class DisplayImagesViewController: UIViewController {
         let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(backButtonTapped(_:)))
         swipeGesture.direction = .right
         self.view.addGestureRecognizer(swipeGesture)
+        
+        productImagesCollectionView.dragDelegate = self
+        productImagesCollectionView.dropDelegate = self
+        productImagesCollectionView.dragInteractionEnabled = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,6 +58,69 @@ class DisplayImagesViewController: UIViewController {
     
     @IBAction func backButtonTapped(_ sender: AnyObject) {
         self.dismiss(animated: true)
+    }
+    
+    // When the drag operation starts, this method creates a drag item for the dragged cell.
+    func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
+        if indexPath.row >= imageResponse?.productImages.count ?? 0 {
+            return []
+        }
+        let item = imageResponse?.productImages[indexPath.row]
+        let itemProvider = NSItemProvider(object: "\(item?.id ?? -1)" as NSString)
+        let dragItem = UIDragItem(itemProvider: itemProvider)
+        dragItem.localObject = item
+        return [dragItem]
+    }
+
+    // The drag item gets dropped into the collection view.
+    func collectionView(_ collectionView: UICollectionView, performDropWith coordinator: UICollectionViewDropCoordinator) {
+        var destinationIndexPath: IndexPath
+        if let indexPath = coordinator.destinationIndexPath, indexPath.row < (imageResponse?.productImages.count ?? 0) {
+            destinationIndexPath = indexPath
+        } else {
+            let row = collectionView.numberOfItems(inSection: 0) - 1 // adjust for extra cell
+            destinationIndexPath = IndexPath(item: row, section: 0)
+        }
+
+        if coordinator.proposal.operation == .move, let item = coordinator.items.first, let sourceIndexPath = item.sourceIndexPath,
+           sourceIndexPath.item < (imageResponse?.productImages.count ?? 0),
+           destinationIndexPath.item < (imageResponse?.productImages.count ?? 0) {
+            collectionView.performBatchUpdates({
+                if let sourceImage = imageResponse?.productImages.remove(at: sourceIndexPath.item) {
+                    imageResponse?.productImages.insert(sourceImage, at: destinationIndexPath.item)
+                    collectionView.deleteItems(at: [sourceIndexPath])
+                    collectionView.insertItems(at: [destinationIndexPath])
+                }
+            }, completion: nil)
+
+            coordinator.drop(item.dragItem, toItemAt: destinationIndexPath)
+            
+            // Update the sequence value of all the images and make API call
+            if let productImages = imageResponse?.productImages {
+                for (index, productImage) in productImages.enumerated() {
+                    var updatedProductImage = productImage
+                    updatedProductImage.sequence = index + 1
+                    imageResponse?.productImages[index] = updatedProductImage
+                    
+                    NetworkManager.shared.modifyImage(image: updatedProductImage) { success, error in
+                        if success {
+                            DispatchQueue.main.async {
+                                collectionView.reloadItems(at: [IndexPath(item: index, section: 0)])
+                            }
+                        } else {
+                            print("Failed to update sequence for image id: \(updatedProductImage.id)")
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+
+    // Provides a destination index path for the drag item, in case we want to reorder the items.
+    func collectionView(_ collectionView: UICollectionView, targetIndexPathForMoveFromItemAt originalIndexPath: IndexPath, toProposedIndexPath proposedIndexPath: IndexPath) -> IndexPath {
+        return proposedIndexPath
     }
 }
 
@@ -160,5 +227,20 @@ extension DisplayImagesViewController: UICollectionViewDelegate {
                 }
             }
         }
+    }
+}
+
+// Add drag & drop delegate protocols
+extension DisplayImagesViewController: UICollectionViewDragDelegate, UICollectionViewDropDelegate {
+
+    func collectionView(_ collectionView: UICollectionView, canHandle session: UIDropSession) -> Bool {
+        return session.canLoadObjects(ofClass: NSString.self)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, dropSessionDidUpdate session: UIDropSession, withDestinationIndexPath destinationIndexPath: IndexPath?) -> UICollectionViewDropProposal {
+        if collectionView.hasActiveDrag {
+            return UICollectionViewDropProposal(operation: .move, intent: .insertAtDestinationIndexPath)
+        }
+        return UICollectionViewDropProposal(operation: .forbidden)
     }
 }
