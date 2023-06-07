@@ -518,16 +518,6 @@
                                                 <color key="textColor" systemColor="secondaryLabelColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0H9-QY-13r">
-                                                <rect key="frame" x="46" y="32" width="269" height="30"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="0Dz-Ru-jn3"/>
-                                                </constraints>
-                                                <color key="textColor" systemColor="labelColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" smartDashesType="no" textContentType="password"/>
-                                            </textView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lfv-dm-GIc">
                                                 <rect key="frame" x="323" y="18.000000000000004" width="30" height="34.333333333333343"/>
                                                 <constraints>
@@ -540,17 +530,22 @@
                                                     <action selector="passwordClearButtonTapped:" destination="iRy-Bc-VCR" eventType="touchUpInside" id="5ap-wd-GMB"/>
                                                 </connections>
                                             </button>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="84R-uX-jbb">
+                                                <rect key="frame" x="46" y="28" width="269" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                            </textField>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="84R-uX-jbb" secondAttribute="bottom" constant="8" id="8Fv-A3-42d"/>
                                             <constraint firstItem="oyV-2y-2Z5" firstAttribute="top" secondItem="g3a-WY-fyE" secondAttribute="top" constant="20" id="DVu-6z-9je"/>
                                             <constraint firstItem="k3g-Pa-Cj6" firstAttribute="top" secondItem="g3a-WY-fyE" secondAttribute="top" constant="8" id="EqB-YF-TIJ"/>
                                             <constraint firstAttribute="trailing" secondItem="lfv-dm-GIc" secondAttribute="trailing" constant="8" id="GcN-Ru-Sw8"/>
                                             <constraint firstAttribute="bottom" secondItem="oyV-2y-2Z5" secondAttribute="bottom" constant="20" id="L3d-N4-4kb"/>
-                                            <constraint firstAttribute="bottom" secondItem="0H9-QY-13r" secondAttribute="bottom" constant="8" id="OUa-Tq-dLH"/>
+                                            <constraint firstItem="lfv-dm-GIc" firstAttribute="leading" secondItem="84R-uX-jbb" secondAttribute="trailing" constant="8" symbolic="YES" id="SSH-cO-zeZ"/>
+                                            <constraint firstItem="84R-uX-jbb" firstAttribute="leading" secondItem="oyV-2y-2Z5" secondAttribute="trailing" constant="8" symbolic="YES" id="WJB-42-e9P"/>
                                             <constraint firstItem="lfv-dm-GIc" firstAttribute="centerY" secondItem="g3a-WY-fyE" secondAttribute="centerY" id="YVI-gx-dr7"/>
-                                            <constraint firstItem="lfv-dm-GIc" firstAttribute="leading" secondItem="0H9-QY-13r" secondAttribute="trailing" constant="8" symbolic="YES" id="ays-HA-M0O"/>
-                                            <constraint firstItem="0H9-QY-13r" firstAttribute="leading" secondItem="oyV-2y-2Z5" secondAttribute="trailing" constant="8" symbolic="YES" id="bmt-HL-A9d"/>
                                             <constraint firstItem="k3g-Pa-Cj6" firstAttribute="leading" secondItem="oyV-2y-2Z5" secondAttribute="trailing" constant="8" symbolic="YES" id="fVp-MV-TZP"/>
                                             <constraint firstItem="oyV-2y-2Z5" firstAttribute="centerY" secondItem="g3a-WY-fyE" secondAttribute="centerY" id="jeT-E4-b8x"/>
                                             <constraint firstItem="oyV-2y-2Z5" firstAttribute="leading" secondItem="g3a-WY-fyE" secondAttribute="leading" constant="8" id="nTv-u6-ZV8"/>
@@ -601,7 +596,7 @@
                         <outlet property="loginButton" destination="SwF-mK-N5T" id="pc5-kl-Z1G"/>
                         <outlet property="passwordClearButton" destination="lfv-dm-GIc" id="Kum-II-dnT"/>
                         <outlet property="passwordLabel" destination="k3g-Pa-Cj6" id="gfE-Fi-h3a"/>
-                        <outlet property="passwordTextView" destination="0H9-QY-13r" id="JVa-Ol-Cam"/>
+                        <outlet property="passwordTextField" destination="84R-uX-jbb" id="n8f-SP-edP"/>
                         <outlet property="passwordView" destination="g3a-WY-fyE" id="2Nz-Pu-CJm"/>
                         <outlet property="usernameClearButton" destination="EBt-NM-yTh" id="uZi-3k-fSw"/>
                         <outlet property="usernameLabel" destination="gSq-Ur-hwH" id="DYm-jX-gIT"/>
