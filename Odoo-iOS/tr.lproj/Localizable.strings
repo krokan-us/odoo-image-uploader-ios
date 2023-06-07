@@ -15,4 +15,12 @@
 "cancel" = "İptal";
 "remove" = "Kaldır";
 
+"error" = "Hata";
+"ok" = "Tamam";
+"failedToChangeIsPublishedValue" = "isPublished değeri değiştirilemedi.";
+
+"enterImageName" = "Görsel İsmi Girin";
+"imageName" = "Görsel İsmi";
+"submit" = "Yükle";
+"emptyImageNameWarning" = "Görsel adı boş olamaz.";
 */
