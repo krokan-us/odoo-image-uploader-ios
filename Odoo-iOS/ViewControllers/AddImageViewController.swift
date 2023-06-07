@@ -149,17 +149,32 @@ class AddImageViewController: UIViewController, UINavigationControllerDelegate {
     func uploadImage(_ imageData: Data) {
         let base64String = imageData.base64EncodedString()
         
-        let imageName = UUID().uuidString
-        
-        NetworkManager.shared.addImage(productID: productID ?? 0, name: imageName, imageData: base64String) { success, message, imageID in
-            if success {
-                print("Image uploaded successfully. Message: \(message ?? "") Image ID: \(imageID ?? 0)")
-                // Handle the successful upload
-            } else {
-                print("Failed to add image. Message: \(message ?? "")")
-                // Handle the failure
+        // Display an alert with a text field to get the image name from the user
+        let alertController = UIAlertController(title: NSLocalizedString("enterImageName", comment: ""), message: "", preferredStyle: .alert)
+        alertController.addTextField { textField in
+            textField.placeholder = NSLocalizedString("imageName", comment: "")
+        }
+        let submitAction = UIAlertAction(title: NSLocalizedString("submit", comment: ""), style: .default) { _ in
+            let textField = alertController.textFields![0] as UITextField
+            guard let imageName = textField.text, !imageName.isEmpty else {
+                print("Invalid image name.")
+                return
+            }
+            NetworkManager.shared.addImage(productID: self.productID ?? 0, name: imageName, imageData: base64String) { success, message, imageID in
+                if success {
+                    print("Image uploaded successfully. Message: \(message ?? "") Image ID: \(imageID ?? 0)")
+                    // Handle the successful upload
+                } else {
+                    print("Failed to add image. Message: \(message ?? "")")
+                    let errorAlert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                    errorAlert.addAction(okAction)
+                    self.present(errorAlert, animated: true, completion: nil)
+                }
             }
         }
+        alertController.addAction(submitAction)
+        self.present(alertController, animated: true, completion: nil)
     }
 }
 
