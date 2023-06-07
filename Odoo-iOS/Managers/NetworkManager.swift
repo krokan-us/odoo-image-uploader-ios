@@ -205,34 +205,38 @@ class NetworkManager {
         ]
         print("Slugged name: " + name.slugify())
         AF.request(requestURL, method: .post, parameters: payload, encoding: JSONEncoding.default)
-                    .validate()
-                    .responseJSON { response in
-                        switch response.result {
-                        case .success(let value):
-                            print(response)
-                            if let json = value as? [String: Any],
-                               let result = json["result"] as? [String: Any],
-                               let status = result["status"] as? String,
-                               let message = result["message"] as? String {
-                                if status == "success" {
-                                    let imageID = result["image_id"] as? Int
-                                    completion(true, message, imageID)
-                                } else {
-                                    completion(false, message, nil)
-                                }
-                            } else if let json = value as? [String: Any],
-                                      let error = json["error"] as? [String: Any],
-                                      let data = error["data"] as? [String: Any],
-                                      let message = data["message"] as? String {
-                                completion(false, message, nil)
-                            } else {
-                                completion(false, "Invalid response", nil)
-                            }
-                        case .failure(let error):
-                            print("Error: \(error)")
-                            completion(false, error.localizedDescription, nil)
+            .validate()
+            .responseJSON { response in
+                switch response.result {
+                case .success(let value):
+                    print(response)
+                    if let json = value as? [String: Any],
+                       let result = json["result"] as? [String: Any],
+                       let status = result["status"] as? String,
+                       let message = result["message"] as? String,
+                       let imageID = result["image_id"] as? Int {
+                        if status == "success" {
+                            completion(true, message, imageID)
+                        } else {
+                            completion(false, message, nil)
                         }
+                    } else if let json = value as? [String: Any],
+                              let error = json["error"] as? [String: Any],
+                              let data = error["data"] as? [String: Any],
+                              let debug = data["debug"] as? String {
+                        if debug.contains("base_multi_image_image_uniq_name_owner") {
+                            completion(false, NSLocalizedString("sameNameErrorDescription", comment: ""), nil)
+                        } else {
+                            completion(false, NSLocalizedString("anErrorOccured", comment: ""), nil)
+                        }
+                    } else {
+                        completion(false, "Invalid response", nil)
                     }
+                case .failure(let error):
+                    print("Error: \(error)")
+                    completion(false, error.localizedDescription, nil)
+                }
+            }
     }
     
     func modifyImage(image: ProductImage, completion: @escaping (Bool, String?) -> Void) {
