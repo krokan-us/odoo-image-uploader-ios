@@ -285,50 +285,38 @@
                                     <action selector="backButtonTapped:" destination="FQE-FP-2J7" eventType="touchUpInside" id="Yz8-8y-4sg"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qka-uf-JSu">
-                                <rect key="frame" x="176" y="59.000000000000007" width="41" height="20.333333333333336"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mcR-gv-sOR">
-                                <rect key="frame" x="233" y="59" width="20" height="34.333333333333343"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="lorem ipsum" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="pAP-w4-r1Y">
+                                <rect key="frame" x="44" y="59" width="313" height="30"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="20" id="yaD-vU-b1n"/>
+                                    <constraint firstAttribute="height" constant="30" id="ARa-tH-c4z"/>
                                 </constraints>
-                                <color key="tintColor" systemColor="labelColor"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="pencil" catalog="system"/>
-                                <connections>
-                                    <action selector="editImageNameButtonTapped:" destination="FQE-FP-2J7" eventType="touchUpInside" id="GnW-e3-7Q0"/>
-                                </connections>
-                            </button>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bVP-z0-d5F"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ebv-Yc-ky0" firstAttribute="leading" secondItem="bVP-z0-d5F" secondAttribute="leading" constant="16" id="1Vb-5a-eZ3"/>
                             <constraint firstItem="mYy-Ig-jgx" firstAttribute="centerX" secondItem="R6K-Xu-VLz" secondAttribute="centerX" id="5lb-ov-eEk"/>
+                            <constraint firstItem="bVP-z0-d5F" firstAttribute="trailing" secondItem="pAP-w4-r1Y" secondAttribute="trailing" constant="36" id="GE0-p5-ffz"/>
                             <constraint firstItem="U9k-Ak-qwv" firstAttribute="leading" secondItem="bVP-z0-d5F" secondAttribute="leading" constant="16" id="GNd-g0-7Rr"/>
                             <constraint firstItem="bVP-z0-d5F" firstAttribute="bottom" secondItem="mYy-Ig-jgx" secondAttribute="bottom" id="J5B-RI-ExO"/>
                             <constraint firstItem="ebv-Yc-ky0" firstAttribute="centerY" secondItem="R6K-Xu-VLz" secondAttribute="centerY" id="OGk-IV-Uu5"/>
-                            <constraint firstItem="Qka-uf-JSu" firstAttribute="top" secondItem="bVP-z0-d5F" secondAttribute="top" id="PQw-WF-Aur"/>
-                            <constraint firstItem="mcR-gv-sOR" firstAttribute="leading" secondItem="Qka-uf-JSu" secondAttribute="trailing" constant="16" id="QsG-vY-M5M"/>
                             <constraint firstItem="ebv-Yc-ky0" firstAttribute="centerX" secondItem="R6K-Xu-VLz" secondAttribute="centerX" id="VFv-HM-yry"/>
-                            <constraint firstItem="Qka-uf-JSu" firstAttribute="centerX" secondItem="R6K-Xu-VLz" secondAttribute="centerX" id="fA2-ER-eU5"/>
+                            <constraint firstItem="pAP-w4-r1Y" firstAttribute="top" secondItem="bVP-z0-d5F" secondAttribute="top" id="d4t-fD-yHt"/>
+                            <constraint firstItem="pAP-w4-r1Y" firstAttribute="leading" secondItem="U9k-Ak-qwv" secondAttribute="trailing" constant="8" symbolic="YES" id="dUh-C6-xne"/>
                             <constraint firstItem="U9k-Ak-qwv" firstAttribute="top" secondItem="bVP-z0-d5F" secondAttribute="top" id="igO-qG-XmE"/>
-                            <constraint firstItem="bVP-z0-d5F" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="mcR-gv-sOR" secondAttribute="trailing" constant="16" id="kGX-sf-hQE"/>
-                            <constraint firstItem="Qka-uf-JSu" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="U9k-Ak-qwv" secondAttribute="trailing" constant="16" id="v66-wm-vHl"/>
                             <constraint firstItem="bVP-z0-d5F" firstAttribute="trailing" secondItem="ebv-Yc-ky0" secondAttribute="trailing" constant="16" id="vd0-cN-ODl"/>
-                            <constraint firstItem="mcR-gv-sOR" firstAttribute="top" secondItem="bVP-z0-d5F" secondAttribute="top" id="wVW-3E-Jr2"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="backButton" destination="U9k-Ak-qwv" id="g0h-IA-2nW"/>
                         <outlet property="deleteButton" destination="9wp-W9-lXE" id="tbz-ch-er6"/>
-                        <outlet property="editImageNameButton" destination="mcR-gv-sOR" id="Hxm-NV-zZj"/>
                         <outlet property="imageImageView" destination="ebv-Yc-ky0" id="9MM-yl-kFI"/>
-                        <outlet property="imageNameLabel" destination="Qka-uf-JSu" id="Y05-n5-paF"/>
+                        <outlet property="imageNameTextView" destination="pAP-w4-r1Y" id="1Km-JD-yvQ"/>
                         <outlet property="isPublishedButton" destination="i26-Id-h5f" id="qOd-nA-VtC"/>
                         <outlet property="modifyImageButton" destination="H5R-YO-Yen" id="KHS-7A-q4I"/>
                     </connections>
@@ -653,7 +641,6 @@
         <image name="lock" catalog="system" width="125" height="128"/>
         <image name="network" catalog="system" width="128" height="123"/>
         <image name="paintbrush.pointed" catalog="system" width="128" height="118"/>
-        <image name="pencil" catalog="system" width="128" height="113"/>
         <image name="person" catalog="system" width="128" height="121"/>
         <image name="photo" catalog="system" width="128" height="93"/>
         <image name="server.rack" catalog="system" width="128" height="93"/>
