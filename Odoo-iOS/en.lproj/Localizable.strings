@@ -23,4 +23,10 @@
 "imageName" = "Image Name";
 "submit" = "Submit";
 "emptyImageNameWarning" = "Image name cannot be empty.";
+
+"success" = "Success";
+"imageUploaded" = "Image uploaded.";
+
+"sameNameErrorDescription" = "There cannot be two images with the same name.";
+"anErrorOccured" = "An error occured.";
 */
