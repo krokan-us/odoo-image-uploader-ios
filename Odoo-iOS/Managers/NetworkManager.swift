@@ -87,7 +87,6 @@ class NetworkManager {
             "jsonrpc": "2.0",
             "method": "call",
             "params": [
-                "context": ["lang": "tr_TR"],
                 "service": "object",
                 "method": "execute",
                 "args": [
@@ -99,6 +98,8 @@ class NetworkManager {
                     0,
                     [
                         "product_barcode": productBarcode
+                    ],[
+                        "lang": "tr_TR"
                     ]
                 ]
             ],
@@ -193,7 +194,7 @@ class NetworkManager {
                         "name": name,
                         "sequence": 10,
                         "image_data": imageData,
-                        "filename": name.replacingOccurrences(of: " ", with: "-"),
+                        "filename": name.slugify(),
                         "is_published": true
                     ],
                     ["lang": "tr_TR"]
@@ -201,7 +202,7 @@ class NetworkManager {
             ],
             "id": randomID
         ]
-        
+        print("Slugged name: " + name.slugify())
         AF.request(requestURL, method: .post, parameters: payload, encoding: JSONEncoding.default)
             .validate()
             .responseJSON { response in
@@ -258,7 +259,7 @@ class NetworkManager {
                         "name": image.name,
                         "is_published": image.isPublished,
                         "filename": image.fileName,
-                        "sequence": image.sequence,
+                        "sequence": image.name.slugify(),
                         "file_db_store": image.imageData
                     ],
                     ["lang": "tr_TR"]
