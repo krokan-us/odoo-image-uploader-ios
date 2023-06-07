@@ -98,16 +98,18 @@ extension DisplayImagesViewController: UICollectionViewDataSource {
     func handleIsSelectedButtonTapped(at index: Int) {
         guard var productImages = imageResponse?.productImages else { return }
         
-        // Toggle the isPublished value of the selected image
         productImages[index].isPublished.toggle()
         
-        // Update the image response with the modified product images
-        imageResponse?.productImages = productImages
-        
-        // Reload the collection view to reflect the updated data
-        productImagesCollectionView.reloadData()
-        
-        // TODO: Handle the logic for updating the server with the modified isPublished value
+        NetworkManager.shared.modifyImage(image: productImages[index]) { success, error in
+            if success {
+                self.getImagesFromAPI()
+            } else {
+                let alertController = UIAlertController(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("failedToChangeIsPublishedValue", comment: ""), preferredStyle: .alert)
+                let okAction = UIAlertAction(title: NSLocalizedString("ok", comment: ""), style: .default, handler: nil)
+                alertController.addAction(okAction)
+                self.present(alertController, animated: true, completion: nil)
+            }
+        }
     }
 }
 
