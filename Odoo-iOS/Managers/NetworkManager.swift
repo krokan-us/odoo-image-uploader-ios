@@ -98,7 +98,8 @@ class NetworkManager {
                     0,
                     [
                         "product_barcode": productBarcode
-                    ],[
+                    ],
+                    [
                         "lang": "tr_TR"
                     ]
                 ]
@@ -204,28 +205,34 @@ class NetworkManager {
         ]
         print("Slugged name: " + name.slugify())
         AF.request(requestURL, method: .post, parameters: payload, encoding: JSONEncoding.default)
-            .validate()
-            .responseJSON { response in
-                switch response.result {
-                case .success(let value):
-                    if let json = value as? [String: Any],
-                       let result = json["result"] as? [String: Any],
-                       let status = result["status"] as? String,
-                       let message = result["message"] as? String,
-                       let imageID = result["image_id"] as? Int {
-                        if status == "success" {
-                            completion(true, message, imageID)
-                        } else {
-                            completion(false, message, nil)
+                    .validate()
+                    .responseJSON { response in
+                        switch response.result {
+                        case .success(let value):
+                            print(response)
+                            if let json = value as? [String: Any],
+                               let result = json["result"] as? [String: Any],
+                               let status = result["status"] as? String,
+                               let message = result["message"] as? String {
+                                if status == "success" {
+                                    let imageID = result["image_id"] as? Int
+                                    completion(true, message, imageID)
+                                } else {
+                                    completion(false, message, nil)
+                                }
+                            } else if let json = value as? [String: Any],
+                                      let error = json["error"] as? [String: Any],
+                                      let data = error["data"] as? [String: Any],
+                                      let message = data["message"] as? String {
+                                completion(false, message, nil)
+                            } else {
+                                completion(false, "Invalid response", nil)
+                            }
+                        case .failure(let error):
+                            print("Error: \(error)")
+                            completion(false, error.localizedDescription, nil)
                         }
-                    } else {
-                        completion(false, "Invalid response", nil)
                     }
-                case .failure(let error):
-                    print("Error: \(error)")
-                    completion(false, error.localizedDescription, nil)
-                }
-            }
     }
     
     func modifyImage(image: ProductImage, completion: @escaping (Bool, String?) -> Void) {
@@ -258,8 +265,8 @@ class NetworkManager {
                     [
                         "name": image.name,
                         "is_published": image.isPublished,
-                        "filename": image.fileName,
-                        "sequence": image.name.slugify(),
+                        "filename": image.name.slugify(),
+                        "sequence": image.sequence,
                         "file_db_store": image.imageData
                     ],
                     ["lang": "tr_TR"]
