@@ -102,7 +102,6 @@ class DisplayImageViewController: UIViewController, CropViewControllerDelegate, 
             isPublishedButton.setImage(UIImage(systemName: imageName), for: .normal)
         }
         
-        // assuming modifyImage(image:completion:) is also a method in this class
         if let imageToBeDisplayed = imageToBeDisplayed {
             NetworkManager.shared.modifyImage(image: imageToBeDisplayed) { success, message in
                 if !success {

@@ -6,10 +6,16 @@
 //
 
 import UIKit
+import DropDown
 
 class LoginViewController: UIViewController {
-    @IBOutlet weak var welcomeLabel: UILabel!
+    let dropDown = DropDown()
+    @IBOutlet weak var changeUserView: UIView!
+    @IBOutlet weak var changeUserButton: UIButton!
+    @IBOutlet weak var profileImageView: UIImageView!
     
+    @IBOutlet weak var welcomeLabel: UILabel!
+
     @IBOutlet weak var URLView: UIView!
     @IBOutlet weak var URLLabel: UILabel!
     @IBOutlet weak var URLTextView: UITextView!
@@ -27,7 +33,7 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var passwordView: UIView!
     @IBOutlet weak var passwordLabel: UILabel!
-    @IBOutlet weak var passwordTextView: UITextView!
+    @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var passwordClearButton: UIButton!
     
     @IBOutlet weak var loginButton: UIButton!
@@ -41,6 +47,12 @@ class LoginViewController: UIViewController {
         configureTextViews()
         configureButtons()
         configureTapGesture()
+        configureChangeUserButton()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        configureChangeUserDropdownMenu()
+        setScreenForLastlyLoggedUser()
     }
     
     private func setViewBackgrounds(){
@@ -61,6 +73,64 @@ class LoginViewController: UIViewController {
         passwordView.layer.cornerRadius = 10
     }
     
+    private func configureChangeUserButton() {
+        changeUserButton.setTitle("", for: .normal)
+        changeUserButton.addTarget(self, action: #selector(changeUserButtonTapped), for: .touchUpInside)
+        profileImageView.layer.cornerRadius = 10
+    }
+    
+    @objc private func changeUserButtonTapped() {
+        dropDown.show()
+    }
+    
+    func setScreenForLastlyLoggedUser() {
+        if let lastLoggedUser = LoggedUsersManager.shared.getLastlyLoggedUser() {
+            URLTextView.text = lastLoggedUser.URL.absoluteString
+            databaseTextView.text = lastLoggedUser.database
+            usernameTextView.text = lastLoggedUser.username
+            if let imageData = Data(base64Encoded: lastLoggedUser.profileImageData),
+               let image = UIImage(data: imageData) {
+                profileImageView.image = image
+            } else {
+                profileImageView.image = UIImage(systemName: "person.crop.circle")
+            }
+        } else {
+            print("No logged-in users")
+        }
+    }
+
+    private func configureChangeUserDropdownMenu() {
+        let loggedUsers = LoggedUsersManager.shared.getLoggedUsers()
+        let dropdownItems = loggedUsers.map { "\($0.username)" }
+
+        dropDown.anchorView = changeUserView
+        dropDown.dataSource = dropdownItems
+
+        dropDown.cellNib = UINib(nibName: "ChangeProfileCell", bundle: nil)
+
+        dropDown.customCellConfiguration = { (index: Index, item: String, cell: DropDownCell) -> Void in
+            guard let cell = cell as? ChangeProfileCell else { return }
+
+            // Setup your custom UI components
+            let loggedUser = loggedUsers[index]
+            cell.profileImage.image = UIImage(data: Data(base64Encoded: loggedUser.profileImageData) ?? Data())
+        }
+
+        dropDown.selectionAction = { [weak self] (index: Int, item: String) in
+            // Update the login page with the selected user's information
+            let selectedUser = loggedUsers[index]
+            self?.URLTextView.text = selectedUser.URL.absoluteString
+            self?.databaseTextView.text = selectedUser.database
+            self?.usernameTextView.text = selectedUser.username
+            if let imageData = Data(base64Encoded: selectedUser.profileImageData),
+               let image = UIImage(data: imageData) {
+                self?.profileImageView.image = image
+            } else {
+                self?.profileImageView.image = UIImage(systemName: "person.crop.circle")
+            }
+        }
+    }
+
     private func configureLabels(){
         welcomeLabel.text = NSLocalizedString("welcome", comment: "")
         databaseLabel.text = NSLocalizedString("database", comment: "")
@@ -80,11 +150,6 @@ class LoginViewController: UIViewController {
         usernameTextView.isScrollEnabled = false
         usernameTextView.textContainer.lineBreakMode = .byTruncatingTail
         usernameTextView.textContainer.maximumNumberOfLines = 1
-        
-        passwordTextView.isScrollEnabled = false
-        passwordTextView.textContainer.lineBreakMode = .byTruncatingTail
-        passwordTextView.textContainer.maximumNumberOfLines = 1
-        passwordTextView.isSecureTextEntry = true
     }
     
     private func configureButtons(){
@@ -107,7 +172,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginButtonTapped(_ sender: Any) {
         if let urlText = URLTextView.text, let url = URL(string: urlText) {
-            NetworkManager.shared.sendLoginRequest(baseURL: url, databaseName: databaseTextView.text, username: usernameTextView.text, password: passwordTextView.text) {
+            NetworkManager.shared.sendLoginRequest(baseURL: url, databaseName: databaseTextView.text, username: usernameTextView.text, password: passwordTextField.text ?? "") {
                 userID in
                 if let userID = userID {
                     print("Login successful! User ID: \(userID)")
@@ -116,6 +181,16 @@ class LoginViewController: UIViewController {
                         tabBarVC.modalPresentationStyle = .fullScreen
                         DispatchQueue.main.async {
                             self.present(tabBarVC, animated: false)
+
+                            let userID = userID
+                            NetworkManager.shared.getLoggedUserDetails(userID: userID) { userDetails in
+                                if let userDetails = userDetails {
+                                    LoggedUsersManager.shared.addLoggedUser(user: LoggedUser(id: userDetails.userID, username: self.usernameTextView.text, URL: url, database: self.databaseTextView.text, userName: userDetails.userName, profileImageData: userDetails.imageData, lastLoginDate: Date()))
+                                    print(LoggedUsersManager.shared.getLoggedUsers())
+                                } else {
+                                    print("Failed to fetch user details")
+                                }
+                            }
                         }
                     }
                 } else {
@@ -123,7 +198,6 @@ class LoginViewController: UIViewController {
                 }
             }
         } else {
-            // Handle invalid URL text
             print("Invalid URL")
         }
     }
@@ -147,6 +221,6 @@ extension LoginViewController {
     }
     
     @IBAction func passwordClearButtonTapped(_ sender: Any) {
-        passwordTextView.text = ""
+        passwordTextField.text = ""
     }
 }

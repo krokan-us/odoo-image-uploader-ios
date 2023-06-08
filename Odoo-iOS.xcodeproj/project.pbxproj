@@ -12,6 +12,9 @@
 		160864AD2A2C9B27006C9EAC /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 160864AB2A2C9B27006C9EAC /* ImageCollectionViewCell.xib */; };
 		160864B52A2CD92A006C9EAC /* AddImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160864B42A2CD92A006C9EAC /* AddImageViewController.swift */; };
 		160864BE2A2CDD10006C9EAC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 160864C02A2CDD10006C9EAC /* Localizable.strings */; };
+		165C5AB22A31F21900A62E93 /* LoggedUsersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165C5AB12A31F21900A62E93 /* LoggedUsersManager.swift */; };
+		16953CCD2A31BFC500AC9596 /* ChangeProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16953CCB2A31BFC500AC9596 /* ChangeProfileCell.swift */; };
+		16953CCE2A31BFC500AC9596 /* ChangeProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16953CCC2A31BFC500AC9596 /* ChangeProfileCell.xib */; };
 		16D09C412A272D6D007C19E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D09C402A272D6D007C19E4 /* AppDelegate.swift */; };
 		16D09C432A272D6D007C19E4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D09C422A272D6D007C19E4 /* SceneDelegate.swift */; };
 		16D09C482A272D6D007C19E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16D09C462A272D6D007C19E4 /* Main.storyboard */; };
@@ -53,6 +56,9 @@
 		160864B42A2CD92A006C9EAC /* AddImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageViewController.swift; sourceTree = "<group>"; };
 		160864BF2A2CDD10006C9EAC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		160864C12A2CDD13006C9EAC /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		165C5AB12A31F21900A62E93 /* LoggedUsersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedUsersManager.swift; sourceTree = "<group>"; };
+		16953CCB2A31BFC500AC9596 /* ChangeProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProfileCell.swift; sourceTree = "<group>"; };
+		16953CCC2A31BFC500AC9596 /* ChangeProfileCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangeProfileCell.xib; sourceTree = "<group>"; };
 		16D09C3D2A272D6D007C19E4 /* Odoo-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Odoo-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		16D09C402A272D6D007C19E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16D09C422A272D6D007C19E4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +117,8 @@
 			children = (
 				160864AA2A2C9B27006C9EAC /* ImageCollectionViewCell.swift */,
 				160864AB2A2C9B27006C9EAC /* ImageCollectionViewCell.xib */,
+				16953CCB2A31BFC500AC9596 /* ChangeProfileCell.swift */,
+				16953CCC2A31BFC500AC9596 /* ChangeProfileCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -169,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				16D09C782A28C7F2007C19E4 /* NetworkManager.swift */,
+				165C5AB12A31F21900A62E93 /* LoggedUsersManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -326,6 +335,7 @@
 				160864BE2A2CDD10006C9EAC /* Localizable.strings in Resources */,
 				16D09C4D2A272D6E007C19E4 /* LaunchScreen.storyboard in Resources */,
 				16D09C4A2A272D6E007C19E4 /* Assets.xcassets in Resources */,
+				16953CCE2A31BFC500AC9596 /* ChangeProfileCell.xib in Resources */,
 				160864AD2A2C9B27006C9EAC /* ImageCollectionViewCell.xib in Resources */,
 				16D09C482A272D6D007C19E4 /* Main.storyboard in Resources */,
 			);
@@ -456,10 +466,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				16ECBD5F2A2E7C45004F5EC9 /* DisplayImageViewController.swift in Sources */,
+				16953CCD2A31BFC500AC9596 /* ChangeProfileCell.swift in Sources */,
 				16D09C762A28C5E1007C19E4 /* LoginViewController.swift in Sources */,
 				16D09C412A272D6D007C19E4 /* AppDelegate.swift in Sources */,
 				160864B52A2CD92A006C9EAC /* AddImageViewController.swift in Sources */,
 				16ECBD622A305C64004F5EC9 /* String+Slugify.swift in Sources */,
+				165C5AB22A31F21900A62E93 /* LoggedUsersManager.swift in Sources */,
 				160864AC2A2C9B27006C9EAC /* ImageCollectionViewCell.swift in Sources */,
 				16D09C792A28C7F2007C19E4 /* NetworkManager.swift in Sources */,
 				16D09C432A272D6D007C19E4 /* SceneDelegate.swift in Sources */,
