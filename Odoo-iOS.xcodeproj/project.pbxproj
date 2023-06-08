@@ -15,6 +15,7 @@
 		165C5AB22A31F21900A62E93 /* LoggedUsersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165C5AB12A31F21900A62E93 /* LoggedUsersManager.swift */; };
 		16953CCD2A31BFC500AC9596 /* ChangeProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16953CCB2A31BFC500AC9596 /* ChangeProfileCell.swift */; };
 		16953CCE2A31BFC500AC9596 /* ChangeProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16953CCC2A31BFC500AC9596 /* ChangeProfileCell.xib */; };
+		1699E2F92A321BBB00C2A3B9 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1699E2F82A321BBB00C2A3B9 /* SettingsViewController.swift */; };
 		16D09C412A272D6D007C19E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D09C402A272D6D007C19E4 /* AppDelegate.swift */; };
 		16D09C432A272D6D007C19E4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D09C422A272D6D007C19E4 /* SceneDelegate.swift */; };
 		16D09C482A272D6D007C19E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16D09C462A272D6D007C19E4 /* Main.storyboard */; };
@@ -59,6 +60,7 @@
 		165C5AB12A31F21900A62E93 /* LoggedUsersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedUsersManager.swift; sourceTree = "<group>"; };
 		16953CCB2A31BFC500AC9596 /* ChangeProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProfileCell.swift; sourceTree = "<group>"; };
 		16953CCC2A31BFC500AC9596 /* ChangeProfileCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangeProfileCell.xib; sourceTree = "<group>"; };
+		1699E2F82A321BBB00C2A3B9 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		16D09C3D2A272D6D007C19E4 /* Odoo-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Odoo-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		16D09C402A272D6D007C19E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16D09C422A272D6D007C19E4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				160864A72A2C9A8A006C9EAC /* DisplayImagesViewController.swift */,
 				160864B42A2CD92A006C9EAC /* AddImageViewController.swift */,
 				16ECBD5E2A2E7C45004F5EC9 /* DisplayImageViewController.swift */,
+				1699E2F82A321BBB00C2A3B9 /* SettingsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 				165C5AB22A31F21900A62E93 /* LoggedUsersManager.swift in Sources */,
 				160864AC2A2C9B27006C9EAC /* ImageCollectionViewCell.swift in Sources */,
 				16D09C792A28C7F2007C19E4 /* NetworkManager.swift in Sources */,
+				1699E2F92A321BBB00C2A3B9 /* SettingsViewController.swift in Sources */,
 				16D09C432A272D6D007C19E4 /* SceneDelegate.swift in Sources */,
 				16D09C7B2A28D497007C19E4 /* TabBarViewController.swift in Sources */,
 				160864A82A2C9A8A006C9EAC /* DisplayImagesViewController.swift in Sources */,
