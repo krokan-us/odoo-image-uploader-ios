@@ -13,18 +13,62 @@
         <!--Settings Screen-->
         <scene sceneID="RWi-kb-js3">
             <objects>
-                <viewController title="Settings Screen" id="0Hb-R4-uxh" sceneMemberID="viewController">
+                <viewController title="Settings Screen" id="0Hb-R4-uxh" customClass="SettingsViewController" customModule="Odoo_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NNx-OB-Qkc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ex4-PW-WRK">
+                                <rect key="frame" x="16" y="729" width="361" height="40"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jnw-cr-ZAg">
+                                        <rect key="frame" x="0.0" y="0.0" width="361" height="40"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1nP-bA-JDe">
+                                                <rect key="frame" x="7.9999999999999964" y="8" width="60.666666666666657" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RTu-SX-Jcl">
+                                                <rect key="frame" x="297.33333333333331" y="3" width="55.666666666666686" height="34.333333333333336"/>
+                                                <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="person.fill.xmark" catalog="system"/>
+                                                <connections>
+                                                    <action selector="logoutButtonTapped:" destination="0Hb-R4-uxh" eventType="touchUpInside" id="lAo-Qc-S6d"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="1nP-bA-JDe" firstAttribute="leading" secondItem="Jnw-cr-ZAg" secondAttribute="leading" constant="8" id="6cM-gR-5r1"/>
+                                            <constraint firstAttribute="height" constant="40" id="8pk-9M-gC2"/>
+                                            <constraint firstItem="1nP-bA-JDe" firstAttribute="centerY" secondItem="Jnw-cr-ZAg" secondAttribute="centerY" id="Onn-nW-hgf"/>
+                                            <constraint firstAttribute="trailing" secondItem="RTu-SX-Jcl" secondAttribute="trailing" constant="8" id="WYt-1A-79x"/>
+                                            <constraint firstItem="RTu-SX-Jcl" firstAttribute="centerY" secondItem="Jnw-cr-ZAg" secondAttribute="centerY" id="fTt-h2-qE8"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="4FO-RC-kM9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="4FO-RC-kM9" firstAttribute="trailing" secondItem="Ex4-PW-WRK" secondAttribute="trailing" constant="16" id="h1P-sT-yaz"/>
+                            <constraint firstItem="Ex4-PW-WRK" firstAttribute="bottom" secondItem="4FO-RC-kM9" secondAttribute="bottom" id="pqh-m7-kkg"/>
+                            <constraint firstItem="Ex4-PW-WRK" firstAttribute="leading" secondItem="4FO-RC-kM9" secondAttribute="leading" constant="16" id="rKD-nA-4cr"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" id="Jj0-c6-KQy"/>
+                    <connections>
+                        <outlet property="logoutButton" destination="RTu-SX-Jcl" id="OJo-sN-upR"/>
+                        <outlet property="logoutLabel" destination="1nP-bA-JDe" id="NJa-hf-m1B"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6IX-fh-NIo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="563" y="299"/>
+            <point key="canvasLocation" x="562.59541984732823" y="298.59154929577466"/>
         </scene>
         <!--Barcode Reader Screen-->
         <scene sceneID="I7Z-sx-kq4">
@@ -675,6 +719,7 @@
         <image name="paintbrush.pointed" catalog="system" width="128" height="118"/>
         <image name="person" catalog="system" width="128" height="121"/>
         <image name="person.crop.circle" catalog="system" width="128" height="123"/>
+        <image name="person.fill.xmark" catalog="system" width="128" height="89"/>
         <image name="photo" catalog="system" width="128" height="93"/>
         <image name="server.rack" catalog="system" width="128" height="93"/>
         <image name="trash" catalog="system" width="117" height="128"/>
