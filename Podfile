@@ -8,6 +8,7 @@ target 'Odoo-iOS' do
   # Pods for Odoo-iOS
     pod 'Alamofire'
     pod 'CropViewController'
+    pod 'DropDown'
   target 'Odoo-iOSTests' do
     inherit! :search_paths
     # Pods for testing
