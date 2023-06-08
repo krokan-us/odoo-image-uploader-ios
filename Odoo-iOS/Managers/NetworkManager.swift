@@ -25,6 +25,13 @@ struct ImageResponse {
     var productImages: [ProductImage]
 }
 
+
+struct UserDetails {
+    let userID: Int
+    let userName: String
+    let imageData: String
+}
+
 class NetworkManager {
     static let shared = NetworkManager()
     
@@ -356,4 +363,65 @@ class NetworkManager {
                 }
             }
     }
+    
+    func getLoggedUserDetails(userID: Int, completion: @escaping (UserDetails?) -> Void) {
+        guard let currentBaseURL = UserDefaults.standard.url(forKey: "currentBaseURL"),
+              let currentDatabaseName = UserDefaults.standard.string(forKey: "currentDatabaseName"),
+              let currentlyLoggedUserId = UserDefaults.standard.object(forKey: "currentlyLoggedUserId") as? Int,
+              let currentlyLoggedUserPassword = UserDefaults.standard.string(forKey: "currentlyLoggedUserPassword") else {
+            print("Missing required user defaults")
+            completion(nil)
+            return
+        }
+        
+        let requestURL = currentBaseURL.appendingPathComponent("jsonrpc")
+        
+        let randomID = Int.random(in: 0...1000) // Generate random ID between 0 and 1000
+        
+        let payload: [String: Any] = [
+            "jsonrpc": "2.0",
+            "method": "call",
+            "params": [
+                "service": "object",
+                "method": "execute",
+                "args": [
+                    currentDatabaseName,
+                    currentlyLoggedUserId,
+                    currentlyLoggedUserPassword,
+                    "res.users",
+                    "get_user_image_endpoint",
+                    userID,
+                    [
+                        "lang": "tr_TR"
+                    ]
+                ]
+            ],
+            "id": randomID
+        ]
+        
+        AF.request(requestURL, method: .post, parameters: payload, encoding: JSONEncoding.default)
+            .validate()
+            .responseJSON { response in
+                switch response.result {
+                case .success(let value):
+                    if let json = value as? [String: Any],
+                       let result = json["result"] as? [String: Any],
+                       let status = result["status"] as? String,
+                       let message = result["message"] as? String,
+                       status == "success" {
+                        let userID = result["user_id"] as? Int ?? 0
+                        let userName = result["user_name"] as? String ?? ""
+                        let imageData = result["image_data"] as? String ?? ""
+                        let userDetails = UserDetails(userID: userID, userName: userName, imageData: imageData)
+                        completion(userDetails)
+                    } else {
+                        completion(nil)
+                    }
+                case .failure(let error):
+                    print("Error: \(error)")
+                    completion(nil)
+                }
+            }
+    }
+
 }
