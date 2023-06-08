@@ -29,4 +29,6 @@
 
 "sameNameErrorDescription" = "Aynı isimle iki görüntü olamaz.";
 "anErrorOccured" = "Bir hata oldu.";
+
+"logout" = "Çıkış yap";
 */

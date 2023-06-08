@@ -29,4 +29,6 @@
 
 "sameNameErrorDescription" = "There cannot be two images with the same name.";
 "anErrorOccured" = "An error occured.";
+
+"logout" = "Logout";
 */
