@@ -55,6 +55,10 @@ class LoginViewController: UIViewController {
         setScreenForLastlyLoggedUser()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        passwordTextField.text = ""
+    }
+    
     private func setViewBackgrounds(){
         URLView.layer.borderWidth = 1
         URLView.layer.borderColor = UIColor.label.cgColor
@@ -128,6 +132,7 @@ class LoginViewController: UIViewController {
             } else {
                 self?.profileImageView.image = UIImage(systemName: "person.crop.circle")
             }
+            self?.passwordTextField.text = ""
         }
     }
 
