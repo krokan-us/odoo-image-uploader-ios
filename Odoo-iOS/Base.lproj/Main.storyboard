@@ -41,11 +41,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FsC-NE-5ef" userLabel="barcodeReaderScreen">
-                                <rect key="frame" x="16" y="101.33333333333331" width="361" height="667.66666666666674"/>
+                                <rect key="frame" x="16" y="101" width="361" height="668"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MPO-kj-tDO">
-                                <rect key="frame" x="332" y="59" width="45" height="34.333333333333343"/>
+                                <rect key="frame" x="332" y="59" width="45" height="34"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="bolt.fill" catalog="system"/>
@@ -116,7 +116,7 @@
                                 </cells>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="STZ-ZX-fJP">
-                                <rect key="frame" x="16" y="59" width="40" height="35"/>
+                                <rect key="frame" x="16" y="59" width="40" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="w6n-Cv-k1n"/>
                                 </constraints>
@@ -161,7 +161,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LMh-Me-GT4">
-                                <rect key="frame" x="15.999999999999996" y="59" width="39.666666666666657" height="34.333333333333343"/>
+                                <rect key="frame" x="16" y="59" width="40" height="34"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system"/>
@@ -170,11 +170,11 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jwm-Wg-POQ">
-                                <rect key="frame" x="16" y="101.33333333333331" width="361" height="674.33333333333348"/>
+                                <rect key="frame" x="16" y="101" width="361" height="675"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R0l-bv-MtC">
-                                <rect key="frame" x="15.999999999999996" y="783.66666666666663" width="54.666666666666657" height="34.333333333333371"/>
+                                <rect key="frame" x="15.999999999999996" y="784" width="54.666666666666657" height="34"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="photo" catalog="system"/>
@@ -183,7 +183,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8E-oA-dYm">
-                                <rect key="frame" x="168.66666666666666" y="783.66666666666663" width="55.666666666666657" height="34.333333333333371"/>
+                                <rect key="frame" x="168.66666666666666" y="784" width="56" height="34"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="camera.shutter.button" catalog="system"/>
@@ -192,7 +192,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QbY-Ht-cGy">
-                                <rect key="frame" x="332" y="59" width="45" height="34.333333333333343"/>
+                                <rect key="frame" x="332" y="59" width="45" height="34"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="bolt.fill" catalog="system"/>
@@ -571,10 +571,41 @@
                                     <action selector="loginButtonTapped:" destination="iRy-Bc-VCR" eventType="touchUpInside" id="qbY-Tc-kBs"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2OB-Dc-mqe">
+                                <rect key="frame" x="327" y="59" width="50" height="45"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="44v-Cn-lqI">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="45"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain"/>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="OY4-EB-3VN">
+                                        <rect key="frame" x="0.0" y="1" width="45" height="43.666666666666671"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="DI3-zL-4Gz"/>
+                                            <constraint firstAttribute="width" constant="45" id="pWb-Zq-fLE"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="OY4-EB-3VN" firstAttribute="centerY" secondItem="2OB-Dc-mqe" secondAttribute="centerY" id="15y-5S-EST"/>
+                                    <constraint firstAttribute="height" constant="45" id="5yJ-Vg-fOe"/>
+                                    <constraint firstItem="44v-Cn-lqI" firstAttribute="top" secondItem="2OB-Dc-mqe" secondAttribute="top" id="7m9-7r-FkV"/>
+                                    <constraint firstItem="44v-Cn-lqI" firstAttribute="leading" secondItem="2OB-Dc-mqe" secondAttribute="leading" id="C4V-SF-Lk3"/>
+                                    <constraint firstAttribute="trailing" secondItem="44v-Cn-lqI" secondAttribute="trailing" id="QJI-oi-cOI"/>
+                                    <constraint firstAttribute="bottom" secondItem="44v-Cn-lqI" secondAttribute="bottom" id="Tvn-oi-JFu"/>
+                                    <constraint firstAttribute="width" constant="50" id="ift-ob-Kid"/>
+                                    <constraint firstItem="OY4-EB-3VN" firstAttribute="leading" secondItem="2OB-Dc-mqe" secondAttribute="leading" id="lIa-Ve-Piv"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="EH0-u7-3JY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="2OB-Dc-mqe" firstAttribute="top" secondItem="EH0-u7-3JY" secondAttribute="top" id="JRI-hy-GVC"/>
+                            <constraint firstItem="EH0-u7-3JY" firstAttribute="trailing" secondItem="2OB-Dc-mqe" secondAttribute="trailing" constant="16" id="bEI-lG-fS0"/>
                             <constraint firstItem="SwF-mK-N5T" firstAttribute="top" secondItem="yI1-jG-dUX" secondAttribute="bottom" constant="40" id="fj2-PB-UPY"/>
                             <constraint firstItem="elj-hb-n7h" firstAttribute="leading" secondItem="EH0-u7-3JY" secondAttribute="leading" constant="24" id="jBW-y3-w7G"/>
                             <constraint firstItem="yI1-jG-dUX" firstAttribute="leading" secondItem="EH0-u7-3JY" secondAttribute="leading" constant="16" id="keg-4b-PAs"/>
@@ -589,6 +620,8 @@
                         <outlet property="URLLabel" destination="cFo-Sw-3pF" id="75n-8m-L47"/>
                         <outlet property="URLTextView" destination="JSK-IF-AuT" id="DcB-qP-vgs"/>
                         <outlet property="URLView" destination="Ei1-Tb-M9c" id="rf7-4b-pg3"/>
+                        <outlet property="changeUserButton" destination="44v-Cn-lqI" id="fYX-lf-vge"/>
+                        <outlet property="changeUserView" destination="2OB-Dc-mqe" id="BGM-bj-9CV"/>
                         <outlet property="databaseClearButton" destination="8Qt-hX-XGR" id="tB7-Ku-o2d"/>
                         <outlet property="databaseLabel" destination="bnd-ST-pdK" id="g2m-r9-yEZ"/>
                         <outlet property="databaseTextView" destination="Avw-9W-W1z" id="lWe-sa-SeH"/>
@@ -598,6 +631,7 @@
                         <outlet property="passwordLabel" destination="k3g-Pa-Cj6" id="gfE-Fi-h3a"/>
                         <outlet property="passwordTextField" destination="84R-uX-jbb" id="n8f-SP-edP"/>
                         <outlet property="passwordView" destination="g3a-WY-fyE" id="2Nz-Pu-CJm"/>
+                        <outlet property="profileImageView" destination="OY4-EB-3VN" id="gRc-3H-BfX"/>
                         <outlet property="usernameClearButton" destination="EBt-NM-yTh" id="uZi-3k-fSw"/>
                         <outlet property="usernameLabel" destination="gSq-Ur-hwH" id="DYm-jX-gIT"/>
                         <outlet property="usernameTextView" destination="2Zy-eq-PoJ" id="lrm-aT-Y0t"/>
@@ -640,6 +674,7 @@
         <image name="network" catalog="system" width="128" height="123"/>
         <image name="paintbrush.pointed" catalog="system" width="128" height="118"/>
         <image name="person" catalog="system" width="128" height="121"/>
+        <image name="person.crop.circle" catalog="system" width="128" height="123"/>
         <image name="photo" catalog="system" width="128" height="93"/>
         <image name="server.rack" catalog="system" width="128" height="93"/>
         <image name="trash" catalog="system" width="117" height="128"/>
