@@ -8,7 +8,7 @@
 import UIKit
 import DropDown
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextViewDelegate, UITextFieldDelegate {
     let dropDown = DropDown()
     @IBOutlet weak var changeUserView: UIView!
     @IBOutlet weak var changeUserButton: UIButton!
@@ -48,6 +48,12 @@ class LoginViewController: UIViewController {
         configureButtons()
         configureTapGesture()
         configureChangeUserButton()
+        updateLoginButtonState()
+        
+        URLTextView.delegate = self
+        databaseTextView.delegate = self
+        usernameTextView.delegate = self
+        passwordTextField.delegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -105,7 +111,7 @@ class LoginViewController: UIViewController {
 
     private func configureChangeUserDropdownMenu() {
         let loggedUsers = LoggedUsersManager.shared.getLoggedUsers()
-        let dropdownItems = loggedUsers.map { "\($0.username)" }
+        let dropdownItems = loggedUsers.map { $0.userName.split(separator: " ").first?.description ?? "" }
 
         dropDown.anchorView = changeUserView
         dropDown.dataSource = dropdownItems
@@ -133,6 +139,8 @@ class LoginViewController: UIViewController {
                 self?.profileImageView.image = UIImage(systemName: "person.crop.circle")
             }
             self?.passwordTextField.text = ""
+            self?.updateLoginButtonState()
+            UINotificationFeedbackGenerator().notificationOccurred(.success)
         }
     }
 
@@ -199,6 +207,11 @@ class LoginViewController: UIViewController {
                         }
                     }
                 } else {
+                    UINotificationFeedbackGenerator().notificationOccurred(.error)
+                    let alert = UIAlertController(title: NSLocalizedString("loginFailed", comment: ""), message: NSLocalizedString("tryAgain", comment: ""), preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil)
+                    alert.addAction(okAction)
+                    self.present(alert, animated: true, completion: nil)
                     print("Login failed.")
                 }
             }
@@ -210,22 +223,43 @@ class LoginViewController: UIViewController {
     @objc private func handleTap() {
         view.endEditing(true)
     }
+    
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        updateLoginButtonState()
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        updateLoginButtonState()
+    }
 }
 
 extension LoginViewController {
     @IBAction func URLClearButtonTapped(_ sender: Any) {
         URLTextView.text = ""
+        updateLoginButtonState()
     }
     
     @IBAction func databaseClearButtonTapped(_ sender: Any) {
         databaseTextView.text = ""
+        updateLoginButtonState()
     }
     
     @IBAction func usernameClearButtonTapped(_ sender: Any) {
         usernameTextView.text = ""
+        updateLoginButtonState()
     }
     
     @IBAction func passwordClearButtonTapped(_ sender: Any) {
         passwordTextField.text = ""
+        updateLoginButtonState()
+    }
+    
+    private func updateLoginButtonState() {
+        let isURLEmpty = URLTextView.text.isEmpty
+        let isDatabaseEmpty = databaseTextView.text.isEmpty
+        let isUsernameEmpty = usernameTextView.text.isEmpty
+        let isPasswordEmpty = passwordTextField.text?.isEmpty ?? true
+        
+        loginButton.isEnabled = !(isURLEmpty || isDatabaseEmpty || isUsernameEmpty || isPasswordEmpty)
     }
 }
