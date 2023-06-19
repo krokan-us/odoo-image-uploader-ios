@@ -2,6 +2,7 @@ import UIKit
 import AVFoundation
 
 class BarcodeReaderViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
+    @IBOutlet weak var pageTitle: UILabel!
     @IBOutlet weak var flashButton: UIButton!
     @IBOutlet weak var cameraView: UIView!
     
@@ -18,6 +19,7 @@ class BarcodeReaderViewController: UIViewController, AVCaptureMetadataOutputObje
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        pageTitle.text = NSLocalizedString("scanTheBarcodeFirst", comment: "")
         isFlashOn = false
         flashButton.setTitle("", for: .normal)
         flashButton.setImage(UIImage(systemName: "bolt.slash.fill"), for: .normal)
