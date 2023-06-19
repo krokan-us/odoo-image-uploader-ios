@@ -31,4 +31,15 @@
 "anErrorOccured" = "Bir hata oldu.";
 
 "logout" = "Çıkış yap";
+
+"loginFailed" = "Giriş Yapılamadı";
+"tryAgain" = "Lütfen bilgileri kontol edin ve tekrar deneyin.";
+
+"missingValues" = "Bilgiler Eksik";
+"pleaseFillTheURLAndDatabaseFields" = "Lütfen URL ve veritabanı alanlarını doldurun.";
+
+"camera" = "Kamera";
+"settings" = "Ayarlar";
+
+"scanTheBarcodeFirst" = "Önce barkodu taratın";
 */

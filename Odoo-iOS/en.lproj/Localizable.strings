@@ -31,4 +31,15 @@
 "anErrorOccured" = "An error occured.";
 
 "logout" = "Logout";
+
+"loginFailed" = "Login Failed";
+"tryAgain" = "Please check the credentials and try again.";
+
+"missingValues" = "Missing Values";
+"pleaseFillTheURLAndDatabaseFields" = "Please fill the URL and database fields";
+
+"camera" = "Camera";
+"settings" = "Settings";
+
+"scanTheBarcodeFirst" = "Scan the barcode first";
 */
