@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Lottie
 
 class DisplayImagesViewController: UIViewController {
 
@@ -14,10 +15,11 @@ class DisplayImagesViewController: UIViewController {
     @IBOutlet weak var productImagesCollectionView: UICollectionView!
     var productBarcode: String?
     var imageResponse: ImageResponse? // Store the image response
+    var animationView = LottieAnimationView(name: "paperplaneLoading")
     
     override func viewDidLoad() {
-        super.viewDidLoad()        
-        getImagesFromAPI()
+        super.viewDidLoad()
+        setupLoadingAnimation()
         
         // Register the cell
         let nib = UINib(nibName: "ImageCollectionViewCell", bundle: nil)
@@ -38,6 +40,7 @@ class DisplayImagesViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         backButton.setTitle("", for: .normal)
+        showLoadingAnimation()
         getImagesFromAPI()
     }
     
@@ -49,9 +52,11 @@ class DisplayImagesViewController: UIViewController {
                 // Reload the collection view to display the images
                 DispatchQueue.main.async {
                     self.productImagesCollectionView.reloadData()
+                    self.hideLoadingAnimation()
                 }
             } else {
                 print("Failed to fetch images.")
+                self.hideLoadingAnimation()
             }
         }
     }
@@ -242,5 +247,33 @@ extension DisplayImagesViewController: UICollectionViewDragDelegate, UICollectio
             return UICollectionViewDropProposal(operation: .move, intent: .insertAtDestinationIndexPath)
         }
         return UICollectionViewDropProposal(operation: .forbidden)
+    }
+}
+
+extension DisplayImagesViewController{
+    func setupLoadingAnimation() {
+        animationView = LottieAnimationView(name: "paperplaneLoading")
+        animationView.loopMode = .loop
+        animationView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(animationView)
+        
+        NSLayoutConstraint.activate([
+            animationView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            animationView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            animationView.widthAnchor.constraint(equalToConstant: 300),
+            animationView.heightAnchor.constraint(equalToConstant: 300)
+        ])
+    }
+    
+    func showLoadingAnimation() {
+        animationView.play()
+        animationView.isHidden = false
+        productImagesCollectionView.isHidden = true
+    }
+    
+    func hideLoadingAnimation() {
+        animationView.stop()
+        animationView.isHidden = true
+        productImagesCollectionView.isHidden = false
     }
 }
