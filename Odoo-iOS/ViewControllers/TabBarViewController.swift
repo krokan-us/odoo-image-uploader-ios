@@ -11,5 +11,8 @@ class TabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tabBar.items?[0].title = NSLocalizedString("camera", comment: "")
+        tabBar.items?[1].title = NSLocalizedString("settings", comment: "")
+
     }
 }
