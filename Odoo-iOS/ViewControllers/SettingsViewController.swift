@@ -9,6 +9,7 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
+    @IBOutlet weak var logoutBackgroundView: UIView!
     @IBOutlet weak var logoutLabel: UILabel!
     @IBOutlet weak var logoutButton: UIButton!
     override func viewDidLoad() {
@@ -17,6 +18,7 @@ class SettingsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         setButtons()
         setLabels()
+        logoutBackgroundView.layer.cornerRadius = 10
     }
     func setButtons(){
         logoutButton.setTitle("", for: .normal)
