@@ -138,15 +138,11 @@ class NetworkManager {
                                 var fileName = image["filename"] {
                                 
                                 if let fileNameString = fileName as? String {
-                                    // Handle string value
                                     if fileNameString == "false" {
-                                        // Create slugged filename from name by removing whitespaces
-                                        fileName = name.replacingOccurrences(of: " ", with: "-")
+                                        fileName = name.slugify()
                                     }
                                 } else if fileName is Bool && !(fileName as! Bool) {
-                                    // Handle boolean value (false)
-                                    // Create slugged filename from name by removing whitespaces
-                                    fileName = name.replacingOccurrences(of: " ", with: "-")
+                                    fileName = name.slugify()
                                 }
                                 
                                 let productImage = ProductImage(id: id, name: name, sequence: sequence, imageData: imageData, isPublished: isPublished, fileName: fileName as! String)
