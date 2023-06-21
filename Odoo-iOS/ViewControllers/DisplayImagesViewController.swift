@@ -44,19 +44,27 @@ class DisplayImagesViewController: UIViewController {
         getImagesFromAPI()
     }
     
-    func getImagesFromAPI(){
-        NetworkManager.shared.fetchImages(productBarcode: productBarcode ?? "0") { imageResponse in
+    func getImagesFromAPI() {
+        NetworkManager.shared.fetchImages(productBarcode: productBarcode ?? "0") { [weak self] imageResponse in
             if let imageResponse = imageResponse {
-                self.imageResponse = imageResponse
-                self.productNameLabel.text = imageResponse.productName
+                self?.imageResponse = imageResponse
+                self?.productNameLabel.text = imageResponse.productName
                 // Reload the collection view to display the images
                 DispatchQueue.main.async {
-                    self.productImagesCollectionView.reloadData()
-                    self.hideLoadingAnimation()
+                    self?.productImagesCollectionView.reloadData()
+                    self?.hideLoadingAnimation()
                 }
             } else {
                 print("Failed to fetch images.")
-                self.hideLoadingAnimation()
+                self?.hideLoadingAnimation()
+                
+                let successAlert = UIAlertController(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("productNotFound", comment: ""), preferredStyle: .alert)
+                self?.present(successAlert, animated: true, completion: nil)
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                    successAlert.dismiss(animated: true, completion: nil)
+                    self?.dismiss(animated: true, completion: nil) // Dismiss the view controller
+                }
             }
         }
     }
